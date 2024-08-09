@@ -49,9 +49,7 @@
                             <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
                             <div class="jumbotron-logged-in-text">
                                 <h1>{{ localize('welcome_logged_in', user_data.title) }}</h1>
-                                <p>@{{ user_data.name }}</p>
-                                <p>{{ followersText }} follower{{ pluralSubscribers }}
-                                    • {{ viewsText }} view{{ pluralViews }}</p>
+                                <div>@{{ user_data.name }} • {{ followersText }} follower{{ pluralSubscribers }} • {{ viewsText }} view{{ pluralViews }}</div>
                             </div>
                         </div>
                     {% else %}

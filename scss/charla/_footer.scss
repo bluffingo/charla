@@ -1,20 +1,14 @@
 .footer
 {
   .footer-container {
-    @if $theme == "cubicle" {
-      border-radius: 20px;
-      background: #555753;
-      color: #cccccc;
+    border-top: 1px solid $content-box-border-color;
+    background: #595C62;
+    box-shadow: inset 0px 30px 30px -20px #00000050;
+    color: #aaa;
 
-      a {
-        color: #888a85;
-      }
-
-    } @else {
-      border-top: 1px solid $content-box-border-color;
+    a {
+      color: #aaa;
     }
-
-    @include maxwidths();
 
     // shitty
     padding-top: 20px;
@@ -43,7 +37,6 @@
     }
   }
 
-  margin: 16px 0;
   line-height: 20px;
   clear: both;
 }

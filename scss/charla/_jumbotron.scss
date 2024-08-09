@@ -14,31 +14,31 @@
     } @else if $theme == "cubicle" {
       background: #555753;
     } @else {
-      background: #111 linear-gradient(45deg, #222 0%, #111 100%);
+      //background: #111 linear-gradient(45deg, #222 0%, #111 100%);
+      background: #111 url("/assets/biscuit_login_background.jpg");
+      background-size: cover;
     }
-    background-size: cover;
+    //background-size: cover;
 
     color: white;
     text-shadow: 0 0 0.5em #00000090;
     padding: 20px 0;
 
+    // this fucking sucks.
+    box-shadow: inset 0px -30px 30px -20px #00000050;
+
     .jumbotron-welcome {
       flex-grow: 1;
 
-      h1, p {
-        margin: 0 0 12px 0;
-        &:last-child {
-          margin: 0;
-        }
-      }
+      line-height: 2.45em;
 
       .jumbotron-logged-in {
         display: flex;
         align-items: center;
 
         .pfp {
-          height: 110px;
-          margin-right: 10px;
+          height: 64px;
+          margin-right: 13px;
         }
       }
     }
