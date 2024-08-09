@@ -1,0 +1,44 @@
+{% extends "_layout.twig" %}
+
+{% set title = "Notifications" %}
+
+{% block content %}
+    <div class="section">
+        <div class="section-title">
+            <h1>Notifications</h1>
+            {% if 0 %}
+            <a href="notices?action=clear_all">Clear all</a>
+            {% endif %}
+        </div>
+        <div class="banner banner-secondary">
+            <strong>NOTE</strong>: This page is still incomplete.
+        </div>
+        <br>
+        <div class="content-box">
+            {% for notice in data %}
+                <div class="content-entry">
+                    <div class="content-notice">
+                        <table cellpadding="0" cellspacing="0">
+                            <tr valign="top">
+                                <td>
+                                    <img src="{{ profile_picture(notice.sender.info.username) }}" class="pfp">
+                                </td>
+                                <td>
+                                    {{ notice.intro }} {{ user_link(notice.sender) }}
+                                    {{ notice.detail | markdown_user_written }}
+                                    <small>
+                                        {{ notice.time | relative_time }} on {{ website_branding.name }}, could be anywhere.
+                                    </small>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            {% else %}
+            <p>
+                No notifications.
+            </p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+body.login {
+  background: #333 url("/assets/biscuit_login_background.jpg") fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  .page {
+    .page-contents {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .section-title {
+    text-shadow: #000 0 1px 2px;
+    color: white;
+  }
+
+  .login-text {
+    margin-top: 1em;
+    text-align: center;
+    color: white;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+// FIXME: on theseus, the page classes do not get applied, so the login and register pages remain wide.
+.container {
+  &.login, &.register {
+    margin: auto;
+    width: 310px;
+  }
+}
