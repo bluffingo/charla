@@ -50,7 +50,7 @@
     }
 
     .profile-box-details {
-      @if $theme == "biscuit" {
+      @if $theme == "default" {
         font-family: $font-serif;
       }
       color: #777;

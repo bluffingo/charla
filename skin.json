@@ -3,8 +3,9 @@
     "id": "charla",
     "name": "Finalium 3/Charla",
     "author": "Chaziz",
-    "description": "Our default and recommended frontend.",
+    "description": "Work-in-progress!",
     "site": "squarebracket",
+    "incomplete": "true",
     "themes": [
       {
         "id": "default",

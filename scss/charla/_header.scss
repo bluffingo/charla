@@ -15,7 +15,8 @@
 
 .header-main-links {
   display: flex;
-  gap: 0.85em;
+  gap: 9px;
+  align-items: center;
 }
 
 // actually known as user links, but back in 2023 the main browse/members links were aligned to the right so
@@ -43,7 +44,7 @@
         cursor: pointer;
       }
 
-      @if $theme == "biscuit" {
+      @if $theme == "default" {
         &:hover, &.selected {
           background: rgba(white, 0.1);
         }
@@ -97,12 +98,6 @@
   }
 
   .logo {
-    @include responsive('tiny') {
-      display: none;
-    }
-    @include responsive('medium') {
-      display: inline;
-    }
     @if $theme == "cubicle" or $theme == "classic" {
       height: 40px;
     } @else {
@@ -110,18 +105,9 @@
     }
   }
 
-  .logo-small {
-    @include responsive('tiny') {
-      display: inline;
-    }
-    @include responsive('medium') {
-      display: none;
-    }
-    height: $header-logo-height;
-  }
 
   @if $theme != "cubicle" and $theme != "classic" {
-    margin-right: 10px;
+    margin-right: 15px;
   }
 }
 
@@ -217,6 +203,8 @@ td.h
 {
   @if $theme == "pink" {
     color: black;
+  } @else if $theme == "default" {
+    color: #999;
   } @else {
     color: white;
   }
@@ -226,7 +214,7 @@ td.h
   }
 
   @if $theme != "classic" {
-    font-weight: bold;
+    font-weight: 500;
   }
 
   &.username {
@@ -267,7 +255,7 @@ td.h
     background: none;
     box-shadow: none;
   } @else {
-    background: linear-gradient(to bottom, #333, #111);
+    background: linear-gradient(to bottom, #2E2E2E, #151515);
     box-shadow: 0 1px 2px rgba(0,0,0,0.5);
   }
 
