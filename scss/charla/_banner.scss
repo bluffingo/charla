@@ -13,12 +13,20 @@
     min-height: 20px;
     background-size: 20px;
   }
+
+  &.full-screen {
+    margin: 0;
+    border-radius: 0;
+    .notification-text {
+      margin: auto;
+    }
+  }
 }
 
 @each $color, $value in $color-map {
   .banner-#{$color} {
-    @include gradient-y($start-color: adjust-hue(lighten($value, 1%), 2), $end-color: adjust-hue(darken($value, 9%), 6));
-    border: 1px solid adjust-hue(darken($value, 10%), 6);
+    @include gradient-y($start-color: adjust-hue(lighten($value, 1%), 2), $end-color: adjust-hue(darken($value, 7%), 4));
+    border: 1px solid adjust-hue(darken($value, 10%), 4);
     color: contrast-color($value, #000, #fff);
 
     a {
