@@ -25,7 +25,8 @@
     }
 
     &.login {
-        background: linear-gradient(180deg, rgb(253, 253, 253) 0%, rgb(225, 225, 225) 100%);
+        background: linear-gradient(180deg, $content-box-background-color 0%, #eee 100%);
+        padding: 15px;
     }
 
     // used for staff notes. i think it just looks cool honestly

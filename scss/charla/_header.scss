@@ -137,6 +137,7 @@ form.header-search
 
   #header-search-input {
     border-radius: 15px;
+    transition: all .2s ease-in-out;
 
     @if $theme != "cubicle" and $theme != "classic" {
       @if $theme == "pink" {
@@ -145,10 +146,9 @@ form.header-search
         color: #444;
         box-shadow: none;
       } @else {
-        border: 1px solid black;
-        color: #eee;
-        background: #575757;
-        box-shadow: 0 1px 0 #333;
+        border: 1px solid #ccc;
+        color: #111;
+        background: #dedede;
         padding: 6px 40px 6px 10px;
         height: 30px;
       }
@@ -160,9 +160,9 @@ form.header-search
           box-shadow: #ff6d6d 0 1px 5px;
           color: #111;
         } @else {
-          background: #eee;
-          color: #222;
-          box-shadow: 0 1px 0 #000;
+          background: #f3f3f3;
+          color: #333;
+          border-color: #cecece;
         }
       }
     }
@@ -206,7 +206,7 @@ td.h
   @if $theme == "pink" {
     color: black;
   } @else if $theme == "default" {
-    color: #999;
+    color: #666;
   } @else {
     color: white;
   }
@@ -257,8 +257,10 @@ td.h
     background: none;
     box-shadow: none;
   } @else {
-    background: linear-gradient(to bottom, #2E2E2E, #151515);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    //background: $content-box-background-color;
+    background: linear-gradient(to bottom, #fff, #fafafa);
+    border: 1px solid $content-box-border-color;
+    //box-shadow: 0 1px 2px rgba(0,0,0,0.5);
   }
 
   height: $header-height;
@@ -266,27 +268,25 @@ td.h
 }
 
 .menu#user-menu {
-  background: #2A2A2A;
+  background: white;
   border: none;
   min-width: 165px;
   top: $header-height;
   border-radius: 0 0 5px 5px;
-  box-shadow: 0 1px 2px rgba(black, 0.6);
+  box-shadow: 0 1px 2px rgba(black, 0.2);
 
   hr {
-    border-color: #777;
+    border-color: #ddd;
     margin: 4px 0;
   }
 
   .menu-item-button {
-    color: white;
-
     &.small {
       font-size: 11px;
     }
 
     &:hover {
-      background: rgba(white, 0.1);
+      background: rgba(black, 0.1);
       text-decoration: none;
     }
   }

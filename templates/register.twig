@@ -37,16 +37,17 @@
                         </div>
                         {% endif %}
 
+                        <div class="login-text">
+                            By registering on {{ website_branding.name }},
+                            you accept the <a href="/tos">Terms of Service</a>
+                            and <a href="/privacy">Privacy Policy</a>.
+                        </div>
+
                         <div class="form-button-container">
                             <input type="submit" class="button button-primary" value="Register" name="registersubmit">
                         </div>
                     </form>
                 </div>
-            </div>
-            <div class="login-text">
-                By registering on {{ website_branding.name }},
-                you accept the <a href="/tos">Terms of Service</a>
-                and <a href="/privacy">Privacy Policy</a>.
             </div>
         </div>
     {% endblock %}

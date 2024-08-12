@@ -2,14 +2,14 @@
 
 $threshold: 66%; // contrast threshold
 
-$primary: #3498db; // primary color
+$primary: #2187dd; // primary color
 @if $theme == "pink" {
         $primary: #edb1c1; // primary color
 }
 $primary-darker: darken($primary, 33%); // darker primary color
-$secondary: #eee; //secondary color (nearly white)
-$green: #28c228;
-$red: #c01b0c;
+$secondary: #eaeaea; //secondary color (nearly white)
+$green: #18b618;
+$red: #cd1611;
 
 $link-color: #0061c5;
 @if $theme == "pink" {
@@ -67,7 +67,7 @@ $button-padding-huge: 0.5em 1em;
 
 // content boxes
 $content-box-background-color: #FFF;
-$content-box-border-color: darken($secondary, 7.5%);
+$content-box-border-color: darken($secondary, 2%);
 $content-box-padding: 12px;
 
 // header
