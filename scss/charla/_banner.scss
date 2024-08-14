@@ -25,8 +25,9 @@
 
 @each $color, $value in $color-map {
   .banner-#{$color} {
-    @include gradient-y($start-color: lighten($value, 5%), $end-color: adjust-hue(darken($value, 2%), 1));
-    border: 1px solid adjust-hue(darken($value, 10%), 4);
+    background-color: lighten($value, 10%);
+    @include gradient-y($start-color: adjust-hue(lighten($value, 6%), 1), $end-color: $value);
+    border: 1px solid darken($value, 5%);
     color: contrast-color($value, #000, #fff);
 
     a {

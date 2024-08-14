@@ -8,8 +8,8 @@ $primary: #2187dd; // primary color
 }
 $primary-darker: darken($primary, 33%); // darker primary color
 $secondary: #eaeaea; //secondary color (nearly white)
-$green: #18b618;
-$red: #cd1611;
+$green: #0cb60c;
+$red: #c2120d;
 
 $link-color: #0061c5;
 @if $theme == "pink" {

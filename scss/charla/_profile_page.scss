@@ -29,9 +29,9 @@
       display: flex;
       gap: 5px;
       align-items: center;
-
       font-size: 24px;
-      font-weight: bold;
+      font-weight: 500;
+
       @if $theme == "cubicle" {
         font-family: "Trebuchet MS", $font;
       }
@@ -45,7 +45,7 @@
     }
 
     .profile-box-handle {
-      color: #777;
+      color: #888;
       font-size: 17px;
     }
 
@@ -53,7 +53,7 @@
       @if $theme == "default" {
         font-family: $font-serif;
       }
-      color: #777;
+      color: #888;
       font-style: italic;
     }
   }

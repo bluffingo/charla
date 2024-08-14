@@ -215,10 +215,6 @@ td.h
     font-size: 16px;
   }
 
-  @if $theme != "classic" {
-    font-weight: 500;
-  }
-
   &.username {
     display: none;
 
