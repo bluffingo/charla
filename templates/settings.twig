@@ -62,7 +62,7 @@
 
                         <div class="form-input">
                             <label for="customcolor">Username/link color:</label>
-                            <input name="customcolor" type="color" value="{{ user_data.customcolor | default('523bb8') }}">
+                            <input name="customcolor" type="text" data-coloris value="{{ user_data.customcolor | default('523bb8') }}">
                         </div>
                     </div>
 
@@ -140,3 +140,8 @@
             </div>
         </div>
     {% endblock %}
+
+{% block scripts %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
+{% endblock %}

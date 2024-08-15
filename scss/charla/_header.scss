@@ -104,7 +104,7 @@ form.header-search
     @if $theme == "pink" {
       background: #ffe0e0;
       border: #ff7c7c solid 1px;
-      color: #444;
+      color: #111;
       box-shadow: none;
     } @else if $theme == "dark"{
       border: 1px solid #222;
@@ -122,9 +122,8 @@ form.header-search
 
     &:focus {
       @if $theme == "pink" {
-        background: #ffe0e0;
+        background: #ffecec;
         border: #ff7c7c solid 1px;
-        box-shadow: #ff6d6d 0 1px 5px;
         color: #111;
       } @else if $theme == "dark" {
         background: #333;
