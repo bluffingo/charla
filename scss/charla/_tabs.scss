@@ -13,7 +13,7 @@
   background-color: #fff0;
   margin-bottom: -1px;
   border-radius: 4px 4px 0 0;
-  color: $link-color;
+  color: var(--link-color);
   display: inline-block;
 
   &:hover {

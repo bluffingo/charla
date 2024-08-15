@@ -19,6 +19,7 @@ $bootstrap-icons-font-dir: "/assets" !default;
 // misc unorganized shit
 :root {
   font-family: $font;
+  --link-color: #{$link-color};
 }
 
 *,
@@ -49,7 +50,7 @@ body
 a
 {
   text-decoration: none;
-  color: $link-color;
+  color: var(--link-color);
 
   &:hover {
     text-decoration: underline;
