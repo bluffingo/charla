@@ -16,6 +16,29 @@
                         <div class="section-title">
                             <h2>Profile</h2>
                         </div>
+
+                        <div id="settings-banner"></div>
+                        <div class="content-box no-border-top">
+                            <div class="profile-box">
+                                <div class="profile-box-pfp">
+                                    <img src="{{ profile_picture(user_data.username) }}" class="pfp" alt="{{ user_data.username }}">
+                                </div>
+                                <div class="profile-box-info">
+                                    <div class="profile-box-username">
+                                        <span style="color:{{ user_data.customcolor }}">{{ user_data.title }}</span>
+                                    </div>
+                                    <div class="profile-box-handle">
+                                        @{{ user_data.name }}
+                                    </div>
+                                    <div class="profile-box-details">
+                                        {% if user_data.about | trim is not empty %}
+                                            {{ user_data.about | markdown_user_written }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-input">
                             <label for="title">Profile name:</label>
                             <input class="form-submit" type="text" name="title" size="45" maxlength="50" value="{{ user_data.title }}">
@@ -38,7 +61,7 @@
 
 
                         <div class="form-input">
-                            <label for="customcolor">Username color:</label>
+                            <label for="customcolor">Username/link color:</label>
                             <input name="customcolor" type="color" value="{{ user_data.customcolor | default('523bb8') }}">
                         </div>
                     </div>
