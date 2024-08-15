@@ -3,7 +3,8 @@
 }
 
 .tabs {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid $content-box-border-color;
+  display: flex;
 }
 
 .tablink {
@@ -15,17 +16,26 @@
   border-radius: 4px 4px 0 0;
   color: var(--link-color);
   display: inline-block;
+  border: 1px solid #0000;
 
   &:hover {
-    background-color: #ddd;
+    @if $theme == "dark" {
+      background-color: #555;
+    } @else {
+      background-color: #ddd;
+    }
     text-decoration: none;
   }
 
   &.active {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: $content-box-background-color;
+    border: 1px solid $content-box-border-color;
     border-bottom: 1px solid #fff0;
-    color: black;
+    @if $theme == "dark" {
+      color: white;
+    } @else {
+      color: black;
+    }
     font-weight: bold;
   }
 

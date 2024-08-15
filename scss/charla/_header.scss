@@ -1,14 +1,5 @@
 .headers {
-  @if $theme == "cubicle" or $theme == "classic" {
-    position: static;
-  } @else {
-    position: sticky;
-  }
-
-  @if $theme == "classic" {
-    margin-top: 12px;
-  }
-
+  position: sticky;
   top: 0;
   z-index: 47101;
 }
@@ -50,17 +41,6 @@
         }
       }
 
-      @if $theme == "cubicle" {
-        background: #64b713;
-        border-left: 1px solid #4e9e00;
-        border-right: 1px solid #4e9e00;
-
-        &.selected {
-          background: #2e2e2e;
-          color: #76b900;
-        }
-      }
-
       .user-menu-pfp {
         width: $header-pfp-width;
       }
@@ -69,7 +49,7 @@
         display: inline-block;
         font-size: 10px;
         color: rgba(255, 255, 255, 0.75);
-        @if $theme == "pink" or $theme == "classic" {
+        @if $theme == "pink" or $theme == "default" {
           color: rgba(0, 0, 0, 0.75);
         }
       }
@@ -81,16 +61,7 @@
 {
   a {
     display: block;
-    @if $theme == "cubicle" or $theme == "classic" {
-      @include responsive('tiny') {
-        height: $header-logo-height;
-      }
-      @include responsive('medium') {
-        height: 40px;
-      }
-    } @else {
-      height: $header-logo-height;
-    }
+    height: $header-logo-height;
 
     &:focus {
       outline: none;
@@ -98,17 +69,10 @@
   }
 
   .logo {
-    @if $theme == "cubicle" or $theme == "classic" {
-      height: 40px;
-    } @else {
-      height: $header-logo-height;
-    }
+    height: $header-logo-height;
   }
 
-
-  @if $theme != "cubicle" and $theme != "classic" {
-    margin-right: 15px;
-  }
+  margin-right: 15px;
 }
 
 form.header-search
@@ -116,22 +80,20 @@ form.header-search
   position: relative;
   display: none;
 
-  @if $theme != "cubicle" and $theme != "classic" {
-    #header-search-button {
-      position: absolute;
-      right: 0;
+  #header-search-button {
+    position: absolute;
+    right: 0;
 
-      background: none;
-      border: none;
+    background: none;
+    border: none;
 
-      color: #B4B4B4;
+    color: #B4B4B4;
 
-      height: 30px;
-      width: 40px;
+    height: 30px;
+    width: 40px;
 
-      &:hover {
-        cursor: pointer;
-      }
+    &:hover {
+      cursor: pointer;
     }
   }
 
@@ -139,31 +101,39 @@ form.header-search
     border-radius: 15px;
     transition: all .2s ease-in-out;
 
-    @if $theme != "cubicle" and $theme != "classic" {
+    @if $theme == "pink" {
+      background: #ffe0e0;
+      border: #ff7c7c solid 1px;
+      color: #444;
+      box-shadow: none;
+    } @else if $theme == "dark"{
+      border: 1px solid #222;
+      color: #dedede;
+      background: #111;
+      padding: 6px 40px 6px 10px;
+      height: 30px;
+    } @else {
+      border: 1px solid #ccc;
+      color: #111;
+      background: #dedede;
+      padding: 6px 40px 6px 10px;
+      height: 30px;
+    }
+
+    &:focus {
       @if $theme == "pink" {
         background: #ffe0e0;
         border: #ff7c7c solid 1px;
-        color: #444;
-        box-shadow: none;
-      } @else {
-        border: 1px solid #ccc;
+        box-shadow: #ff6d6d 0 1px 5px;
         color: #111;
-        background: #dedede;
-        padding: 6px 40px 6px 10px;
-        height: 30px;
-      }
-
-      &:focus {
-        @if $theme == "pink" {
-          background: #ffe0e0;
-          border: #ff7c7c solid 1px;
-          box-shadow: #ff6d6d 0 1px 5px;
-          color: #111;
-        } @else {
-          background: #f3f3f3;
-          color: #333;
-          border-color: #cecece;
-        }
+      } @else if $theme == "dark" {
+        background: #333;
+        color: #f3f3f3;
+        border-color: #444;
+      } @else {
+        background: #f3f3f3;
+        color: #333;
+        border-color: #cecece;
       }
     }
   }
@@ -181,9 +151,7 @@ form.header-search
   }
   @include responsive('medium') {
     display: block;
-    @if $theme != "cubicle" {
-      margin-left: 15px;
-    }
+    margin-left: 15px;
     max-width: 300px;
 
     #header-search-input {
@@ -211,10 +179,6 @@ td.h
     color: white;
   }
 
-  @if $theme == "cubicle" {
-    font-size: 16px;
-  }
-
   &.username {
     display: none;
 
@@ -234,29 +198,18 @@ td.h
     flex-wrap: wrap;
     width: 100%;
     margin: 0 auto;
-    @if $theme == "cubicle" {
-      background: #4e9a06;
-      font-family: "Trebuchet MS", $font;
-      border-radius: 20px 20px 0 0;
-      padding: 0 20px;
-    } @else if $theme == "classic" {
-      background: linear-gradient(to bottom, #858585, #202020);
-      border-radius: 5px 5px 0 0;
-    }
   }
 
   width: 100%;
 
   @if $theme == "pink" {
     background: linear-gradient(to bottom, #ffc2c2, #FF9A9A);
-  } @else if $theme == "cubicle" or $theme == "classic" {
-    background: none;
-    box-shadow: none;
+  } @else if $theme == "dark" {
+    background: linear-gradient(to bottom, #0a0a0a, #000);
+    border: 1px solid $content-box-border-color;
   } @else {
-    //background: $content-box-background-color;
     background: linear-gradient(to bottom, #fff, #fafafa);
     border: 1px solid $content-box-border-color;
-    //box-shadow: 0 1px 2px rgba(0,0,0,0.5);
   }
 
   height: $header-height;
@@ -295,22 +248,6 @@ td.h
   display: flex;
   .subheader-container {
     @include maxwidths();
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: auto;
-  }
-}
-
-// CUBICLE AND CLASSIC
-.cubicle-header {
-  padding: 5px 0;
-  color: white;
-  .cubicle-header-container {
-    @include maxwidths();
-    padding: 0;
     display: flex;
     align-items: center;
     gap: 12px;

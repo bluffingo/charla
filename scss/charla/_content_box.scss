@@ -25,7 +25,6 @@
     }
 
     &.login {
-        background: linear-gradient(180deg, $content-box-background-color 0%, #eee 100%);
         padding: 15px;
     }
 
@@ -92,16 +91,6 @@
             text-overflow: ellipsis;
             display: inline-block;
             white-space: nowrap;
-
-            // make links thinner
-            a {
-                font-weight: normal;
-
-                // bring back bold weight for userlinks
-                &.userlink {
-                    font-weight: bold;
-                }
-            }
         }
 
         // Thumbnails used by the "Random Uploads" thing in homepage.
@@ -114,6 +103,9 @@
                 display: table-cell;
                 vertical-align: middle;
                 .content-image {
+                    &:hover {
+                        border-color: var(--link-color);
+                    }
                     max-height: 120px;
                     max-width: 120px;
                     margin: 2px auto;

@@ -30,16 +30,17 @@ $bootstrap-icons-font-dir: "/assets" !default;
 
 body
 {
-  @if $theme == "cubicle" {
-    background: #333 url("/assets/biscuit_login_background.jpg") fixed;
-    background-size: cover;
-  } @else if $theme == "classic" {
-    background: #EAEAEA;
+  @if $theme == "dark" {
+    background: #111;
   } @else {
     background: #F5F5F5;
   }
 
-  color: #333;
+  @if $theme == "dark" {
+    color: white;
+  } @else {
+    color: #333;
+  }
   font-size: small;
   padding: 0;
   margin: 0;

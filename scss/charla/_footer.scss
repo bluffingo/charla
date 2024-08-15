@@ -2,12 +2,11 @@
 {
   .footer-container {
     border-top: 1px solid $content-box-border-color;
-    background: #595C62;
-    box-shadow: inset 0px 30px 30px -20px #00000050;
-    color: #aaa;
-
-    a {
-      color: #aaa;
+    background: $content-box-background-color;
+    @if $theme == "dark" {
+      color: white;
+    } @else {
+      color: #333;
     }
 
     // shitty
