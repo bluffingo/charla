@@ -13,7 +13,7 @@
         </div>
         <div class="content-box">
             {% for submission in data.submissions %}
-                {{ include('/components/_edit_submission.twig') }}
+                {{ include('/components/_upload_vertical_edit.twig') }}
             {% endfor %}
         </div>
         {% set le_url = 'my_submissions?page=%s' %}

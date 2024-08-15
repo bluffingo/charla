@@ -83,7 +83,7 @@
                         <div class="splide__track">
                             <ul class="splide__list">
                                 {% for submission in data.submissions %}
-                                    {{ include('/components/_index_submission_3.twig') }}
+                                    {{ include('/components/_upload_grid_splide.twig') }}
                                 {% endfor %}
                             </ul>
                         </div>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="content-box">
                     {% for submission in data.submissions_new %}
-                        {{ include('/components/_index_submission.twig') }}
+                        {{ include('/components/_upload_vertical.twig') }}
                     {% endfor %}
                 </div>
             </div>
