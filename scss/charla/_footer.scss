@@ -2,12 +2,13 @@
 {
   .footer-container {
     border-top: 1px solid $content-box-border-color;
-    background: $content-box-background-color;
     @if $theme == "dark" {
       color: white;
     } @else {
       color: #333;
     }
+
+    @include maxwidths();
 
     // shitty
     padding-top: 20px;

@@ -204,7 +204,7 @@ td.h
   @if $theme == "pink" {
     background: linear-gradient(to bottom, #ffc2c2, #FF9A9A);
   } @else if $theme == "dark" {
-    background: linear-gradient(to bottom, #0a0a0a, #000);
+    background: linear-gradient(to bottom, #1a1a1a, #111);
     border: 1px solid $content-box-border-color;
   } @else {
     background: linear-gradient(to bottom, #fff, #fafafa);

@@ -61,8 +61,12 @@
                                 <p>Insert slogan.</p>
                             {% endif %}
                             <a href="/register" class="button button-get-started button-big">Get started ›</a>
-                        </div>
+                        </div>ßß
                     {% endif %}
+                </div>
+                <div class="jumbotron-right">
+                    <div class="button button-secondary" id="index-list-button">List</div>
+                    <div class="button button-secondary" id="index-grid-button">Grid</div>
                 </div>
             </div>
         </div>
@@ -74,9 +78,14 @@
         <div class="col-8">
             {% if current_theme != "test" %}
             <div class="section">
-                <div class="section-title">
-                    <h2>{{ localize('random_uploads') }}</h2>
-                    <a href="/browse">{{ localize('more') }}</a>
+                <div class="section-header">
+                    <div class="section-header-left">
+                        <h2 class="section-title">{{ localize('random_uploads') }}</h2>
+                        <div class="section-desc">{{ localize('random_uploads_desc') }}</div>
+                    </div>
+                    <div class="section-header-right">
+                        <a href="/browse">{{ localize('more') }}</a>
+                    </div>
                 </div>
                 <div class="content-box no-side-padding">
                     <section class="splide" id="splide1" aria-labelledby="carousel-heading">
@@ -92,9 +101,14 @@
             </div>
             {% endif %}
             <div class="section">
-                <div class="section-title">
-                    <h2>{{ localize('recent_uploads') }}</h2>
-                    <a href="/browse">{{ localize('more') }}</a>
+                <div class="section-header">
+                    <div class="section-header-left">
+                        <h2 class="section-title">{{ localize('recent_uploads') }}</h2>
+                        <div class="section-desc">{{ localize('recent_uploads_desc') }}</div>
+                    </div>
+                    <div class="section-header-right">
+                        <a href="/browse">{{ localize('more') }}</a>
+                    </div>
                 </div>
                 <div class="content-box">
                     {% for submission in data.submissions_new %}
@@ -104,21 +118,27 @@
             </div>
         </div>
         <div class="col-4">
-            {% if data.news_recent %}
-                <div class="section">
-                    <div class="section-title">
-                        <h2>{{ localize('site_news') }}</h2>
-                    </div>
-                    <div class="content-box">
-                        {% for journal in data.news_recent %}
-                            {{ include('/components/_journal.twig') }}
-                        {% endfor %}
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-left">
+                        <h2 class="section-title">{{ localize('site_news') }}</h2>
+                        <div class="section-desc">{{ localize('site_news_desc') }}</div>
                     </div>
                 </div>
-            {% endif %}
+                <div class="content-box">
+                    {% for journal in data.news_recent %}
+                    {{ include('/components/_journal.twig') }}
+                    {% else %}
+                        <p>No news!</p>
+                    {% endfor %}
+                </div>
+            </div>
             <div class="section">
-                <div class="section-title">
-                    <h2>{{ localize('recent_tags') }}</h2>
+                <div class="section-header">
+                    <div class="section-header-left">
+                        <h2 class="section-title">{{ localize('recent_tags') }}</h2>
+                        <div class="section-desc">{{ localize('recent_tags_desc') }}</div>
+                    </div>
                 </div>
                 <div class="content-box">
                     {% for tag in data.tags_recent %}
