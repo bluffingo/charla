@@ -17,7 +17,7 @@ $text-color: #27272c;
 $link-color: #1e7fe7;
 @if $theme == "pink" {
         $link-color: #c61b7a;
-} @elseif $theme == "dark" {
+} @else if $theme == "dark" {
         $text-color: white;
         $link-color: #2d89e8;
 }
