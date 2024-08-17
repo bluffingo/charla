@@ -29,6 +29,19 @@
         padding: 15px;
     }
 
+    // named like this to avoid conflicts with grid system
+    &.content-grid {
+        display: grid;
+        gap: 5px;
+        grid-auto-rows: minmax(120px, auto);
+        @include responsive('small') {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include responsive('medium') {
+            grid-template-columns: repeat(6, 1fr);
+        }
+    }
+
     // used for staff notes. i think it just looks cool honestly
     &.content-note
     {

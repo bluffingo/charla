@@ -74,94 +74,9 @@
 {% endblock %}
 
 {% block content %}
-    <div class="grid">
-        <div class="col-8">
-            {% if current_theme != "test" %}
-            <div class="section">
-                <div class="section-header">
-                    <div class="section-header-left">
-                        <h2 class="section-title">{{ localize('random_uploads') }}</h2>
-                        <div class="section-desc">{{ localize('random_uploads_desc') }}</div>
-                    </div>
-                    <div class="section-header-right">
-                        <a href="/browse">{{ localize('more') }}</a>
-                    </div>
-                </div>
-                <div class="content-box no-side-padding">
-                    <section class="splide" id="splide1" aria-labelledby="carousel-heading">
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                {% for submission in data.submissions %}
-                                    {{ include('/components/_upload_grid_splide.twig') }}
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            {% endif %}
-            <div class="section">
-                <div class="section-header">
-                    <div class="section-header-left">
-                        <h2 class="section-title">{{ localize('recent_uploads') }}</h2>
-                        <div class="section-desc">{{ localize('recent_uploads_desc') }}</div>
-                    </div>
-                    <div class="section-header-right">
-                        <a href="/browse">{{ localize('more') }}</a>
-                    </div>
-                </div>
-                <div class="content-box">
-                    {% for submission in data.submissions_new %}
-                        {{ include('/components/_upload_vertical.twig') }}
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="section">
-                <div class="section-header">
-                    <div class="section-header-left">
-                        <h2 class="section-title">{{ localize('site_news') }}</h2>
-                        <div class="section-desc">{{ localize('site_news_desc') }}</div>
-                    </div>
-                </div>
-                <div class="content-box">
-                    {% for journal in data.news_recent %}
-                    {{ include('/components/_journal.twig') }}
-                    {% else %}
-                        <p>No news!</p>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-header">
-                    <div class="section-header-left">
-                        <h2 class="section-title">{{ localize('recent_tags') }}</h2>
-                        <div class="section-desc">{{ localize('recent_tags_desc') }}</div>
-                    </div>
-                </div>
-                <div class="content-box">
-                    {% for tag in data.tags_recent %}
-                        <a href="/search.php?query={{ tag.name }}">{{ tag.name }}</a>{{ not loop.last ? ',' }}
-                    {% else %}
-                        <p>No tags!</p>
-                    {% endfor %}
-                </div>
-            </div>
-            {#
-            <div class="section">
-                <div class="section-title">
-                    <h2>Last 5 Users Online</h2>
-                </div>
-                <div class="content-box">
-                    {% for tag in data.tags_recent %}
-                        {{ include('/components/_index_user.twig') }}
-                    {% else %}
-                        <p>No users!</p>
-                    {% endfor %}
-                </div>
-            </div>
-            #}
-        </div>
-    </div>
+    {% if type == "grid" %}
+        {{ include('/components/_index_grid.twig') }}
+    {% else %}
+        {{ include('/components/_index_list.twig') }}
+    {% endif %}
 {% endblock %}

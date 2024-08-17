@@ -1,0 +1,70 @@
+<div class="section">
+    <div class="section-header">
+        <div class="section-header-left">
+            <h2 class="section-title">{{ localize('random_uploads') }}</h2>
+            <div class="section-desc">{{ localize('random_uploads_desc') }}</div>
+        </div>
+        <div class="section-header-right">
+            <a href="/browse">{{ localize('more') }}</a>
+        </div>
+    </div>
+    <div class="content-box content-grid">
+        {% for submission in data.submissions_new %}
+            {{ include('/components/_upload_grid.twig') }}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-header">
+        <div class="section-header-left">
+            <h2 class="section-title">{{ localize('recent_uploads') }}</h2>
+            <div class="section-desc">{{ localize('recent_uploads_desc') }}</div>
+        </div>
+        <div class="section-header-right">
+            <a href="/browse">{{ localize('more') }}</a>
+        </div>
+    </div>
+    <div class="content-box content-grid">
+        {% for submission in data.submissions %}
+            {{ include('/components/_upload_grid.twig') }}
+        {% endfor %}
+    </div>
+</div>
+
+<div class="grid">
+    <div class="col-6">
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <h2 class="section-title">{{ localize('site_news') }}</h2>
+                    <div class="section-desc">{{ localize('site_news_desc') }}</div>
+                </div>
+            </div>
+            <div class="content-box">
+                {% for journal in data.news_recent %}
+                    {{ include('/components/_journal.twig') }}
+                {% else %}
+                    <p>No news!</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <h2 class="section-title">{{ localize('recent_tags') }}</h2>
+                    <div class="section-desc">{{ localize('recent_tags_desc') }}</div>
+                </div>
+            </div>
+            <div class="content-box">
+                {% for tag in data.tags_recent %}
+                    <a href="/search.php?query={{ tag.name }}">{{ tag.name }}</a>{{ not loop.last ? ',' }}
+                {% else %}
+                    <p>No tags!</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
