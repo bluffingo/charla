@@ -13,7 +13,7 @@ table.c1 {
     padding: 20px;
 
     &.h {
-      @include gradient-y($start-color: lighten($content-box-border-color, 3%), $end-color: $content-box-border-color);
+      @include gradient-y($start-color: lighten($content-box-border-color, 5%), $end-color: lighten($content-box-border-color, 2.5%));
       background-color: $content-box-border-color;
       th {
         padding: 1px 4px;

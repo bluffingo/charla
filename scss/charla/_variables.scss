@@ -6,16 +6,20 @@ $primary: #2187dd; // primary color
 @if $theme == "pink" {
         $primary: #edb1c1; // primary color
 }
-$secondary: #ebebeb; // secondary color (nearly white)
+$secondary: #e7edf3; // secondary color (nearly white)
 @if $theme == "dark" {
-        $secondary: #333; // secondary color (dark gray)
+        $secondary: #353742; // secondary color (dark gray)
 }
 $green: #0cb60c;
 $red: #c2120d;
 
-$link-color: #0061c5;
+$text-color: #27272c;
+$link-color: #1e7fe7;
 @if $theme == "pink" {
         $link-color: #c61b7a;
+} @elseif $theme == "dark" {
+        $text-color: white;
+        $link-color: #2d89e8;
 }
 
 $color-map: (
@@ -58,20 +62,18 @@ $breakpoints: (
 );
 //
 
-// pfps/thumbnails
-$image-border-color: rgba(black, 0.25);
-
 // buttons
 $button-padding: 7px 11px;
-$button-padding-small: 3px 8px;
+$button-padding-small: 5px 8px;
 $button-padding-big: 7px 15px;
 $button-padding-huge: 0.5em 1em;
 
 // content boxes
 $content-box-background-color: #FFF;
-$content-box-border-color: darken($secondary, 2%);
+$content-box-border-color: darken($secondary, 2.5%);
 @if $theme == "dark" {
-        $content-box-background-color: #171717;
+        $content-box-background-color: #19191f;
+        $content-box-border-color: lighten($secondary, 0.5%);
 }
 $content-box-padding: 12px;
 

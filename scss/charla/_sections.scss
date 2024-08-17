@@ -14,7 +14,11 @@
 
       .section-desc {
         align-self: center;
-        color: gray;
+        @if $theme == "dark" {
+          color: #ffffff80;
+        } @else {
+          color: #00000080;
+        }
       }
     }
 
