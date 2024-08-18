@@ -32,12 +32,7 @@ $bootstrap-icons-font-dir: "/assets" !default;
 
 body
 {
-  @if $theme == "dark" {
-    background: #121418;
-  } @else {
-    background: #f6f8fa;
-  }
-
+  background: $bg-color;
   color: $text-color;
   font-size: 14px;
   padding: 0;

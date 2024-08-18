@@ -18,6 +18,8 @@
         <div class="content-description">
             {{ submission.views }} view{{ pluralViews }}
             <br>
+            {{ submission.published | relative_time }}
+            <br>
             {{ user_link(submission.author) }}
         </div>
         <div class="content-rating">

@@ -5,6 +5,21 @@
 .tabs {
   border-bottom: 1px solid $content-box-border-color;
   display: flex;
+  &.homepage {
+    justify-content: flex-end;
+    border-bottom: none;
+
+    .tablink {
+      color: white;
+      &:hover {
+        color: $text-color;
+      }
+      &.active {
+        color: $text-color;
+        background-color: $bg-color;
+      }
+    }
+  }
 }
 
 .tablink {
@@ -20,9 +35,9 @@
 
   &:hover {
     @if $theme == "dark" {
-      background-color: #555;
+      background-color: #222;
     } @else {
-      background-color: #ddd;
+      background-color: #eaeaea;
     }
     text-decoration: none;
   }
