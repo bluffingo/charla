@@ -12,7 +12,7 @@
     <div class="content-info">
         <div class="content-title">
             <a href="/view/{{ submission.id }}">
-                {% if submission.description|trim is not empty %}
+                {% if submission.title|trim is not empty %}
                     {{ submission.title }}
                 {% else %}
                     No title
