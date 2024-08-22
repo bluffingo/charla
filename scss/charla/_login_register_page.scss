@@ -1,6 +1,7 @@
 body.login {
-  background: #333 url("/assets/charla_login_background.jpg") fixed;
+  background: #333 url("/assets/charla_login_background.jpg");
   background-size: cover;
+  background-position: center;
 
   .page {
     display: flex;
