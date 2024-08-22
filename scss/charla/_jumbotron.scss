@@ -9,9 +9,11 @@
     } @else if $theme == "dark" {
       background: #333 url("/assets/biscuit_login_background.jpg");
       background-size: cover;
+      background-position: center;
     } @else {
       background: #333 url("/assets/charla_banner_background.jpg");
       background-size: cover;
+      background-position: center;
     }
 
     color: white;
@@ -20,7 +22,7 @@
     &.homepage {
       padding: 0;
       .jumbotron-container {
-        height: 120px;
+        height: 135px;
       }
     }
 
@@ -33,8 +35,16 @@
         align-items: center;
 
         .pfp {
-          height: 64px;
-          margin-right: 13px;
+          @include responsive('tiny') {
+            height: 64px;
+          }
+          @include responsive('small') {
+            height: 64px;
+          }
+          @include responsive('medium') {
+            height: 100px;
+          }
+          margin-right: 1em;
         }
       }
     }

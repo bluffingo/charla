@@ -44,7 +44,12 @@
   }
 
   &.search {
-    background-image: url( '/assets/icons/search.svg' );
+    // stupid fucking hack because i dont want to do the masks hack
+    @if $theme == "dark" {
+      background-image: url( '/assets/icons/search-dark.svg' );
+    } @else {
+      background-image: url( '/assets/icons/search-light.svg' );
+    }
   }
 
   &.placeholder {

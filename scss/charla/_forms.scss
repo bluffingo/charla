@@ -1,14 +1,28 @@
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  border: 1px solid $form-border-color;
+  background-color: $form-bg-color;
+  color: $form-text-color;
+  transition: border linear 0.3s;
+  border-radius: 3px;
+  padding: 6px;
+  font-family: $font;
+
+  &:focus {
+    border-color: var(--link-color);
+    outline: none;
+  }
+}
+
 .form-input {
   margin-bottom: 8px;
 }
 
 .form-submit {
   width: 100%;
-}
-
-.form-submit-wide {
-  width: 100%;
-  padding: 0;
 }
 
 .form-button-container {

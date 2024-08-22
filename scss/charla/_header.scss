@@ -91,16 +91,15 @@ form.header-search
   #header-search-button {
     position: absolute;
     right: 0;
+    top: 1px; // stupid hack
 
     background: none;
     border: none;
 
     .biscuit-icon.search {
-      @if $theme == "pink" {
-        fill: #111;
-      } @else {
-        fill: #dedede;
-      }
+      width: 15px;
+      height: 15px;
+      background-size: 15px;
     }
 
     height: 30px;
@@ -117,34 +116,12 @@ form.header-search
     padding: 6px 40px 6px 10px;
     height: 30px;
 
-    @if $theme == "pink" {
-      background: #ffe0e0;
-      border: #ff7c7c solid 1px;
-      color: #111;
-    } @else if $theme == "dark"{
-      border: 1px solid #222;
-      color: #dedede;
-      background: #111;
-    } @else {
-      border: 1px solid #c7d2da;
-      color: #111;
-      background: #f6f9ff;
-    }
+    border: 1px solid $form-border-color;
+    color: $form-text-color;
+    background: $form-bg-color;
 
     &:focus {
-      @if $theme == "pink" {
-        background: #ffecec;
-        border: #ff7c7c solid 1px;
-        color: #111;
-      } @else if $theme == "dark" {
-        background: #333;
-        color: #f3f3f3;
-        border-color: #444;
-      } @else {
-        background: #ffffff;
-        color: #333;
-        border-color: #d9ddea;
-      }
+      border-color: var(--link-color);
     }
   }
 

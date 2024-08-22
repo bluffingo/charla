@@ -16,12 +16,21 @@ $red: #c2120d;
 $text-color: #27272c;
 $link-color: #1e7fe7;
 $bg-color: #f6f8fa;
+
+$form-bg-color: #fff;
+$form-text-color: #111;
+$form-border-color: #c7d2da;
+
 @if $theme == "pink" {
         $link-color: #c61b7a;
 } @else if $theme == "dark" {
         $text-color: white;
         $link-color: #2d89e8;
         $bg-color: #121418;
+
+        $form-bg-color: #26272c;
+        $form-text-color: #ffffff;
+        $form-border-color: #434651;
 }
 
 $color-map: (
