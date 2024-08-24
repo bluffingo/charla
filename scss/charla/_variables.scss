@@ -51,6 +51,18 @@ $color-map-admin: (
         "staff": #e2f0ff,
 );
 
+@if $theme == "dark" {
+        $color-map-admin: (
+                "banned-other-unbanned": #8c4c4c,
+                "unbanned-other-banned": #8f6d1f,
+                "banned": #6b2d2d,
+                "shadow-banned": #6f4e3c,
+                "unbanned-other-unbanned": #6b6b4d,
+                "partner": #5f8b57,
+                "staff": #4a6a8b,
+        );
+}
+
 // fonts
 $font: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-serif: Georgia, "Times New Roman", serif;

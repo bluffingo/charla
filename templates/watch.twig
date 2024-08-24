@@ -42,6 +42,17 @@
 
 
 {% block content %}
+    {% if submission.takedown %}
+        <div class="banner banner-secondary">
+            This upload was taken down on {{ submission.takedown.sent }} by {{ submission.takedown.takedownee }}
+            on {{ submission.takedown.time | date("F j Y, h:i:s A") }}, with the reason: {{ submission.takedown.reason }}
+        </div>
+    {% endif %}
+    {% if submission.author_banned %}
+        <div class="banner banner-secondary">
+            This upload's author was banned.
+        </div>
+    {% endif %}
     <div class="grid">
         <div class="col-large-9 col-8">
             <div class="submission">

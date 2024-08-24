@@ -10,7 +10,6 @@ table.c1 {
 
   tr {
     border: 1px solid $content-box-border-color;
-    padding: 20px;
 
     &.h {
       @include gradient-y($start-color: lighten($content-box-border-color, 5%), $end-color: lighten($content-box-border-color, 2.5%));
@@ -26,6 +25,10 @@ table.c1 {
     @each $color, $value in $color-map-admin {
       &.#{$color} {
         background: $value;
+        @include gradient-y($start-color: $value, $end-color: adjust-hue(darken($value, 2%), -1));
+        td {
+          border-color: adjust-hue(darken($value, 5.5%), -3);
+        }
       }
     }
   }
@@ -33,5 +36,11 @@ table.c1 {
   td {
     border: 1px solid $content-box-border-color;
     padding: 4px;
+
+    @if $theme != "dark" {
+      &.fade-into-bg {
+        background: linear-gradient(to right, #0000, rgba($content-box-background-color, .5));
+      }
+    }
   }
 }
