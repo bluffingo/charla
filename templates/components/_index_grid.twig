@@ -33,7 +33,7 @@
 </div>
 
 <div class="grid">
-    <div class="col-6">
+    <div class="col-12">
         <div class="section">
             <div class="section-header">
                 <div class="section-header-left">
@@ -46,23 +46,6 @@
                     {{ include('/components/_journal.twig') }}
                 {% else %}
                     <p>No news!</p>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    <div class="col-6">
-        <div class="section">
-            <div class="section-header">
-                <div class="section-header-left">
-                    <h2 class="section-title">{{ localize('recent_tags') }}</h2>
-                    <div class="section-desc">{{ localize('recent_tags_desc') }}</div>
-                </div>
-            </div>
-            <div class="content-box">
-                {% for tag in data.tags_recent %}
-                    <a href="/search.php?query={{ tag.name }}">{{ tag.name }}</a>{{ not loop.last ? ',' }}
-                {% else %}
-                    <p>No tags!</p>
                 {% endfor %}
             </div>
         </div>
