@@ -42,6 +42,13 @@
                             <input type="date" name="birthdate" required />
                         </div>
 
+                        {% if captcha_public_token %}
+                            <div class="form-input">
+                                <label>Captcha:</label>
+                                <div class="h-captcha" data-sitekey="{{ captcha_public_token }}"></div>
+                            </div>
+                        {% endif %}
+
                         <div class="login-text">
                             By registering on {{ website_branding.name }},
                             you accept the <a href="/tos">Terms of Service</a>
