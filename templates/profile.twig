@@ -57,18 +57,20 @@
                 </div>
             </div>
             <div class="profile-box-follow">
-                {% if not data.is_current %}
-                    <button class="button button-secondary" id="follow-user">
-                        {% if data.following %}
-                            Unfollow
-                        {% else %}
-                            Follow
-                        {% endif %}
-                    </button>
-                {% else %}
-                    <a href="/settings">
-                        Edit
-                    </a>
+                {% if is_user_logged_in %}
+                    {% if not data.is_current %}
+                        <button class="button button-secondary" id="follow-user">
+                            {% if data.following %}
+                                Unfollow
+                            {% else %}
+                                Follow
+                            {% endif %}
+                        </button>
+                    {% else %}
+                        <a href="/settings">
+                            Edit
+                        </a>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
@@ -81,6 +83,7 @@
             {% if data.journals %}
                 <button class="tablink" data-tab="tab_posts">Journals</button>
             {% endif %}
+            <button class="tablink" data-tab="tab_pools">Pools</button>
             <button class="tablink" data-tab="tab_comments">Comments</button>
         </div>
 
@@ -107,6 +110,14 @@
                             {{ include('/components/_journal.twig') }}
                         {% endfor %}
                     {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div id="tab_pools" class="tabcontent">
+            <div class="section">
+                <div class="content-box no-border-top">
+                    <img src="/assets/under_construction.png" class="under-construction">
                 </div>
             </div>
         </div>

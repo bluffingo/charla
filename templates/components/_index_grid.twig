@@ -32,22 +32,18 @@
     </div>
 </div>
 
-<div class="grid">
-    <div class="col-12">
-        <div class="section">
-            <div class="section-header">
-                <div class="section-header-left">
-                    <h2 class="section-title">{{ localize('site_news') }}</h2>
-                    <div class="section-desc">{{ localize('site_news_desc') }}</div>
-                </div>
-            </div>
-            <div class="content-box">
-                {% for journal in data.news_recent %}
-                    {{ include('/components/_journal.twig') }}
-                {% else %}
-                    <p>No news!</p>
-                {% endfor %}
-            </div>
+<div class="section">
+    <div class="section-header">
+        <div class="section-header-left">
+            <h2 class="section-title">{{ localize('site_news') }}</h2>
+            <div class="section-desc">{{ localize('site_news_desc') }}</div>
         </div>
+    </div>
+    <div class="content-box">
+        {% for journal in data.news_recent %}
+            {{ include('/components/_journal.twig') }}
+        {% else %}
+            <p>No news!</p>
+        {% endfor %}
     </div>
 </div>

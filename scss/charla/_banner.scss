@@ -35,3 +35,10 @@
     }
   }
 }
+
+// make banners less tall on login/register pages
+.page-login {
+  .banner {
+    padding: 5px 10px;
+  }
+}

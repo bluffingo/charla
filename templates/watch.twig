@@ -15,9 +15,9 @@
 {% set opengraph_author = domain ~ "user/" ~ submission.author.info.username %}
 {% set metadata_author = submission.author.info.username %}
 {% if submission.type == 0 %}
-    {% set opengraph_section = "squareBracket video" %}
+    {% set opengraph_section = "SquareBracket video" %}
 {% elseif submission.type == 2 %}
-    {% set opengraph_section = "squareBracket image" %}
+    {% set opengraph_section = "SquareBracket image" %}
 {% endif %}
 
 {% block scripts %}
@@ -28,7 +28,7 @@
     this is simply a path issue. but we'll not fix it for now since we have other more crucial stuff to deal with first.
     #}
     {% if not areWeRunningTheNewCode %}
-    {{ include('submission_rating_script.twig') }}
+        {{ include('submission_rating_script.twig') }}
     {% endif %}
 
     <script>
@@ -61,10 +61,20 @@
             <br>
             <div class="watch-box">
                 <div class="section">
-                    <div class="section-title">
-                        <h1>{{ submission.title }}</h1>
+                    <div class="section-header">
+                        <div class="section-header-left">
+                            <h1>
+                                {% if submission.title %}
+                                    {{ submission.title }}
+                                {% else %}
+                                    No title
+                                {% endif %}
+                            </h1>
+                        </div>
                         {% if submission.is_owner %}
-                            <a href="/edit?v={{ submission.id }}">Edit</a>
+                            <div class="section-header-right">
+                                <a href="/edit?v={{ submission.id }}">Edit</a>
+                            </div>
                         {% endif %}
                     </div>
                     <hr>
@@ -76,7 +86,7 @@
                                     {{ user_link(submission.author) }}
                                 </div>
                                 <div class="watch-box-author-follow">
-                                    {% if not submission.is_owner %}
+                                    {% if not submission.is_owner and is_user_logged_in %}
                                         <button class="button button-secondary button-small" id="follow-user">
                                             {% if submission.author.following %}
                                                 Unfollow

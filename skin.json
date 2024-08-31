@@ -9,7 +9,7 @@
       {
         "id": "default",
         "name": "Default",
-        "description": "The default squareBracket user experience.",
+        "description": "The default SquareBracket user experience.",
         "author": "OpenSB developers"
       },
       {
@@ -21,7 +21,7 @@
       {
         "id": "pink",
         "name": "Pink",
-        "description": "A pink theme for squareBracket.",
+        "description": "A pink theme for SquareBracket.",
         "author": "Mori"
       }
     ]
