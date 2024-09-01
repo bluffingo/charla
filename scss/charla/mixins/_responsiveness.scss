@@ -30,7 +30,12 @@
   }
 
   @include responsive('large') {
-    max-width: 80%;
+    max-width: 82.5%;
     min-width: 1050px;
+  }
+
+  @include responsive('huge') {
+    max-width: 85%;
+    min-width: 1250px;
   }
 }

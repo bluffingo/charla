@@ -24,7 +24,7 @@
 
 .tablink {
   font-family: $font;
-  padding: 5px 12px;
+  padding: 5px 14px;
   cursor: pointer;
   background-color: #fff0;
   margin-bottom: -1px;
@@ -35,9 +35,9 @@
 
   &:hover {
     @if $theme == "dark" {
-      background-color: #222;
+      background-color: lighten($bg-color, 2.5%);
     } @else {
-      background-color: #eaeaea;
+      background-color: darken($bg-color, 3.5%);
     }
     text-decoration: none;
   }

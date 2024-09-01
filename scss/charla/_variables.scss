@@ -82,6 +82,9 @@ $breakpoints: (
         "large": (
                 1250px,
         ),
+        "huge": (
+                1500px,
+        ),
 );
 //
 
@@ -98,7 +101,11 @@ $content-box-border-color: darken($secondary, 2.5%);
         $content-box-background-color: #19191f;
         $content-box-border-color: lighten($secondary, 0.5%);
 }
-$content-box-padding: 12px;
+$content-box-padding: 1rem;
+
+// content box grid entries
+$content-box-grid-entry-height: 190px;
+$content-box-grid-entry-width: 135px;
 
 // header
 $header-height: 44px;

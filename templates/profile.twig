@@ -46,11 +46,11 @@
                         @{{ data.username }}
                     </div>
                 {% endif %}
-                <div class="profile-box-info">
+                <div class="profile-box-details">
                     Joined {{ data.joined | relative_time }} •
                     <span id="follower_count">{{ data.followers }}</span> followers
                 </div>
-                <div class="profile-box-details">
+                <div class="profile-box-description">
                     {% if data.about | trim is not empty %}
                         {{ data.about | markdown_user_written }}
                     {% endif %}
@@ -83,7 +83,9 @@
             {% if data.journals %}
                 <button class="tablink" data-tab="tab_posts">Journals</button>
             {% endif %}
-            <button class="tablink" data-tab="tab_pools">Pools</button>
+            {% if data.pools %}
+                <button class="tablink" data-tab="tab_pools">Pools</button>
+            {% endif %}
             <button class="tablink" data-tab="tab_comments">Comments</button>
         </div>
 
@@ -91,11 +93,18 @@
             {% if data.submissions %}
                 <div class="section">
                     <div class="content-box no-border-top">
-                        {% for submission in data.submissions %}
-                            {{ include('/components/_upload_vertical.twig') }}
-                        {% endfor %}
-                        <div class="content-entry">
-                            <a href="/browse?user={{ data.username }}">{{ localize('browse_more') }}</a>
+                        <div class="section-header">
+                            <div class="section-header-left">
+                                <h2 class="section-title">Uploads</h2>
+                            </div>
+                            <div class="section-header-right">
+                                <a href="/browse">{{ localize('more') }}</a>
+                            </div>
+                        </div>
+                        <div class="content-grid">
+                            {% for submission in data.submissions %}
+                                {{ include('/components/_upload_grid.twig') }}
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

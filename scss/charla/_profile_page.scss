@@ -14,7 +14,7 @@
 
   .profile-box-pfp {
     width: $pfp-width-profiles;
-    margin-right: 10px;
+    margin-right: 1rem;
 
     .pfp {
       width: $pfp-width-profiles;
@@ -45,7 +45,7 @@
       font-size: 17px;
     }
 
-    .profile-box-details {
+    .profile-box-description {
       @if $theme == "default" {
         font-family: $font-serif;
       }

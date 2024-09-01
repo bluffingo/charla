@@ -1,7 +1,54 @@
+@mixin content-box-small-max-widths {
+    @include responsive('tiny') {
+        max-width: 140px;
+    }
+    @include responsive('small') {
+        max-width: 120px;
+    }
+    @include responsive('medium') {
+        max-width: 135px;
+    }
+    @include responsive('large') {
+        max-width: 150px;
+    }
+    @include responsive('huge') {
+        max-width: 160px;
+    }
+}
+
+@mixin content-box-small-info {
+    @include content-box-small-max-widths;
+    margin: auto;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+
 .thumbnail
 {
     border-radius: 2px;
     border: 1px solid $content-box-border-color;
+}
+
+// named like this to avoid conflicts with grid system
+.content-grid {
+    display: grid;
+    gap: 5px;
+    grid-auto-rows: minmax($content-box-grid-entry-width, auto);
+    @include responsive('tiny') {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include responsive('small') {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include responsive('medium') {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @include responsive('large') {
+        grid-template-columns: repeat(6, 1fr);
+    }
 }
 
 .content-box
@@ -27,19 +74,6 @@
 
     &.login {
         padding: 15px;
-    }
-
-    // named like this to avoid conflicts with grid system
-    &.content-grid {
-        display: grid;
-        gap: 5px;
-        grid-auto-rows: minmax(120px, auto);
-        @include responsive('small') {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        @include responsive('medium') {
-            grid-template-columns: repeat(6, 1fr);
-        }
     }
 
     // used for staff notes. i think it just looks cool honestly
@@ -68,7 +102,7 @@
     .content-entry
     {
         display: flex;
-        padding: 6px 2px;
+        padding: 0.8rem 0;
         border-bottom: 1px solid $content-box-border-color;
 
         &:last-child {
@@ -95,6 +129,30 @@
 
         .content-image
         {
+            @include responsive('tiny') {
+                width: 140px;
+            }
+            @include responsive('small') {
+                width: 140px;
+            }
+            @include responsive('medium') {
+                width: 140px;
+            }
+            @include responsive('large') {
+                width: 160px;
+            }
+            @include responsive('huge') {
+                width: 175px;
+            }
+
+            &.small {
+                width: 100px;
+            }
+
+            &:hover {
+                border-color: var(--link-color);
+            }
+
             margin-right: 8px;
             min-width: 50px;
             min-height: 50px;
@@ -104,19 +162,25 @@
 
     .content-entry-small
     {
-        max-height: 140px;
+        max-height: $content-box-grid-entry-height;
         text-align: center;
 
-        // make "By [uploader]" (index) and "[submission title]" (profile) text smaller
-        .content-author {
-            font-size: 10px;
-            font-weight: normal;
+        .content-title {
+            @include content-box-small-info;
+            font-size: 12px;
+        }
 
-            max-width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: inline-block;
-            white-space: nowrap;
+        .content-author {
+            @include content-box-small-info;
+            font-size: 10px;
+        }
+
+        .content-rating {
+            .biscuit-icon {
+                width: 12px;
+                height: 12px;
+                background-size: 12px;
+            }
         }
 
         // Thumbnails used by the "Random Uploads" thing in homepage.
@@ -124,7 +188,7 @@
             display: table;
             text-align: center;
             margin: auto;
-            height: 120px;
+            height: $content-box-grid-entry-width;
             a.content-image-link {
                 display: table-cell;
                 vertical-align: middle;
@@ -132,8 +196,8 @@
                     &:hover {
                         border-color: var(--link-color);
                     }
-                    max-height: 120px;
-                    max-width: 120px;
+                    max-height: $content-box-grid-entry-width;
+                    @include content-box-small-max-widths;
                     margin: 2px auto;
                 }
             }
