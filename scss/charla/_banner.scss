@@ -1,13 +1,13 @@
 .banner {
-  padding: 10px;
+  padding: 0.7rem;
   display: flex;
   align-items: center;
   border-radius: 4px;
-  margin-bottom: 5px;
+  margin-bottom: 0.5em;
   background-repeat: repeat-x;
 
   .notification-icon {
-    margin-right: 7px;
+    margin-right: 0.5em;
     min-width: 20px;
     min-height: 20px;
     background-size: 20px;
@@ -26,7 +26,7 @@
   .banner-#{$color} {
     background-color: lighten($value, 10%);
     @include gradient-y($start-color: adjust-hue(lighten($value, 6%), 1), $end-color: $value);
-    border: 1px solid darken($value, 5%);
+    border: 1px solid adjust-hue(darken($value, 7.5%), -4);
     color: contrast-color($value, #000, #fff);
 
     a {
@@ -39,6 +39,6 @@
 // make banners less tall on login/register pages
 .page-login {
   .banner {
-    padding: 5px 10px;
+    padding: 0.5rem 0.7rem;
   }
 }

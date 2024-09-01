@@ -1,7 +1,6 @@
 .profile-box {
   display: flex;
-  padding: 8px;
-  min-height: $profile-intro-height;
+  align-items: center;
 
   &.centered {
     text-align: center
@@ -23,7 +22,7 @@
 
   .profile-box-info {
     width: 100%;
-    line-height: 22px;
+    line-height: 2em;
 
     .profile-box-username {
       display: flex;
@@ -41,22 +40,15 @@
     }
 
     .profile-box-handle {
-      color: #888;
-      font-size: 17px;
-    }
-
-    .profile-box-description {
-      @if $theme == "default" {
-        font-family: $font-serif;
-      }
-      color: #888;
-      font-style: italic;
+      color: gray;
+      font-size: 1.25em;
     }
   }
 
   .profile-box-follow {
     width: 120px;
     text-align: right;
+    align-self: start;
   }
 }
 

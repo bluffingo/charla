@@ -54,11 +54,10 @@
         </div>
     {% endif %}
     <div class="grid">
-        <div class="col-large-9 col-8">
+        <div class="col-8">
             <div class="submission">
                 {{ submission_view(submission) }}
             </div>
-            <br>
             <div class="watch-box">
                 <div class="section">
                     <div class="section-header">
@@ -80,14 +79,15 @@
                     <hr>
                     <div class="watch-box-row">
                         <div class="watch-box-left">
-                            <img class="watch-box-profile-picture pfp" src="{{ profile_picture(submission.author.info.username) }}">
+                            <img class="watch-box-profile-picture pfp"
+                                 src="{{ profile_picture(submission.author.info.username) }}">
                             <div class="watch-box-author">
                                 <div class="watch-box-author-userlink">
                                     {{ user_link(submission.author) }}
                                 </div>
                                 <div class="watch-box-author-follow">
                                     {% if not submission.is_owner and is_user_logged_in %}
-                                        <button class="button button-secondary button-small" id="follow-user">
+                                        <button class="button button-secondary" id="follow-user">
                                             {% if submission.author.following %}
                                                 Unfollow
                                             {% else %}
@@ -102,11 +102,6 @@
                             </div>
                         </div>
                         <div class="watch-box-right">
-                            {# hack to prevent twig from outputing the number 1 #}
-                            {% if submission.interactions.views != 1 %}
-                                {% set pluralViews = "s" %}
-                            {% endif %}
-                            <div class="watch-box-views">{{ submission.interactions.views }} view{{ pluralViews }}</div>
                             <div id="rater"></div>
                             {#
                             <div><small>{{ submission.interactions.ratings.total }} ratings</small></div>
@@ -114,23 +109,15 @@
                         </div>
                     </div>
                     <hr>
+                    {% if submission.description | trim is not empty %}
                     <div class="watch-box-description">
-                        <div class="watch-box-description-info">Uploaded on {{ submission.published | date('F j, Y') }}</div>
-                        {% if submission.published_originally and submission.original_site %}
-                            <div class="watch-box-description-info-small">First uploaded on {{ submission.original_site }} on {{ submission.published_originally | date('M j, Y') }}</div>
-                        {% elseif submission.original_site %}
-                            <div class="watch-box-description-info-small">Originally uploaded on {{ submission.original_site }}</div>
-                        {% endif %}
-                        <div class="watch-box-description-contents">
-                            {% if submission.description | trim is not empty %}
-                                {{ submission.description | markdown_user_journal }}
-                            {% endif %}
-                        </div>
+                            {{ submission.description | markdown_user_journal }}
                     </div>
                     <hr>
+                    {% endif %}
                     <div class="watch-box-info">
                         <div class="grid">
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div class="section">
                                     <div class="section-title">
                                         <h2>Tags</h2>
@@ -150,18 +137,63 @@
                                     #}
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div class="section">
                                     <div class="section-title">
                                         <h2>Details</h2>
                                     </div>
-                                    <div>
-                                        Rating:
+                                    <div class="watch-box-info-detail">
+                                        <span class="watch-box-info-detail-title">Type:</span>
+                                        {% if submission.type == 2 %}
+                                            Image
+                                        {% elseif submission.type == 3 %}
+                                            Music
+                                        {% else %}
+                                            Video
+                                        {% endif %}
+                                    </div>
+                                    <div class="watch-box-info-detail">
+                                        <span class="watch-box-info-detail-title">Rating:</span>
                                         {% if submission.rating == 'mature' %}
                                             Sensitive
                                         {% else %}
                                             General
                                         {% endif %}
+                                    </div>
+                                    <div class="watch-box-info-detail">
+                                        <span class="watch-box-info-detail-title">Uploaded:</span>
+                                        {{ submission.published | date('M d Y H:i T') }}
+                                    </div>
+                                    {% if submission.original_site %}
+                                        <div class="watch-box-info-detail">
+                                            <span class="watch-box-info-detail-title">Original site:</span>
+                                            {{ submission.original_site }}
+                                        </div>
+                                    {% endif %}
+                                    {% if submission.published_originally and submission.original_site %}
+                                        <div class="watch-box-info-detail">
+                                            <span class="watch-box-info-detail-title">Originally uploaded:</span>
+                                            {{ submission.published_originally | date('M d Y') }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="section">
+                                    <div class="section-title">
+                                        <h2>Stats</h2>
+                                    </div>
+                                    <div class="watch-box-info-stat">
+                                        {% if submission.interactions.comments != 1 %}
+                                            {% set pluralViews = "s" %}
+                                        {% endif %}
+                                        <span class="watch-box-info-stat-number">{{ submission.interactions.views }}</span> view{{ pluralViews }}
+                                    </div>
+                                    <div class="watch-box-info-stat">
+                                        {% if submission.interactions.views != 1 %}
+                                            {% set pluralComments = "s" %}
+                                        {% endif %}
+                                        <span class="watch-box-info-stat-number">{{ submission.interactions.comments }}</span> comment{{ pluralComments }}
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +220,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-large-3 col-4">
+        <div class="col-4">
             <div class="content-box">
                 {% for submission in submission.recommended %}
                     {{ include('/components/_upload_vertical_small.twig') }}

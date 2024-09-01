@@ -8,9 +8,9 @@
     border-bottom: none;
   }
 
-  img.pfp {
-    width: 50px;
-    height: 50px;
+  .pfp {
+    width: 60px;
+    height: 60px;
   }
 
   .comment-body {
@@ -48,6 +48,5 @@
   #comment_button, .submit-reply-button {
     margin-left: auto;
     display: block;
-    padding: 5px 10px;
   }
 }

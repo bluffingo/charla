@@ -7,7 +7,6 @@
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
-  text-shadow: 0 -1px 0 rgba(black, 0.4);
   font-weight: 500;
   background-repeat: repeat-x;
   line-height: 1em;
@@ -27,24 +26,23 @@
   }
 
   &.button-huge {
-    font-size: 32px;
+    font-size: 24px;
     padding: $button-padding-huge;
-    border-radius: 10px;
+    border-radius: 7px;
   }
 }
 
 @each $color, $value in $color-map {
   .button-#{$color} {
-    border: 1px solid adjust-hue(darken($value, 10%), 4);
+    border: 1px solid adjust-hue(darken($value, 7.5%), -4);
     background-color: $value;
     @include gradient-y($start-color: lighten($value, 5%), $end-color: adjust-hue(darken($value, 2%), 1));
 
-    $text-color: contrast-color($value, #000, #fff);
-    color: $text-color;
+    $text-color: contrast-color($value, black, white);
+    $shadow-color: contrast-color($value, white, black);
 
-    @if $text-color != #fff {
-      text-shadow: none;
-    }
+    color: $text-color;
+    text-shadow: 0 -1px 0 rgba($shadow-color, 0.4);
 
     @if $color == "secondary" {
       font-weight: normal;
@@ -52,38 +50,14 @@
 
     &:hover {
       background-color: lighten($value, 10%);
-      @include gradient-y($start-color: adjust-hue(lighten($value, 12%), 1), $end-color: $value);
+      @include gradient-y($start-color: adjust-hue(lighten($value, 10%), 1), $end-color: lighten($value, 2%));
       border-color: darken($value, 5%);
     }
 
     &:active {
       background-color: darken($value, 5%);
-      @include gradient-y($start-color: $value, $end-color: adjust-hue(darken($value, 7%), -2));
+      @include gradient-y($start-color: $value, $end-color: adjust-hue(darken($value, 7%), -1.5));
       border-color: darken($value, 12%);
     }
-  }
-}
-
-// hardcoded button for main page. it's not in the color map because its defined in a way that won't really work with
-// how the other buttons are done without massively fucking things up. -chaziz 6/28/2024
-$value: #ffb10a;
-
-.button-get-started {
-  border: 1px solid adjust-hue(darken($value, 10%), 4);
-  background-color: $value;
-  @include gradient-y($start-color: lighten($value, 5%), $end-color: adjust-hue(darken($value, 2%), 1));
-  color: #15110e;
-  text-shadow: 0 -1px 0 rgba(white, 0.4);
-
-  &:hover {
-    background-color: lighten($value, 10%);
-    @include gradient-y($start-color: adjust-hue(lighten($value, 12%), 1), $end-color: $value);
-    border-color: darken($value, 5%);
-  }
-
-  &:active {
-    background-color: darken($value, 5%);
-    @include gradient-y($start-color: $value, $end-color: adjust-hue(darken($value, 7%), -2));
-    border-color: darken($value, 12%);
   }
 }

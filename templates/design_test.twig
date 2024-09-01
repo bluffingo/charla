@@ -13,21 +13,43 @@
 {% endblock %}
 
 {% block content %}
-    {% for color in color_types %}
-        <div class="banner banner-{{ color }}">
+    <div style="margin-bottom: 1rem;">
+        {% for color in color_types %}
+            <div class="banner banner-{{ color }}">
             <span class="notification-text">
                 This is a {{ color }} banner. You may go back to the homepage <a href="/">here</a>.
             </span>
-        </div>
-    {% endfor %}
-    <hr>
-    {% for color in color_types %}
-        <div class="button button-{{ color }}">{{ color }} button!</div>
-    {% endfor %}
-    {# not an actual color #}
-    <div class="button button-get-started">get started button!</div>
-    <hr>
-    <div>Unix epoch: {{ "0" | relative_time() }}</div>
-    <div>Unix epoch: {{ "1" | relative_time() }}</div>
-    <div>Right now: {{ 'now'| date('U') | relative_time() }}</div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div style="margin-bottom: 1rem;">
+        {% for color in color_types %}
+            <div class="button button-{{ color }} button-small">small {{ color }} button!</div>
+        {% endfor %}
+    </div>
+
+    <div style="margin-bottom: 1rem;">
+        {% for color in color_types %}
+            <div class="button button-{{ color }}">{{ color }} button!</div>
+        {% endfor %}
+    </div>
+
+    <div style="margin-bottom: 1rem;">
+        {% for color in color_types %}
+            <div class="button button-{{ color }} button-big">big {{ color }} button!</div>
+        {% endfor %}
+    </div>
+
+    <div style="margin-bottom: 1rem;">
+        {% for color in color_types %}
+            <div class="button button-{{ color }} button-huge">huge {{ color }} button!</div>
+        {% endfor %}
+    </div>
+
+    <div style="margin-bottom: 1rem;">
+        <div>Null relative time: {{ "0" | relative_time() }}</div>
+        <div>Unix epoch relative time: {{ "1" | relative_time() }}</div>
+        <div>Right now relative time: {{ 'now'| date('U') | relative_time() }}</div>
+    </div>
 {% endblock %}

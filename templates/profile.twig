@@ -47,13 +47,7 @@
                     </div>
                 {% endif %}
                 <div class="profile-box-details">
-                    Joined {{ data.joined | relative_time }} •
                     <span id="follower_count">{{ data.followers }}</span> followers
-                </div>
-                <div class="profile-box-description">
-                    {% if data.about | trim is not empty %}
-                        {{ data.about | markdown_user_written }}
-                    {% endif %}
                 </div>
             </div>
             <div class="profile-box-follow">
@@ -87,6 +81,7 @@
                 <button class="tablink" data-tab="tab_pools">Pools</button>
             {% endif %}
             <button class="tablink" data-tab="tab_comments">Comments</button>
+            <button class="tablink" data-tab="tab_about">About</button>
         </div>
 
         <div id="tab_uploads" class="tabcontent">
@@ -141,6 +136,25 @@
                     {% for comment in data.comments %}
                         {{ include('/components/_comment.twig') }}
                     {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div id="tab_about" class="tabcontent">
+            <div class="section">
+                <div class="content-box no-border-top">
+                    {% if data.about | trim is not empty %}
+                        {{ data.about | markdown_user_written }}
+                        <hr>
+                    {% endif %}
+                    <ul>
+                        <li>
+                            Joined: {{ data.joined | date('M d Y H:i T') }}
+                        </li>
+                        <li>
+                            Seen: {{ data.connected | date('M d Y H:i T') }}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

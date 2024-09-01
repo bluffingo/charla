@@ -16,16 +16,23 @@
   overflow: hidden;
   word-break: break-word;
 
-  .watch-box-edit {
-    a {
-      margin-right: 7px;
-    }
-  }
-
   .watch-box-info {
+    .watch-box-info-detail {
+      .watch-box-info-detail-title {
+        color: gray;
+      }
+    }
+
+    .watch-box-info-stat {
+      .watch-box-info-stat-number {
+        font-weight: 500;
+      }
+    }
+
     .section-title {
       h2 {
-        font-size: 13px;
+        font-size: 0.9em;
+        font-weight: 500;
       }
     }
   }
@@ -33,66 +40,34 @@
   .watch-box-description {
     margin: 0 auto;
     word-wrap: break-word;
-
-    .watch-box-description-info {
-      color: #777;
-    }
-
-    .watch-box-description-info-small {
-      color: gray;
-      font-size: 11px;
-    }
-
-    /*
-    .watch-box-description-contents {
-      font-family: $font-serif;
-    }
-     */
   }
 
   .watch-box-row {
-    // ↓ this is outdated, but it's best if we keep this class instead of porting all of this shit into rows. -chaziz 6/17/2024
-
-    // unlike finalium, biscuit does not have a proper grid system. the closest thing to a grid system are the
-    // "page-left" and "page-right" classes, which are leftovers from earlier in the biscuit frontend's development
-    // from august 2023 and is currently only used in the user profile page, which has an issue on small displays (eg:
-    // phones) because of said classes. -chaziz 12/8/2023
-
     display: flex;
+    align-items: center;
 
-    // view counter and star rating
+    // star rating
     .watch-box-right {
       width: 25%;
-
       text-align: right;
-
-      .watch-box-views {
-        font-weight: 550;
-        font-size: 15px;
-      }
     }
 
     // author and upload date.
     .watch-box-left {
       display: flex;
+      align-items: center;
+      gap: 0.8em;
       width: 75%;
 
       .watch-box-profile-picture {
-        width: 52px;
-        height: 52px;
-        margin-right: 10px;
+        width: 50px;
+        height: 50px;
       }
 
       .watch-box-author {
-        line-height: 20px;
-
         .watch-box-author-userlink {
-          font-size: 14px;
+          font-size: 1.1em;
         }
-      }
-
-      .watch-box-author-follow {
-        margin-top: 6px;
       }
     }
   }
