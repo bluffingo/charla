@@ -7,33 +7,34 @@
             <div class="banner banner-danger">{{ error }}</div>
         {% endif %}
         <div class="section">
-            <div class="section-title">
+            <div class="section-header">
                 <h1>Account settings</h1>
             </div>
             <div class="content-box">
                 <form action="/settings" method="post" enctype="multipart/form-data">
                     <div class="section">
-                        <div class="section-title">
+                        <div class="section-header">
                             <h2>Profile</h2>
                         </div>
 
-                        <div id="settings-banner"></div>
+                        <div id="settings-banner-preview"></div>
                         <div class="content-box no-border-top">
                             <div class="profile-box">
                                 <div class="profile-box-pfp">
-                                    <img src="{{ profile_picture(user_data.username) }}" class="pfp" alt="{{ user_data.username }}">
+                                    <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
                                 </div>
                                 <div class="profile-box-info">
                                     <div class="profile-box-username">
-                                        <span style="color:{{ user_data.customcolor }}">{{ user_data.title }}</span>
+                                        <span style="color:{{ user_data.customcolor }}" id="settings-display-name">
+                                            {{ user_data.title }}
+                                        </span>
+                                        {% if user_data.powerlevel > 2 %}
+                                            <div class="profile-box-icon biscuit-icon staff"></div>
+                                        {% endif %}
                                     </div>
+
                                     <div class="profile-box-handle">
                                         @{{ user_data.name }}
-                                    </div>
-                                    <div class="profile-box-details">
-                                        {% if user_data.about | trim is not empty %}
-                                            {{ user_data.about | markdown_user_written }}
-                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -41,35 +42,35 @@
 
                         <div class="form-input">
                             <label for="title">Profile name:</label>
-                            <input class="form-submit" type="text" name="title" size="45" maxlength="50" value="{{ user_data.title }}">
+                            <input class="form-submit" id="settings-display-name-input" type="text" name="title" maxlength="50" value="{{ user_data.title }}">
                         </div>
 
                         <div class="form-input">
                             <label for="about">Profile description:</label>
-                            <textarea class="form-submit" name="about" rows="5" cols="80" wrap="hard">{{ user_data.about }}</textarea>
+                            <textarea class="form-submit" name="about" rows="4" wrap="hard">{{ user_data.about }}</textarea>
                         </div>
 
                         <div class="form-input">
                             <label for="profilePicture">Profile picture:</label>
-                            <input type="file" name="profilePicture" id="profilePicture">
+                            <input type="file" name="profilePicture" id="setting-pfp">
                         </div>
 
                         <div class="form-input">
                             <label for="profileBanner">Profile banner:</label>
-                            <input type="file" name="profileBanner" id="profileBanner">
+                            <input type="file" name="profileBanner" id="settings-banner">
                         </div>
 
 
                         <div class="form-input">
                             <label for="customcolor">Username/link color:</label>
-                            <input name="customcolor" type="text" data-coloris value="{{ user_data.customcolor | default('523bb8') }}">
+                            <input name="customcolor" id="settings-color" type="text" data-coloris value="{{ user_data.customcolor | default('523bb8') }}">
                         </div>
                     </div>
 
                     <hr>
 
                     <div class="section">
-                        <div class="section-title">
+                        <div class="section-header">
                             <h2>Security</h2>
                         </div>
 
@@ -80,7 +81,7 @@
                         </div>
 
                         <br>
-                        <div class="section-title">
+                        <div class="section-header">
                             <h3>Change username</h3>
                         </div>
 
@@ -91,7 +92,7 @@
                         </div>
 
                         <br>
-                        <div class="section-title">
+                        <div class="section-header">
                             <h3>Change password</h3>
                         </div>
 
@@ -110,7 +111,7 @@
                     <hr>
 
                     <div class="section">
-                        <div class="section-title">
+                        <div class="section-header">
                             <h2>Filtering</h2>
                         </div>
 
@@ -121,7 +122,7 @@
 
                         <br>
 
-                        <div class="section-title">
+                        <div class="section-header">
                             <h3>Blacklisted tags</h3>
                         </div>
 

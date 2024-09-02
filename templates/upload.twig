@@ -2,15 +2,22 @@
 
 {% set title = "Upload" %}
 
+{% block precontent %}
+    <div class="jumbotron page-banner">
+        <div class="jumbotron-container">
+            <div>
+                <h1>Upload</h1>
+                <p>
+                    Make sure you have read the <a href="/guidelines">guidelines</a> first. Failure to comply
+                    with the guidelines will result in your upload being taken down.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
 	{% block content %}
         <div class="section">
-            <div class="section-title">
-                <h1>Upload</h1>
-            </div>
-            <p>
-                Make sure you have read the <a href="/guidelines">guidelines</a> first. Failure to comply
-                with the guidelines will result in your upload being taken down.
-            </p>
             <div class="content-box">
                 <form name="uploadForm" id="uploadForm" method="post" action="upload" enctype="multipart/form-data">
                     <div class="panel panel-default">

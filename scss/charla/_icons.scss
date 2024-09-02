@@ -7,6 +7,18 @@
   background-repeat: no-repeat;
   background-size: 16px;
 
+  &.size-24 {
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+  }
+
+  &.size-32 {
+    width: 32px;
+    height: 32px;
+    background-size: 32px;
+  }
+
   &.star-full {
     background-image: url( '/assets/icons/star_full.svg' );
   }
@@ -41,6 +53,10 @@
 
   &.b-success {
     background-image: url( '/assets/icons/banner-success.svg' );
+  }
+
+  &.b-warning {
+    background-image: url( '/assets/icons/placeholder.svg' );
   }
 
   &.search {

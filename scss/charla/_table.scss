@@ -10,6 +10,7 @@ table.c1 {
 
   tr {
     border: 1px solid $content-box-border-color;
+    background: $content-box-background-color;
 
     &.h {
       @include gradient-y($start-color: lighten($content-box-border-color, 5%), $end-color: lighten($content-box-border-color, 2.5%));

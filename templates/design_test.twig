@@ -3,53 +3,164 @@
 {% set title = "Whoooo! Charla!" %}
 
 {% block precontent %}
-    {% if current_theme == "default" %}
-        <div class="jumbotron page-banner">
-            <div class="jumbotron-container">
-                <h1>{{ title }}</h1>
-            </div>
+    <div class="jumbotron page-banner">
+        <div class="jumbotron-container">
+            <h1>{{ title }}</h1>
         </div>
-    {% endif %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous">
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function() {
+            var elms = document.getElementsByClassName( 'splide' );
+
+            for ( var i = 0; i < elms.length; i++ ) {
+                new Splide( elms[ i ], {
+                    perPage: 2,
+                    rewind: true,
+                    pagination: false,
+                } ).mount();
+            }
+        } );
+    </script>
 {% endblock %}
 
 {% block content %}
-    <div style="margin-bottom: 1rem;">
+    <div class="section">
         {% for color in color_types %}
             <div class="banner banner-{{ color }}">
-            <span class="notification-text">
+                <i class="{{ notification_icon(color) }} notification-icon"></i>
+                <span class="notification-text">
                 This is a {{ color }} banner. You may go back to the homepage <a href="/">here</a>.
-            </span>
+                </span>
             </div>
         {% endfor %}
     </div>
-
-    <div style="margin-bottom: 1rem;">
-        {% for color in color_types %}
-            <div class="button button-{{ color }} button-small">small {{ color }} button!</div>
-        {% endfor %}
-    </div>
-
-    <div style="margin-bottom: 1rem;">
-        {% for color in color_types %}
-            <div class="button button-{{ color }}">{{ color }} button!</div>
-        {% endfor %}
-    </div>
-
-    <div style="margin-bottom: 1rem;">
-        {% for color in color_types %}
-            <div class="button button-{{ color }} button-big">big {{ color }} button!</div>
-        {% endfor %}
-    </div>
-
-    <div style="margin-bottom: 1rem;">
-        {% for color in color_types %}
-            <div class="button button-{{ color }} button-huge">huge {{ color }} button!</div>
-        {% endfor %}
-    </div>
-
-    <div style="margin-bottom: 1rem;">
-        <div>Null relative time: {{ "0" | relative_time() }}</div>
-        <div>Unix epoch relative time: {{ "1" | relative_time() }}</div>
-        <div>Right now relative time: {{ 'now'| date('U') | relative_time() }}</div>
+    <hr>
+    <div class="grid">
+        <div class="col-6">
+            <div class="section">
+                <div class="section-header">
+                    <h2>Buttons</h2>
+                </div>
+                {% for color in color_types %}
+                    <div class="button button-{{ color }} button-small">small {{ color }} button!</div>
+                {% endfor %}
+                <br>
+                {% for color in color_types %}
+                    <div class="button button-{{ color }}">{{ color }} button!</div>
+                {% endfor %}
+                <br>
+                {% for color in color_types %}
+                    <div class="button button-{{ color }} button-big">big {{ color }} button!</div>
+                {% endfor %}
+                <br>
+                {% for color in color_types %}
+                    <div class="button button-{{ color }} button-huge">huge {{ color }} button!</div>
+                {% endfor %}
+            </div>
+            <hr>
+            <div class="section">
+                <div class="section-header">
+                    <h2>Tables</h2>
+                </div>
+                <table class="c1">
+                    <tr class="h">
+                        <th>Header</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Normal row
+                        </td>
+                    </tr>
+                    {% for color in color_types_admin %}
+                        <tr class="{{ color }}">
+                            <td class="a fade-into-bg">{{ color }} row</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <hr>
+            <div class="section">
+                <div class="section-header">
+                    <h2>Icons</h2>
+                </div>
+                <table class="c1">
+                    <tr class="h">
+                        <th style="width:32px;padding:0;"></th>
+                        <th>Name</th>
+                    </tr>
+                    {% for icon in icons %}
+                        <tr>
+                            <td>
+                                <i class="biscuit-icon {{ icon }} size-32" style="vertical-align: middle;"></i>
+                            </td>
+                            <td class="a">{{ icon }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="section">
+                <div class="section-header">
+                    <h2>Upload vertical</h2>
+                </div>
+                <div class="content-box">
+                    {% for submission in uploads %}
+                        {{ include('/components/_upload_vertical.twig') }}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-header">
+                    <h2>Upload vertical small</h2>
+                </div>
+                <div class="content-box">
+                    {% for submission in uploads %}
+                        {{ include('/components/_upload_vertical_small.twig') }}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-header">
+                    <h2>Upload vertical edit</h2>
+                </div>
+                <div class="content-box">
+                    {% for submission in uploads %}
+                        {{ include('/components/_upload_vertical_edit.twig') }}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-header">
+                    <h2>Upload grid</h2>
+                </div>
+                <div class="content-box content-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    {% for submission in uploads %}
+                        {{ include('/components/_upload_grid.twig') }}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-header">
+                    <h2>Upload splide</h2>
+                </div>
+                <div class="content-box">
+                    <section class="splide" id="splide1" aria-labelledby="carousel-heading">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {% for submission in uploads %}
+                                    {{ include('/components/_upload_grid_splide.twig') }}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

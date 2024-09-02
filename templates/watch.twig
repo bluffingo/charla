@@ -21,15 +21,7 @@
 {% endif %}
 
 {% block scripts %}
-    {#
-    in opensb theseus, we get this error:
-    Unable to find template "submission_rating_script.twig" (looked into: C:/OpenSB/public/../private/skins/biscuit/templates).
-
-    this is simply a path issue. but we'll not fix it for now since we have other more crucial stuff to deal with first.
-    #}
-    {% if not areWeRunningTheNewCode %}
-        {{ include('submission_rating_script.twig') }}
-    {% endif %}
+    {{ include('submission_rating_script.twig') }}
 
     <script>
         submission_id = '{{ submission.id }}';
@@ -119,7 +111,7 @@
                         <div class="grid">
                             <div class="col-4">
                                 <div class="section">
-                                    <div class="section-title">
+                                    <div class="section-header">
                                         <h2>Tags</h2>
                                     </div>
                                     {% for tag in submission.tags %}
@@ -139,7 +131,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="section">
-                                    <div class="section-title">
+                                    <div class="section-header">
                                         <h2>Details</h2>
                                     </div>
                                     <div class="watch-box-info-detail">
@@ -180,7 +172,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="section">
-                                    <div class="section-title">
+                                    <div class="section-header">
                                         <h2>Stats</h2>
                                     </div>
                                     <div class="watch-box-info-stat">
@@ -204,7 +196,7 @@
             <div class="clear"></div>
             <br>
             <div class="section">
-                <div class="section-title">
+                <div class="section-header">
                     <h2>Comments</h2>
                 </div>
                 <div id="comments">

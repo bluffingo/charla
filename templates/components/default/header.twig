@@ -39,7 +39,7 @@
                             <hr>
                             {% for link in header_user_account_links() %}
                                 <a class="menu-item-button" href="/login/{{ link.username }}">
-                                    <img src="{{ profile_picture(link.username) }}" class="menu-item-profile-picture" alt="{{ link.username }}">
+                                    <img src="{{ profile_picture(link.username) }}" class="menu-item-profile-picture pfp" alt="{{ link.username }}">
                                     {{ link.username }}
                                 </a>
                             {% endfor %}
