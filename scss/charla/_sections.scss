@@ -1,12 +1,12 @@
 .section {
   .section-header {
     display: flex;
-    align-items: center;
+    align-items: baseline;
 
     .section-header-left {
       flex-grow: 1;
       display: flex;
-      align-content: center;
+      align-items: baseline;
       gap: 0.5em;
 
       .section-title {
@@ -14,7 +14,6 @@
       }
 
       .section-desc {
-        align-self: center;
         @if $theme == "dark" {
           color: #ffffff80;
         } @else {
@@ -26,7 +25,6 @@
     a {
       font-size: 14px;
       margin-left: 4px;
-      align-self: center;
       &.userlink {
         margin-left: 0;
       }

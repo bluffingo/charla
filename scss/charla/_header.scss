@@ -241,10 +241,9 @@ td.h
 
 .menu#user-menu {
   border-top: none;
-  min-width: 165px;
   top: $header-height;
   border-radius: 0 0 10px 10px;
-  box-shadow: 0 2px 5px rgba(78, 115, 151, 0.2);
+  box-shadow: 0 2px 5px rgba(darken($content-box-border-color, 33%), 0.2);
 
   hr {
     border-color: $content-box-border-color;

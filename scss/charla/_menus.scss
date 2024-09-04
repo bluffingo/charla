@@ -7,6 +7,7 @@
   padding: 5px 0;
   min-width: 100px;
   z-index: 5259;
+  width: 12rem;
 
   .menu-item-button {
     direction: ltr;
@@ -14,11 +15,17 @@
     align-items: center;
     text-align: left;
     padding: 5px 10px;
-    color: $text-color;
-    opacity: 66%;
+    color: rgba($text-color, 66%);
     gap: 5px;
+    width: inherit;
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     &:hover {
-      opacity: 100%;
+      color: $text-color;
     }
 
     .menu-item-profile-picture {
@@ -27,7 +34,9 @@
   }
 }
 
-/* Style for the button */
-.menuButton {
-  cursor: pointer;
+// TODO
+.menu-button {
+  &.button {
+    color: red;
+  }
 }

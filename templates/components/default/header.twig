@@ -40,10 +40,10 @@
                             {% for link in header_user_account_links() %}
                                 <a class="menu-item-button" href="/login/{{ link.username }}">
                                     <img src="{{ profile_picture(link.username) }}" class="menu-item-profile-picture pfp" alt="{{ link.username }}">
-                                    {{ link.username }}
+                                    <span>{{ link.username }}</span>
                                 </a>
                             {% endfor %}
-                            <a class="menu-item-button small" href="/login">Add another account</a>
+                            <a class="menu-item-button small" href="/login"><span>Add another account</span></a>
                         </div>
                     </div>
                 {% else %}

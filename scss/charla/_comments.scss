@@ -1,6 +1,6 @@
 .comment {
-  padding-top: 7px;
-  padding-bottom: 7px;
+  margin: 0.33em 0;
+  padding: 0.33em 0;
   display: flex;
   border-bottom: 1px solid $content-box-border-color;
 
@@ -9,35 +9,40 @@
   }
 
   .pfp {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
   }
 
   .comment-body {
-    //width: 775px;
     width: 100%;
-    margin-left: 10px;
+    margin-left: 0.75em;
 
     .comment-contents {
-      margin-top: 6px;
+      margin-top: 0.25em;
 
       p {
-        margin: 0;
+        margin: 0.5em 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }
 }
 
-#replies {
-  margin-top: 15px;
+.replies {
+  border-left: 1px solid $content-box-border-color;
+  padding-left: 0.33em;
+  margin-top: 0.5em;
   .comment {
-    img.pfp {
-      width: 32px;
-      height: 32px;
-
-      &:last-child {
-        padding-bottom: 0;
-      }
+    border: none;
+    .pfp {
+      display: none;
     }
   }
 }
