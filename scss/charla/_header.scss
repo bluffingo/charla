@@ -1,7 +1,7 @@
 .headers {
   position: sticky;
   top: 0;
-  z-index: 47101;
+  z-index: 1;
 }
 
 .header-main-links {
@@ -26,7 +26,7 @@
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 0.8em;
+  gap: 0.75em;
 
   .user-menu-container {
     direction: rtl;
@@ -79,8 +79,6 @@
   .logo {
     height: $header-logo-height;
   }
-
-  margin-right: 15px;
 }
 
 form.header-search
@@ -97,12 +95,12 @@ form.header-search
     border: none;
 
     .biscuit-icon.search {
-      width: 15px;
-      height: 15px;
-      background-size: 15px;
+      width: 16px;
+      height: 16px;
+      background-size: 16px;
     }
 
-    height: 30px;
+    height: 32px;
     width: 40px;
 
     &:hover {
@@ -111,10 +109,10 @@ form.header-search
   }
 
   #header-search-input {
-    border-radius: 15px;
+    border-radius: 16px;
     transition: all .2s ease-in-out;
     padding: 6px 40px 6px 10px;
-    height: 30px;
+    height: 32px;
 
     border: 1px solid $form-border-color;
     color: $form-text-color;
@@ -127,14 +125,13 @@ form.header-search
 
   @include responsive('tiny') {
     display: block;
-    max-width: 120px;
+    max-width: 130px;
     #header-search-input {
-      max-width: 110px;
+      max-width: 125px;
     }
   }
   @include responsive('small') {
     display: block;
-    margin-left: 5px;
     max-width: 200px;
     #header-search-input {
       max-width: 180px;
@@ -142,10 +139,9 @@ form.header-search
   }
   @include responsive('medium') {
     display: block;
-    margin-left: 15px;
-    max-width: 225px;
+    max-width: 240px;
     #header-search-input {
-      max-width: 200px;
+      max-width: 220px;
     }
   }
 
@@ -220,6 +216,7 @@ td.h
     flex-wrap: wrap;
     width: 100%;
     margin: 0 auto;
+    gap: 0.5em;
   }
 
   width: 100%;
@@ -228,10 +225,10 @@ td.h
     background: linear-gradient(to bottom, #ffc2c2, #FF9A9A);
     border-bottom: 1px solid #e88e8e;
   } @else if $theme == "dark" {
-    background: linear-gradient(to bottom, #191a23, #0e0f15);
-    border-bottom: 1px solid #090b0e;
+    background: linear-gradient(to bottom, #191a23, #15151e);
+    border-bottom: 1px solid darken($content-box-border-color, 5%);
   } @else {
-    background: linear-gradient(to bottom, #fdfdff, #f8fcff);
+    background: linear-gradient(to bottom, #fdfdff, #fafcff);
     border-bottom: 1px solid darken($content-box-border-color, 5%);
   }
 
@@ -301,4 +298,8 @@ td.h
       gap: 0.8em;
     }
   }
+}
+
+.header-button {
+  display: flex; // stupid hack
 }

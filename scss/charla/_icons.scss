@@ -68,6 +68,15 @@
     }
   }
 
+  &.hamburger {
+    // stupid fucking hack because i dont want to do the masks hack
+    @if $theme == "dark" {
+      background-image: url( '/assets/icons/hamburger-dark.svg' );
+    } @else {
+      background-image: url( '/assets/icons/hamburger-light.svg' );
+    }
+  }
+
   &.placeholder {
     background-image: url( '/assets/icons/placeholder.svg' );
   }

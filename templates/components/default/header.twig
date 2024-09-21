@@ -1,15 +1,15 @@
 <div class="headers">
     <div class="header">
         <div class="header-container">
+            <div class="header-button">
+                <div class="button button-secondary button-hamburger" id="button-hamburger">
+                    <i class="biscuit-icon hamburger size-32"></i>
+                </div>
+            </div>
             <div class="header-logo">
                 <a href="/">
                     <img alt="{{ website_branding.name }}" class="logo" src="{{ website_branding.assets_location }}/logo.png">
                 </a>
-            </div>
-            <div class="header-main-links">
-                {% for link in header_main_links() %}
-                    <a class="menulink" href="{{ link.url }}">{{ link.name }}</a>
-                {% endfor %}
             </div>
             <form class="header-search" action="/search">
                 <input id="header-search-input" type="text" name="query" placeholder="{{ localize('search') }}...">
@@ -19,8 +19,6 @@
             </form>
             <div class="header-links">
                 {% if is_user_logged_in %}
-                    <a class="menulink hide-small" href="/write">Write</a>
-                    <a class="menulink hide-small" href="/upload">Upload</a>
                     <a class="menulink" href="/notices">
                         <i class="bi bi-bell"></i>
                         {{ user_notice_data }}
@@ -54,17 +52,11 @@
             </div>
         </div>
     </div>
-    <div class="subheader">
-        <div class="subheader-container">
-            {% for link in header_main_links() %}
-                <a class="menulink" href="{{ link.url }}">{{ link.name }}</a>
-            {% endfor %}
-            {% if is_user_logged_in %}
-                <div class="subheader-right-links">
-                    <a class="menulink" href="/write">Write</a>
-                    <a class="menulink" href="/upload">Upload</a>
-                </div>
-            {% endif %}
-        </div>
-    </div>
+</div>
+<div class="hamburger" id="hamburger">
+    <ul class="hamburger-list">
+        {% for link in header_main_links() %}
+            <li class="hamburger-link"><a href="{{ link.url }}">{{ link.name }}</a></li>
+        {% endfor %}
+    </ul>
 </div>

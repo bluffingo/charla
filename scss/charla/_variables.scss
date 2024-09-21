@@ -70,7 +70,7 @@ $font: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, 
 $font-serif: Georgia, "Times New Roman", serif;
 
 // https://medium.com/@jainbhavukspeaks/leveraging-scss-mixins-to-create-responsive-layouts-the-easy-way-5bbe4080cb15
-
+// breakpoints
 $breakpoints: (
         "tiny": (
                 300px,
@@ -88,7 +88,6 @@ $breakpoints: (
                 1500px,
         ),
 );
-//
 
 // buttons
 $button-padding: 7px 11px;
@@ -110,9 +109,9 @@ $content-box-grid-entry-height: 190px;
 $content-box-grid-entry-width: 135px;
 
 // header
-$header-height: 44px;
-$header-logo-height: 30px;
-$header-pfp-width: 28px;
+$header-height: 48px;
+$header-logo-height: 32px;
+$header-pfp-width: 32px;
 
 // profile
 $pfp-width-profiles: 90px;

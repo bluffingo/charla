@@ -1,0 +1,31 @@
+#hamburger {
+  top: $header-height;
+  left: 0;
+  position: fixed;
+  z-index: 5;
+  width: 200px;
+  padding: $content-box-padding 0;
+  height: calc(100vh - $header-height);
+  background: $content-box-background-color;
+  border-right: 1px solid $content-box-border-color;
+  display: none;
+
+  .hamburger-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .hamburger-link {
+      a {
+        display: block;
+        padding: 5px 1em;
+        color: rgba($text-color, 66%);
+        &:hover {
+          background: rgba(black, 0.1);
+          color: $text-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

@@ -15,6 +15,10 @@
     text-decoration: none;
   }
 
+  &.button-hamburger {
+    padding: 0;
+  }
+
   &.button-small {
     padding: $button-padding-small;
   }

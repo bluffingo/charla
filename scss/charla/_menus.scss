@@ -6,7 +6,7 @@
   border: 1px solid $content-box-border-color;
   padding: 5px 0;
   min-width: 100px;
-  z-index: 5259;
+  z-index: 5;
   width: 12rem;
 
   .menu-item-button {
@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     text-align: left;
-    padding: 5px 10px;
+    padding: 5px 1em;
     color: rgba($text-color, 66%);
     gap: 5px;
     width: inherit;
