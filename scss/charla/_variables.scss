@@ -2,7 +2,7 @@
 
 $threshold: 50%; // contrast threshold
 
-$primary: #2187dd; // primary color
+$primary: #2188dd; // primary color
 @if $theme == "pink" {
         $primary: #edb1c1; // primary color
 }
@@ -11,7 +11,7 @@ $secondary: #e7edf3; // secondary color (nearly white)
         $secondary: #353742; // secondary color (dark gray)
 }
 $green: #0cb60c;
-$red: #c2120d;
+$red: #cd130e;
 $yellow: #ffb10a;
 
 $text-color: #27272c;
@@ -85,7 +85,7 @@ $breakpoints: (
                 1250px,
         ),
         "huge": (
-                1500px,
+                1550px,
         ),
 );
 

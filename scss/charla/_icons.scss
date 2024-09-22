@@ -48,7 +48,11 @@
   }
 
   &.b-secondary {
-    background-image: url( '/assets/icons/banner-secondary.svg' );
+    @if $theme == "dark" {
+      background-image: url( '/assets/icons/banner-primary.svg' );
+    } @else {
+      background-image: url( '/assets/icons/banner-secondary.svg' );
+    }
   }
 
   &.b-success {
@@ -56,7 +60,7 @@
   }
 
   &.b-warning {
-    background-image: url( '/assets/icons/placeholder.svg' );
+    background-image: url( '/assets/icons/banner-warning.svg' );
   }
 
   &.search {

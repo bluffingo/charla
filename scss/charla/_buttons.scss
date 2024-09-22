@@ -38,7 +38,12 @@
 
 @each $color, $value in $color-map {
   .button-#{$color} {
-    border: 1px solid adjust-hue(darken($value, 7.5%), -4);
+    $border-color: adjust-hue(darken($value, 7.5%), 2);
+    @if $theme == "dark" {
+      $border-color: adjust-hue(lighten($value, 10%), 4);
+    }
+
+    border: 1px solid $border-color;
     background-color: $value;
     @include gradient-y($start-color: lighten($value, 5%), $end-color: adjust-hue(darken($value, 2%), 1));
 
@@ -52,16 +57,25 @@
       font-weight: normal;
     }
 
+    &.button-hamburger {
+      @if $theme == "pink" {
+        border-color: #0000;
+      } @else {
+        border-color: rgba($border-color, 66%);
+      }
+      background: none;
+    }
+
     &:hover {
       background-color: lighten($value, 10%);
       @include gradient-y($start-color: adjust-hue(lighten($value, 10%), 1), $end-color: lighten($value, 2%));
-      border-color: darken($value, 5%);
+      border-color: lighten($border-color, 1.5%);
     }
 
     &:active {
       background-color: darken($value, 5%);
       @include gradient-y($start-color: $value, $end-color: adjust-hue(darken($value, 7%), -1.5));
-      border-color: darken($value, 12%);
+      border-color: darken($border-color, 2.5%);
     }
   }
 }

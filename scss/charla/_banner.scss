@@ -7,7 +7,7 @@
   background-repeat: repeat-x;
 
   .notification-icon {
-    margin-right: 0.75em;
+    margin-right: 0.66em;
     min-width: 20px;
     min-height: 20px;
     background-size: 20px;
@@ -24,9 +24,14 @@
 
 @each $color, $value in $color-map {
   .banner-#{$color} {
+    $border-color: adjust-hue(darken($value, 7.5%), 2);
+    @if $theme == "dark" {
+      $border-color: adjust-hue(lighten($value, 10%), 4);
+    }
+
     background-color: lighten($value, 10%);
     @include gradient-y($start-color: adjust-hue(lighten($value, 6%), 1), $end-color: $value);
-    border: 1px solid adjust-hue(darken($value, 7.5%), -4);
+    border: 1px solid $border-color;
     color: contrast-color($value, #000, #fff);
 
     a {
@@ -36,7 +41,7 @@
   }
 }
 
-// make banners less tall on login/register pages
+// make banners smaller on login/register pages
 .page-login {
   .banner {
     padding: 0.5rem 0.7rem;

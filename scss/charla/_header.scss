@@ -67,6 +67,7 @@
 
 .header-logo
 {
+  margin-right: 0.5em;
   a {
     display: block;
     height: $header-logo-height;
@@ -209,21 +210,21 @@ td.h
 .header
 {
   .header-container {
-    @include maxwidths();
+    //@include maxwidths();
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 1em;
     gap: 0.5em;
   }
 
   width: 100%;
 
   @if $theme == "pink" {
-    background: linear-gradient(to bottom, #ffc2c2, #FF9A9A);
-    border-bottom: 1px solid #e88e8e;
+    background: linear-gradient(to bottom, #ffc2c2, #ffa7a7);
+    border-bottom: 1px solid #dc9191;
   } @else if $theme == "dark" {
     background: linear-gradient(to bottom, #191a23, #15151e);
     border-bottom: 1px solid darken($content-box-border-color, 5%);
