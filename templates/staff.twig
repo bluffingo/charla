@@ -1,0 +1,42 @@
+{% extends "_layout.twig" %}
+
+{% set title = "Staff" %}
+
+{% block precontent %}
+    <div class="jumbotron page-banner">
+        <div class="jumbotron-container">
+            <div>
+                <h1>{{ website_branding.name }} Staff</h1>
+                <p>
+                    This is a list of people who are currently staff on {{ website_branding.name }}.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+	{% block content %}
+        <div class="content-box content-grid staff-page-hack">
+            {% for user in staff %}
+                <div class="content-entry">
+                    <div class="content-thumbnail">
+                        <a href="/view/{{ submission.id }}" class="content-image-link">
+                            <img src="{{ profile_picture(user.info.username) }}"
+                                 alt="{{ submission.title }}"
+                                 title="{{ submission.title }} by {{ submission.author.info.username }}"
+                                 class="content-image pfp">
+                        </a>
+                    </div>
+                    <div class="content-info">
+                        <div class="content-author">
+                            {{ user_link(user) }}
+                        </div>
+                        <div class="content-description">
+                            {# temporary #}
+                            Administrator
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endblock %}

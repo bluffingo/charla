@@ -49,6 +49,16 @@
     @include responsive('large') {
         grid-template-columns: repeat(6, 1fr);
     }
+    // STUPID HACK
+    &.staff-page-hack {
+        grid-auto-rows: minmax(auto, auto);
+        @include responsive('large') {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .content-entry {
+            border: none;
+        }
+    }
 }
 
 .content-box
