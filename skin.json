@@ -17,12 +17,6 @@
         "name": "Dark",
         "description": "A dark theme.",
         "author": "OpenSB developers"
-      },
-      {
-        "id": "pink",
-        "name": "Pink",
-        "description": "A pink theme for SquareBracket.",
-        "author": "OpenSB developers (original by Mori)"
       }
     ]
   }

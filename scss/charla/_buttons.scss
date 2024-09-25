@@ -58,11 +58,7 @@
     }
 
     &.button-hamburger {
-      @if $theme == "pink" {
-        border-color: #0000;
-      } @else {
-        border-color: rgba($border-color, 66%);
-      }
+      border-color: rgba($border-color, 66%);
       background: none;
     }
 

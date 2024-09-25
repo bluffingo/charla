@@ -3,9 +3,6 @@
 $threshold: 50%; // contrast threshold
 
 $primary: #2188dd; // primary color
-@if $theme == "pink" {
-        $primary: #edb1c1; // primary color
-}
 $secondary: #e7edf3; // secondary color (nearly white)
 @if $theme == "dark" {
         $secondary: #353742; // secondary color (dark gray)
@@ -22,9 +19,7 @@ $form-bg-color: #fff;
 $form-text-color: #111;
 $form-border-color: #c7d2da;
 
-@if $theme == "pink" {
-        $link-color: #c61b7a;
-} @else if $theme == "dark" {
+@if $theme == "dark" {
         $text-color: white;
         $link-color: #2d89e8;
         $bg-color: #121418;
@@ -42,7 +37,7 @@ $color-map: (
         "warning": $yellow,
 );
 
-// colors used for the users section in the admin panel. taken from the ones on bitview, sorry!
+// colors used for the users section in the admin panel, taken from the ones on bitview.
 $color-map-admin: (
         "banned-other-unbanned": #ff9696,
         "unbanned-other-banned": #ffc848,

@@ -4,9 +4,7 @@
       margin: 0;
     }
 
-    @if $theme == "pink" {
-      background: #111 linear-gradient(45deg, #fdbaba 0%, #E89693 100%);
-    } @else if $theme == "dark" {
+    @if $theme == "dark" {
       background: #333 url("/assets/biscuit_login_background.jpg");
       background-size: cover;
       background-position: center;

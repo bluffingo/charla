@@ -57,7 +57,7 @@
         display: inline-block;
         font-size: 10px;
         color: rgba(255, 255, 255, 0.75);
-        @if $theme == "pink" or $theme == "default" {
+        @if $theme == "default" {
           color: rgba(0, 0, 0, 0.75);
         }
       }
@@ -162,9 +162,7 @@ td.h
   align-items: center;
   gap: 0.5em;
 
-  @if $theme == "pink" {
-    color: black;
-  } @else if $theme == "default" {
+  @if $theme == "default" {
     color: #666;
   } @else {
     color: white;
@@ -222,10 +220,7 @@ td.h
 
   width: 100%;
 
-  @if $theme == "pink" {
-    background: linear-gradient(to bottom, #ffc2c2, #ffa7a7);
-    border-bottom: 1px solid #dc9191;
-  } @else if $theme == "dark" {
+  @if $theme == "dark" {
     background: linear-gradient(to bottom, #191a23, #15151e);
     border-bottom: 1px solid darken($content-box-border-color, 5%);
   } @else {
@@ -272,10 +267,7 @@ td.h
   }
 
   height: 2em;
-  @if $theme == "pink" {
-    background: linear-gradient(to bottom, #FF9A9A, #ee8080);
-    border-bottom: 1px solid #e88e8e;
-  } @else if $theme == "dark" {
+  @if $theme == "dark" {
     background: linear-gradient(to bottom, #141421, #0c0c13);
     border-bottom: 1px solid #0b0b11;
   } @else {
