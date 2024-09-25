@@ -24,8 +24,17 @@
 
 {% block content %}
 	<div class="content-box">
-		<h1>{{ data.title }}</h1>
-		<p>By {{ user_link(data.author) }}, {{ data.published | relative_time }}</p>
+		<div class="profile-box">
+			<div class="profile-box-pfp small">
+				<img src="{{ profile_picture(data.author.info.username) }}" class="pfp" alt="{{ data.author.info.username }}">
+			</div>
+			<div class="profile-box-info">
+				<div class="profile-box-username">{{ data.title }}</div>
+				<div class="profile-box-details">By {{ user_link(data.author) }}, {{ data.published | relative_time }}</div>
+			</div>
+		</div>
+	</div>
+	<div class="content-box no-border-top">
 		{{ data.contents | markdown_user_journal }}
 	</div>
 	<div id="comments">

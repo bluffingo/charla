@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .profile-box {
   display: flex;
   align-items: center;
@@ -14,6 +16,12 @@
   .profile-box-pfp {
     width: $pfp-width-profiles;
     margin-right: 1rem;
+    &.small {
+      width: math.div($pfp-width-profiles, 1.5);
+      .pfp {
+        width: math.div($pfp-width-profiles, 1.5);
+      }
+    }
 
     .pfp {
       width: $pfp-width-profiles;

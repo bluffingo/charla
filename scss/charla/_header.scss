@@ -1,7 +1,7 @@
 .headers {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2000;
 }
 
 .header-main-links {
@@ -221,10 +221,10 @@ td.h
   width: 100%;
 
   @if $theme == "dark" {
-    background: linear-gradient(to bottom, #191a23, #15151e);
+    background: linear-gradient(to bottom, #2d2e33, #1e1f22);
     border-bottom: 1px solid darken($content-box-border-color, 5%);
   } @else {
-    background: linear-gradient(to bottom, #fdfdff, #fafcff);
+    background: linear-gradient(to bottom, #fdfdff, #f7f9fb);
     border-bottom: 1px solid darken($content-box-border-color, 5%);
   }
 

@@ -5,7 +5,7 @@ $threshold: 50%; // contrast threshold
 $primary: #2188dd; // primary color
 $secondary: #e7edf3; // secondary color (nearly white)
 @if $theme == "dark" {
-        $secondary: #353742; // secondary color (dark gray)
+        $secondary: #3a3b42; // secondary color (dark gray)
 }
 $green: #0cb60c;
 $red: #cd130e;
@@ -22,11 +22,11 @@ $form-border-color: #c7d2da;
 @if $theme == "dark" {
         $text-color: white;
         $link-color: #2d89e8;
-        $bg-color: #121418;
+        $bg-color: #141517;
 
-        $form-bg-color: #26272c;
+        $form-bg-color: #242427;
         $form-text-color: #ffffff;
-        $form-border-color: #434651;
+        $form-border-color: #3d4045;
 }
 
 $color-map: (
@@ -94,7 +94,7 @@ $button-padding-huge: 0.5em 0.8em;
 $content-box-background-color: #FFF;
 $content-box-border-color: darken($secondary, 2.5%);
 @if $theme == "dark" {
-        $content-box-background-color: #19191f;
+        $content-box-background-color: #1a1a1c;
         $content-box-border-color: lighten($secondary, 0.5%);
 }
 $content-box-padding: 1rem;

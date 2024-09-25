@@ -28,14 +28,11 @@
                 <span>{{ submission.description }}</span>
             {% endif %}
         </div>
-        <div class="content-rating">
-            {{ show_ratings(submission.interactions.ratings) }}
-        </div>
-        <div>
-            <a href="/edit?v={{ submission.id }}" class="button button-secondary">Edit</a>
-            <a href="/delete?v={{ submission.id }}"
-               onclick="return confirm('Are you sure?');"
-               class="button button-danger">Delete</a>
-        </div>
+    </div>
+    <div>
+        <a href="/edit?v={{ submission.id }}" class="button button-secondary">Edit</a>
+        <a href="/delete?v={{ submission.id }}"
+           onclick="return confirm('Are you sure?');"
+           class="button button-danger">Delete</a>
     </div>
 </div>

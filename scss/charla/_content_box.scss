@@ -114,9 +114,18 @@
         }
 
         .content-info {
+            flex-grow: 1;
+
             .content-title {
-                font-size: 1em;
-                font-weight: 550;
+                .content-title-link {
+                    flex-grow: 1;
+                    font-size: 1em;
+                    font-weight: 550;
+                }
+                .content-rating {
+                    min-width: 80px;
+                }
+                display: flex;
             }
 
             .content-description {

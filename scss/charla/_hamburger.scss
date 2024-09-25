@@ -2,7 +2,7 @@
   top: $header-height;
   left: 0;
   position: fixed;
-  z-index: 5;
+  z-index: 2000;
   width: 200px;
   padding: $content-box-padding 0;
   height: calc(100vh - $header-height);

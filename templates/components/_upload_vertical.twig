@@ -11,13 +11,16 @@
     </div>
     <div class="content-info">
         <div class="content-title">
-            <a href="/view/{{ submission.id }}">
+            <a href="/view/{{ submission.id }}" class="content-title-link">
                 {% if submission.title|trim is not empty %}
                     {{ submission.title }}
                 {% else %}
                     No title
                 {% endif %}
             </a>
+            <div class="content-rating">
+                {{ show_ratings(submission.interactions.ratings) }}
+            </div>
         </div>
         <div class="content-description">
             By {{ user_link(submission.author) }}
@@ -27,9 +30,6 @@
             {% if submission.description|trim is not empty %}
                 <span>{{ submission.description }}</span>
             {% endif %}
-        </div>
-        <div class="content-rating">
-            {{ show_ratings(submission.interactions.ratings) }}
         </div>
     </div>
 </div>
