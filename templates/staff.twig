@@ -20,11 +20,9 @@
             {% for user in staff %}
                 <div class="content-entry">
                     <div class="content-thumbnail">
-                        <a href="/view/{{ submission.id }}" class="content-image-link">
+                        <a href="/user/{{ user.info.username }}">
                             <img src="{{ profile_picture(user.info.username) }}"
-                                 alt="{{ submission.title }}"
-                                 title="{{ submission.title }} by {{ submission.author.info.username }}"
-                                 class="content-image pfp">
+                                 alt="{{ user.info.username }}" class="content-image pfp">
                         </a>
                     </div>
                     <div class="content-info">
