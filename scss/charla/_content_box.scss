@@ -127,6 +127,11 @@
             flex-grow: 1;
 
             .content-title {
+                font-size: 1em;
+                font-weight: 550;
+            }
+
+            .content-title-upload {
                 .content-title-link {
                     flex-grow: 1;
                     font-size: 1em;
@@ -134,6 +139,10 @@
                 }
                 .content-rating {
                     min-width: 80px;
+                }
+                .content-upload-edit-button {
+                    direction: rtl;
+                    min-width: 40px;
                 }
                 display: flex;
             }

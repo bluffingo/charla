@@ -24,6 +24,10 @@
       text-overflow: ellipsis;
     }
 
+    &.small {
+      font-size: 11px;
+    }
+
     &:hover {
       color: $text-color;
     }
@@ -34,9 +38,13 @@
   }
 }
 
-// TODO
 .menu-button {
-  &.button {
-    color: red;
+  .menu-caret-container {
+    display: inline;
   }
+}
+
+.menu-upload-edit {
+  direction: rtl;
+  width: 150px;
 }
