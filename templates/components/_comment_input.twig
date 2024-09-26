@@ -1,3 +1,4 @@
+{% if is_user_logged_in %}
 <div class="new-comment" id="comment_field">
     <textarea class="form-submit" id="comment_contents" name="comment" maxlength="1000"
               placeholder="{{ localize('write_comment') }}" rows="4"></textarea>
@@ -5,3 +6,8 @@
         {{ localize('post') }}
     </button>
 </div>
+{% else %}
+<div class="new-comment-logged-out">
+    Please login to comment.
+</div>
+{% endif %}

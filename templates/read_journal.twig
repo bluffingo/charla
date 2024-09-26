@@ -39,9 +39,7 @@
 	</div>
 	<div id="comments">
 		<div class="content-box no-border-top">
-			{% if is_user_logged_in %}
-				{{ include('/components/_comment_input.twig') }}
-			{% endif %}
+			{{ include('/components/_comment_input.twig') }}
 			<div id="new-comments-here"></div>
 			{% for comment in data.comments %}
 				{{ include('/components/_comment.twig') }}
