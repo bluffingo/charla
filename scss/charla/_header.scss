@@ -51,15 +51,13 @@
 
       .user-menu-pfp {
         width: $header-pfp-width;
+        height: $header-pfp-width;
       }
 
       .user-menu-caret-container {
         display: inline-block;
         font-size: 10px;
         color: rgba(255, 255, 255, 0.75);
-        @if $theme == "default" {
-          color: rgba(0, 0, 0, 0.75);
-        }
       }
     }
   }
@@ -111,15 +109,21 @@ form.header-search
 
   #header-search-input {
     border-radius: 16px;
-    transition: all .2s ease-in-out;
+    transition: all .1s ease-in-out;
     padding: 6px 40px 6px 10px;
     height: 32px;
 
-    border: 1px solid $form-border-color;
-    color: $form-text-color;
-    background: $form-bg-color;
+    border: 1px solid black;
+    color: #eee;
+    background: #575757;
+    box-shadow: 0 1px 0 #333;
 
     &:focus {
+      /*
+      background: #eee;
+      color: #222;
+       */
+      box-shadow: 0 1px 0 #000;
       border-color: var(--link-color);
     }
   }
@@ -162,11 +166,7 @@ td.h
   align-items: center;
   gap: 0.5em;
 
-  @if $theme == "default" {
-    color: #666;
-  } @else {
-    color: white;
-  }
+  color: white;
 
   opacity: 0.67;
   &:hover {
@@ -220,13 +220,8 @@ td.h
 
   width: 100%;
 
-  @if $theme == "dark" {
-    background: linear-gradient(to bottom, #2d2e33, #1e1f22);
-    border-bottom: 1px solid darken($content-box-border-color, 5%);
-  } @else {
-    background: linear-gradient(to bottom, #fdfdff, #f7f9fb);
-    border-bottom: 1px solid darken($content-box-border-color, 5%);
-  }
+  background: linear-gradient(to bottom, #2E2E2E, #151515);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
 
   height: $header-height;
   display: flex;
@@ -247,44 +242,6 @@ td.h
     &:hover {
       background: rgba(black, 0.1);
       text-decoration: none;
-    }
-  }
-}
-
-.subheader {
-  @include responsive('tiny') {
-    display: flex;
-  }
-  @include responsive('small') {
-    display: flex;
-  }
-  @include responsive('medium') {
-    display: none;
-  }
-
-  height: 2em;
-  @if $theme == "dark" {
-    background: linear-gradient(to bottom, #141421, #0c0c13);
-    border-bottom: 1px solid #0b0b11;
-  } @else {
-    background: linear-gradient(to bottom, #f8faff, #dde3e8);
-    border-bottom: 1px solid $content-box-border-color;
-  }
-
-  .subheader-container {
-    @include maxwidths();
-    display: flex;
-    align-items: center;
-    gap: 0.8em;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: auto;
-
-    .subheader-right-links
-    {
-      margin-left: auto;
-      display: flex;
-      gap: 0.8em;
     }
   }
 }

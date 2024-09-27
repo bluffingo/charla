@@ -1,5 +1,7 @@
 <div class="comment" id="comment-{{ comment.id }}">
-    <img src="{{ profile_picture(comment.author.info.username) }}" class="pfp" alt="{{ comment.author.info.username }}">
+    <div class="profile-picture">
+        <img src="{{ profile_picture(comment.author.info.username) }}" class="pfp" alt="{{ comment.author.info.username }}">
+    </div>
     <div class="comment-body">
         <div class="comment-author">
             {{ user_link(comment.author) }} • <small title="{{ comment.posted | date('F j, Y') }}">{{ comment.posted | relative_time }}</small>

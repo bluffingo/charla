@@ -43,7 +43,7 @@
     background-image: url( '/assets/icons/banner-danger.svg' );
   }
 
-  &.b-primary {
+  &.b-primary, &.b-dark {
     background-image: url( '/assets/icons/banner-primary.svg' );
   }
 
@@ -64,21 +64,11 @@
   }
 
   &.search {
-    // stupid fucking hack because i dont want to do the masks hack
-    @if $theme == "dark" {
-      background-image: url( '/assets/icons/search-dark.svg' );
-    } @else {
-      background-image: url( '/assets/icons/search-light.svg' );
-    }
+    background-image: url( '/assets/icons/search-dark.svg' );
   }
 
   &.hamburger {
-    // stupid fucking hack because i dont want to do the masks hack
-    @if $theme == "dark" {
-      background-image: url( '/assets/icons/hamburger-dark.svg' );
-    } @else {
-      background-image: url( '/assets/icons/hamburger-light.svg' );
-    }
+    background-image: url( '/assets/icons/hamburger-dark.svg' );
   }
 
   &.placeholder {

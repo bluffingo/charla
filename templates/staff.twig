@@ -21,8 +21,10 @@
                 <div class="content-entry">
                     <div class="content-thumbnail">
                         <a href="/user/{{ user.info.username }}">
-                            <img src="{{ profile_picture(user.info.username) }}"
-                                 alt="{{ user.info.username }}" class="content-image pfp">
+                            <div class="content-image profile-picture">
+                                <img src="{{ profile_picture(user.info.username) }}"
+                                     alt="{{ user.info.username }}" class="pfp">
+                            </div>
                         </a>
                     </div>
                     <div class="content-info">

@@ -26,7 +26,9 @@
 	<div class="content-box">
 		<div class="profile-box">
 			<div class="profile-box-pfp small">
-				<img src="{{ profile_picture(data.author.info.username) }}" class="pfp" alt="{{ data.author.info.username }}">
+				<div class="profile-picture">
+					<img src="{{ profile_picture(data.author.info.username) }}" class="pfp" alt="{{ data.author.info.username }}">
+				</div>
 			</div>
 			<div class="profile-box-info">
 				<div class="profile-box-username">{{ data.title }}</div>

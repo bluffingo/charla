@@ -13,12 +13,12 @@ table.c1 {
     background: $content-box-background-color;
 
     &.h {
-      @include gradient-y($start-color: lighten($content-box-border-color, 5%), $end-color: lighten($content-box-border-color, 2.5%));
-      background-color: $content-box-border-color;
+      @include gradient-y($start-color: lighten($content-box-border-color, 10%), $end-color: lighten($content-box-border-color, 2.5%));
+      background-color: lighten($content-box-border-color, 2.5%);
       th {
         padding: 1px 4px;
         text-align: left;
-        border: 1px solid darken($content-box-border-color, 10%);
+        border: 1px solid $content-box-border-color;
         font-weight: 500;
       }
     }

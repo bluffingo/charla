@@ -15,16 +15,20 @@
 
   .profile-box-pfp {
     width: $pfp-width-profiles;
+    height: $pfp-width-profiles;
     margin-right: 1rem;
     &.small {
       width: math.div($pfp-width-profiles, 1.5);
-      .pfp {
+      height: math.div($pfp-width-profiles, 1.5);
+      .profile-picture {
         width: math.div($pfp-width-profiles, 1.5);
+        height: math.div($pfp-width-profiles, 1.5);
       }
     }
 
-    .pfp {
+    .profile-picture {
       width: $pfp-width-profiles;
+      height: $pfp-width-profiles;
     }
   }
 

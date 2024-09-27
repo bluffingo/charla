@@ -1,33 +1,26 @@
-// colors
-
 $threshold: 50%; // contrast threshold
 
-$primary: #2188dd; // primary color
-$secondary: #e7edf3; // secondary color (nearly white)
-@if $theme == "dark" {
-        $secondary: #3a3b42; // secondary color (dark gray)
-}
-$green: #0cb60c;
-$red: #cd130e;
-$yellow: #ffb10a;
-
+// basic colors
 $text-color: #27272c;
-$link-color: #1e7fe7;
-$bg-color: #f6f8fa;
-
-$form-bg-color: #fff;
-$form-text-color: #111;
-$form-border-color: #c7d2da;
+$link-color: #0061C5;
+$bg-color: #F4F4F4;
 
 @if $theme == "dark" {
         $text-color: white;
         $link-color: #2d89e8;
-        $bg-color: #141517;
-
-        $form-bg-color: #242427;
-        $form-text-color: #ffffff;
-        $form-border-color: #3d4045;
+        $bg-color: #111;
 }
+
+// component colors
+$primary: #2195dd; // primary color
+$secondary: #eee; // secondary color (nearly white)
+$dark: #333; // dark gray
+@if $theme == "dark" {
+        $secondary: $dark; // secondary color (dark gray)
+}
+$green: #28c228;
+$red: #c01b0c;
+$yellow: #ffb10a;
 
 $color-map: (
         "primary": $primary,
@@ -35,7 +28,26 @@ $color-map: (
         "success": $green,
         "danger": $red,
         "warning": $yellow,
+        "dark": $dark,
 );
+
+// content boxes
+$content-box-background-color: #FFF;
+$content-box-border-color: #DBDBDB;
+@if $theme == "dark" {
+        $content-box-background-color: #1a1a1a;
+        $content-box-border-color: lighten($secondary, 0.5%);
+}
+$content-box-padding: 1rem;
+
+// content box grid entries
+$content-box-grid-entry-height: 190px;
+$content-box-grid-entry-width: 135px;
+
+// forms
+$form-bg-color: $content-box-background-color;
+$form-text-color: $text-color;
+$form-border-color: $content-box-border-color;
 
 // colors used for the users section in the admin panel, taken from the ones on bitview.
 $color-map-admin: (
@@ -61,7 +73,7 @@ $color-map-admin: (
 }
 
 // fonts
-$font: -apple-system, BlinkMacSystemFont, 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-serif: Georgia, "Times New Roman", serif;
 
 // https://medium.com/@jainbhavukspeaks/leveraging-scss-mixins-to-create-responsive-layouts-the-easy-way-5bbe4080cb15
@@ -86,22 +98,9 @@ $breakpoints: (
 
 // buttons
 $button-padding: 7px 11px;
-$button-padding-small: 5px 8px;
+$button-padding-small: 5px 10px;
 $button-padding-big: 7px 15px;
 $button-padding-huge: 0.5em 0.8em;
-
-// content boxes
-$content-box-background-color: #FFF;
-$content-box-border-color: darken($secondary, 2.5%);
-@if $theme == "dark" {
-        $content-box-background-color: #1a1a1c;
-        $content-box-border-color: lighten($secondary, 0.5%);
-}
-$content-box-padding: 1rem;
-
-// content box grid entries
-$content-box-grid-entry-height: 190px;
-$content-box-grid-entry-width: 135px;
 
 // header
 $header-height: 48px;

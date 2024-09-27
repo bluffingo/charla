@@ -71,8 +71,9 @@
                     <hr>
                     <div class="watch-box-row">
                         <div class="watch-box-left">
-                            <img class="watch-box-profile-picture pfp"
-                                 src="{{ profile_picture(submission.author.info.username) }}">
+                            <div class="watch-box-profile-picture profile-picture">
+                                <img class="pfp" src="{{ profile_picture(submission.author.info.username) }}">
+                            </div>
                             <div class="watch-box-author">
                                 <div class="watch-box-author-userlink">
                                     {{ user_link(submission.author) }}

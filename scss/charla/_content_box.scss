@@ -133,14 +133,12 @@
 
             .content-title {
                 font-size: 1em;
-                font-weight: 550;
             }
 
             .content-title-upload {
                 .content-title-link {
                     flex-grow: 1;
                     font-size: 1em;
-                    font-weight: 550;
                 }
                 .content-rating {
                     min-width: 80px;
@@ -179,8 +177,9 @@
                 width: 100px;
             }
 
-            &.pfp {
+            &.profile-picture {
                 width: 60px;
+                height: 60px;
             }
 
             &:hover {

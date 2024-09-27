@@ -11,7 +11,7 @@
     <div class="header">
         <div class="header-container">
             <div class="header-button">
-                <div class="button button-secondary button-hamburger button-transparent" id="button-hamburger">
+                <div class="button button-dark button-hamburger button-transparent" id="button-hamburger">
                     <i class="biscuit-icon hamburger size-32"></i>
                 </div>
             </div>
@@ -34,7 +34,9 @@
                     </a>
                     <div class="user-menu-container">
                         <div class="menu-button user-menu-button" data-menu-id="user-menu">
-                            <img src="{{ profile_picture(user_data.name) }}" class="user-menu-pfp pfp" alt="{{ user_data.name }}">
+                            <div class="profile-picture user-menu-pfp">
+                                <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
+                            </div>
                             <div class="menu-caret-container user-menu-caret-container">
                                 <i class="bi bi-caret-down-fill menu-caret"></i>
                             </div>
@@ -46,7 +48,9 @@
                             <hr>
                             {% for link in header_user_account_links() %}
                                 <a class="menu-item-button" href="/login/{{ link.username }}">
-                                    <img src="{{ profile_picture(link.username) }}" class="menu-item-profile-picture pfp" alt="{{ link.username }}">
+                                    <div class="menu-item-profile-picture profile-picture">
+                                        <img src="{{ profile_picture(link.username) }}" class="pfp" alt="{{ link.username }}">
+                                    </div>
                                     <span>{{ link.username }}</span>
                                 </a>
                             {% endfor %}

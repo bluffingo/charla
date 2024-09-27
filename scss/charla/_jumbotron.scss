@@ -4,43 +4,68 @@
       margin: 0;
     }
 
-    @if $theme == "dark" {
-      background: #333 url("/assets/biscuit_login_background.jpg");
-      background-size: cover;
-      background-position: center;
-    } @else {
-      background: #333 url("/assets/charla_banner_background.jpg");
-      background-size: cover;
-      background-position: center;
+    h1 {
+      @include responsive('tiny') {
+        font-size: 1rem;
+      }
+      @include responsive('small') {
+        font-size: 1.2rem;
+      }
+      @include responsive('medium') {
+        font-size: 1.35rem;
+      }
+      font-size: 1.35rem;
+      font-weight: bold;
     }
 
+    background: #333 url("/assets/charla_banner_background.jpg");
+    background-size: cover;
+    background-position: center;
+
     color: white;
-    text-shadow: 0 1px 0.25em #00000088;
+    text-shadow: 0 1px 0.4em rgba(black, 0.5);
     padding: 20px 0;
     &.homepage {
       padding: 0;
       .jumbotron-container {
-        height: 135px;
+        height: 92px;
+      }
+    }
+
+    .jumbotron-logged-out {
+      .button-get-started {
+        @include responsive('tiny') {
+          display: none;
+        }
+        @include responsive('small') {
+          display: none;
+        }
+        @include responsive('medium') {
+          display: inline-block;
+        }
       }
     }
 
     .jumbotron-welcome {
       flex-grow: 1;
-      line-height: 2.45em;
+      line-height: 2em;
 
       .jumbotron-logged-in {
         display: flex;
         align-items: center;
 
-        .pfp {
+        .profile-picture {
           @include responsive('tiny') {
-            height: 64px;
+            width: 48px;
+            height: 48px;
           }
           @include responsive('small') {
+            width: 64px;
             height: 64px;
           }
           @include responsive('medium') {
-            height: 100px;
+            width: 64px;
+            height: 64px;
           }
           margin-right: 1em;
         }
@@ -97,8 +122,7 @@
         display: inline;
       }
       margin-top: 0.75em;
-      font-weight: 425;
-      font-size: 1.15em;
+      font-weight: normal;
     }
   }
 }

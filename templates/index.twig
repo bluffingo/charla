@@ -45,7 +45,9 @@
                 <div class="jumbotron-welcome">
                     {% if is_user_logged_in %}
                         <div class="jumbotron-logged-in">
-                            <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
+                            <div class="profile-picture">
+                                <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
+                            </div>
                             <div class="jumbotron-logged-in-text">
                                 <h1>{{ localize('welcome_logged_in', user_data.title) }}</h1>
                                 <div>@{{ user_data.name }} • {{ followersText }} follower{{ pluralSubscribers }} • {{ viewsText }} view{{ pluralViews }}</div>
@@ -57,7 +59,7 @@
                             {% if is_chaziz_sb %}
                                 <p>Your content, your narration, your niche on the web.</p>
                             {% endif %}
-                            <a href="/register" class="button button-warning button-big">Get started ›</a>
+                            <a href="/register" class="button button-warning button-small button-get-started">Get started ›</a>
                         </div>
                     {% endif %}
                 </div>

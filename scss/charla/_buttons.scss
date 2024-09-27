@@ -7,9 +7,10 @@
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: normal;
   background-repeat: repeat-x;
   line-height: 1em;
+  box-shadow: inset 0 1px 0 rgba(white, 0.2), 0 1px 2px rgba(black, 0.1);
 
   &:hover {
     text-decoration: none;
@@ -39,7 +40,7 @@
 @each $color, $value in $color-map {
   .button-#{$color} {
     $border-color: adjust-hue(darken($value, 7.5%), 2);
-    @if $theme == "dark" {
+    @if $theme == "dark" or $color == "dark" {
       $border-color: adjust-hue(lighten($value, 10%), 4);
     }
 
@@ -52,10 +53,6 @@
 
     color: $text-color;
     text-shadow: 0 -1px 0 rgba($shadow-color, 0.4);
-
-    @if $color == "secondary" {
-      font-weight: normal;
-    }
 
     &.button-transparent {
       border-color: rgba($border-color, 66%);
