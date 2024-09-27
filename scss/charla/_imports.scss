@@ -156,12 +156,15 @@ blockquote {
     background-image: url('/assets/charla_pfp_gloss.svg');
     background-size: cover;
     position: absolute;
-    border-radius: inherit;
+    border-radius: 3px;
   }
   .pfp {
     width: auto;
     height: 100%;
-    border-radius: inherit;
+    border-radius: 3px;
+
+    // a fix for legacy poktube profile pictures that aren't 1:1
+    aspect-ratio: 1 / 1;
   }
 }
 

@@ -1,9 +1,5 @@
 {% if is_fulptube %}
-    {% if current_theme == "dark" %}
-        {% set logo = '/assets/sb_branding/fulp/logo-wordmark-dark.png' %}
-    {% else %}
-        {% set logo = '/assets/sb_branding/fulp/logo-wordmark.png' %}
-    {% endif %}
+    {% set logo = '/assets/sb_branding/fulp/logo-wordmark-dark.png' %}
 {% else %}
     {% set logo = website_branding.assets_location ~ '/logo.png' %}
 {% endif %}
@@ -38,7 +34,7 @@
                                 <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
                             </div>
                             <div class="menu-caret-container user-menu-caret-container">
-                                <i class="bi bi-caret-down-fill menu-caret"></i>
+                                <i class="biscuit-icon caret-closed-header menu-caret"></i>
                             </div>
                         </div>
                         <div class="menu" id="user-menu">

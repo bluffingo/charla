@@ -8,6 +8,7 @@
   min-width: 100px;
   z-index: 1999;
   width: 12rem;
+  box-shadow: 0 2px 5px rgba(darken($content-box-border-color, 33%), 0.2);
 
   .menu-item-button {
     direction: ltr;

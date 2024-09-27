@@ -36,7 +36,6 @@
       padding: 5px;
       direction: ltr;
       display: flex;
-      gap: 5px;
       align-items: center;
 
       &:hover, &.selected {
@@ -56,8 +55,9 @@
 
       .user-menu-caret-container {
         display: inline-block;
-        font-size: 10px;
-        color: rgba(255, 255, 255, 0.75);
+        opacity: 0.75;
+        width: 16px;
+        height: 16px;
       }
     }
   }
@@ -231,7 +231,6 @@ td.h
   border-top: none;
   top: $header-height;
   border-radius: 0 0 10px 10px;
-  box-shadow: 0 2px 5px rgba(darken($content-box-border-color, 33%), 0.2);
 
   hr {
     border-color: $content-box-border-color;
@@ -240,7 +239,7 @@ td.h
 
   .menu-item-button {
     &:hover {
-      background: rgba(black, 0.1);
+      background: rgba(black, 0.075);
       text-decoration: none;
     }
   }

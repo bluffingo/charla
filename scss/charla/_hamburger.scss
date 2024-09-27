@@ -8,6 +8,7 @@
   height: calc(100vh - $header-height);
   background: $content-box-background-color;
   border-right: 1px solid $content-box-border-color;
+  box-shadow: 2px 0px 6px rgba(darken($content-box-border-color, 33%), 0.2);
   display: none;
 
   .hamburger-list {

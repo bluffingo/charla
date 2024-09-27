@@ -1,5 +1,5 @@
 .button {
-  padding: $button-padding;
+  padding: 7px 11px;
   text-align: center;
   border-radius: 4px;
   color: white;
@@ -20,19 +20,23 @@
     padding: 0;
   }
 
+  &.button-caret {
+    padding: 3px 4px;
+  }
+
   &.button-small {
-    padding: $button-padding-small;
+    padding: 5px 10px;
   }
 
   &.button-big {
     font-size: 15px;
-    padding: $button-padding-big;
+    padding: 7px 15px;
     border-radius: 5px;
   }
 
   &.button-huge {
     font-size: 24px;
-    padding: $button-padding-huge;
+    padding: 0.5em 0.8em;
     border-radius: 7px;
   }
 }

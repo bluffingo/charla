@@ -71,6 +71,30 @@
     background-image: url( '/assets/icons/hamburger-dark.svg' );
   }
 
+  &.caret-closed {
+    @if $theme == "dark" {
+      background-image: url( '/assets/icons/caret-closed-dark.svg' );
+    } @else {
+      background-image: url( '/assets/icons/caret-closed-light.svg' );
+    }
+  }
+
+  &.caret-open {
+    @if $theme == "dark" {
+      background-image: url( '/assets/icons/caret-open-dark.svg' );
+    } @else {
+      background-image: url( '/assets/icons/caret-open-light.svg' );
+    }
+  }
+
+  &.caret-closed-header {
+    background-image: url( '/assets/icons/caret-closed-dark.svg' );
+  }
+
+  &.caret-open-header {
+    background-image: url( '/assets/icons/caret-open-dark.svg' );
+  }
+
   &.placeholder {
     background-image: url( '/assets/icons/placeholder.svg' );
   }
