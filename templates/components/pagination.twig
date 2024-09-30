@@ -10,11 +10,11 @@
                 <a href="{{ url | format(1) }}">1</a>
             </div>
             {% if start > 2 %}
-                <span class="pagination-ellipsis">...</span>
+                <div class="pagination-item">...</div>
             {% endif %}
         {% endif %}
         {% for page in start..end %}
-            <div class="pagination-item {% if page == current %}current{% endif %}">
+            <div class="pagination-item{% if page == current %} current{% endif %}">
                 {% if page != current %}
                     <a href="{{ url | format(page) }}">{{ page }}</a>
                 {% else %}
@@ -24,7 +24,7 @@
         {% endfor %}
         {% if end < pages %}
             {% if end < pages - 1 %}
-                <span class="pagination-ellipsis">...</span>
+                <div class="pagination-item">...</div>
             {% endif %}
             <div class="pagination-item">
                 <a href="{{ url | format(pages) }}">{{ pages }}</a>

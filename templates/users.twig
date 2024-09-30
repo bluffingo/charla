@@ -10,9 +10,9 @@
 			<div class="section-header">
 				<h1>Members (Page {{ current_page }} of {{ total_pages }})</h1>
 			</div>
-			<div class="content-box">
+			<div class="content-box content-grid content-grid-users">
 				{% for user in users.users %}
-					<div class="content-entry centered">
+					<div class="content-entry">
 						<div class="content-thumbnail">
 							<a href="/user/{{ user.info.username }}">
 								<div class="content-image profile-picture">
@@ -22,11 +22,11 @@
 							</a>
 						</div>
 						<div class="content-info">
-							<div class="content-title">
+							<div class="content-author">
 								{{ user_link(user) }}
 							</div>
 							<div class="content-description">
-								{{ user.submissions }} uploads · {{ user.journals }} journals
+								{{ user.submissions }} uploads<br>{{ user.journals }} journals
 							</div>
 						</div>
 					</div>

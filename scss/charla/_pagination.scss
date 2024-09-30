@@ -1,8 +1,9 @@
 // because pagination looks weird with normal buttons
 
 .pagination {
-  margin-top: 7px;
-  text-align: center;
+  margin: 1em auto auto;
+  display: flex;
+  justify-content: center;
 
   .pagination-ellipsis {
     color: #999;
@@ -11,19 +12,34 @@
 
   .pagination-item {
     display: inline-block;
-
-    padding: 4px 8px;
+    padding: 3px 10px;
     border: 1px solid $content-box-border-color;
+    border-right: none;
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+
+    &:last-child {
+      border-right: 1px solid $content-box-border-color;
+      border-radius: 0 5px 5px 0;
+    }
+
     background: $content-box-background-color;
 
     a {
-      color: #333;
+      color: $text-color;
     }
 
     &.current {
       background: $primary;
       border: 1px solid adjust-hue(darken($primary, 4%), 2);
+      border-right: none;
       color: white;
+
+      &:last-child {
+        border-right: 1px solid adjust-hue(darken($primary, 4%), 2);
+      }
     }
   }
 }
