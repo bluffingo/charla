@@ -87,6 +87,11 @@
         padding: 15px;
     }
 
+    &.related-uploads {
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+
     // used for staff notes. i think it just looks cool honestly
     &.content-note
     {

@@ -212,11 +212,42 @@
             </div>
         </div>
         <div class="col-4">
-            <div class="content-box">
-                {% for submission in submission.recommended %}
-                    {{ include('/components/_upload_vertical_small.twig') }}
-                {% endfor %}
-            </div>
+            {% if submission.other_by_author %}
+                <div class="section">
+                    <div class="section-header">
+                        <h2>More by {{ submission.author.info.displayname }}</h2>
+                    </div>
+                    <div class="content-box related-uploads">
+                        {% for submission in submission.other_by_author %}
+                            {{ include('/components/_upload_vertical_small.twig') }}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if submission.recommended %}
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Related uploads</h2>
+                    </div>
+                    <div class="content-box related-uploads">
+                        {% for submission in submission.recommended %}
+                            {{ include('/components/_upload_vertical_small.twig') }}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if submission.random %}
+                <div class="section">
+                    <div class="section-header">
+                        <h2>Random uploads</h2>
+                    </div>
+                    <div class="content-box related-uploads">
+                        {% for submission in submission.random %}
+                            {{ include('/components/_upload_vertical_small.twig') }}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
