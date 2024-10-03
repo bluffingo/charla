@@ -5,7 +5,7 @@
 {% endif %}
 <div class="headers">
     <div class="header">
-        <div class="header-container">
+        <div class="header-container {% if not is_user_logged_in %}logged-out{% endif %}">
             <div class="header-button">
                 <div class="button button-dark button-hamburger button-transparent" id="button-hamburger">
                     <i class="biscuit-icon hamburger size-32"></i>

@@ -4,11 +4,16 @@
   position: absolute;
   background-color: $content-box-background-color;
   border: 1px solid $content-box-border-color;
-  padding: 5px 0;
+  padding: 3px 0;
   min-width: 100px;
   z-index: 1999;
   width: 12rem;
   box-shadow: 0 2px 5px rgba(black, 0.2);
+
+  hr {
+    border-color: $content-box-border-color;
+    margin: 0;
+  }
 
   .menu-item-button {
     direction: ltr;
@@ -26,11 +31,18 @@
     }
 
     &.small {
-      font-size: 11px;
+      font-size: 12px;
     }
 
     &:hover {
+      @if $theme == "dark" {
+        background: rgba(white, 0.1);
+      } @else {
+        background: rgba(black, 0.1);
+      }
       color: $text-color;
+      text-decoration: none;
+      cursor: pointer;
     }
 
     .menu-item-profile-picture {
