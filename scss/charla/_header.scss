@@ -230,18 +230,6 @@ td.h
   border-top: none;
   top: $header-height;
   border-radius: 0 0 10px 10px;
-
-  hr {
-    border-color: $content-box-border-color;
-    margin: 4px 0;
-  }
-
-  .menu-item-button {
-    &:hover {
-      background: rgba(black, 0.075);
-      text-decoration: none;
-    }
-  }
 }
 
 .header-button {
