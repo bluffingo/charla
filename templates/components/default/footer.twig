@@ -1,16 +1,17 @@
 <footer class="footer">
     <div class="footer-container">
-        <div class="footer-content">
-            <div>Running <a href="/version">OpenSB {{ opensb_version }}</a></div>
-            <span><a href="/theme">Change theme</a></span>
-            <span><a href="/rules">Rules</a></span>
-            <span><a href="/tos">Terms of Service</a></span>
-            <span><a href="/privacy">Privacy policy</a></span>
-            <span><a href="/staff">Staff</a></span>
-            <span>© 2021-{{ 'now' | date('Y') }} OpenSB contributors.</span>
-            {% if is_debug %}
-                <p>{{ profiler_stats() }}</p>
-            {% endif %}
+        <div>
+            <span>© 2021-{{ 'now' | date('Y') }} <a href="/version">OpenSB contributors</a></span>
         </div>
+        <span><a href="/guidelines">Community Guidelines</a></span>
+        <span><a href="/tos">Terms of Service</a></span>
+        <span><a href="/privacy">Privacy policy</a></span>
+        <span><a href="/staff">Staff</a></span>
+        <div><a href="/theme" class="button button-secondary button-small">Customize theme</a></div>
+        {% if is_debug %}
+            <div>
+                <p>{{ profiler_stats() }}</p>
+            </div>
+        {% endif %}
     </div>
 </footer>

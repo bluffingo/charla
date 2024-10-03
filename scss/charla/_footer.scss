@@ -1,6 +1,8 @@
 .footer
 {
   margin-top: 1rem;
+  line-height: 1.5rem;
+
   .footer-container {
     border-top: 1px solid $content-box-border-color;
     @if $theme == "dark" {
@@ -13,21 +15,9 @@
 
     padding: 1.25em 0;
     margin: auto;
-
-    .footer-content {
-      text-align: center;
-      span {
-        margin: 0 0.25em;
-      }
-    }
-
-    .footer-logo-chaziz {
-      margin-top: 0.5em;
-      img {
-        height: 2em;
-      }
+    text-align: center;
+    span {
+      margin: 0 0.25em;
     }
   }
-
-  line-height: 1.5em;
 }
