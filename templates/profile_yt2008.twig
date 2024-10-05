@@ -1,5 +1,43 @@
-{% extends "_layout.twig" %}
+{% extends "_layout_profile_yt2008.twig" %}
 
 {% block content %}
-    <h1>Placeholder YT2008</h1>
+    <div class="grid">
+        <div class="col-4">
+            <div class="content-header highlight-box">
+                {{ data.displayname }}
+            </div>
+            <div class="content-box highlight-box">
+                User Highlight
+            </div>
+            <div class="content-header basic-box">
+                Connect with {{ data.displayname }}
+            </div>
+            <div class="content-box basic-box">
+                Connect
+            </div>
+            <div class="content-header basic-box">
+                Journals
+            </div>
+            <div class="content-box basic-box">
+                Journals
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="content-box basic-box">
+                Featured Upload
+            </div>
+            <div class="content-header basic-box">
+                Uploads
+            </div>
+            <div class="content-box basic-box">
+                Uploads
+            </div>
+            <div class="content-header basic-box">
+                Comments
+            </div>
+            <div class="content-box basic-box">
+                Comments
+            </div>
+        </div>
+    </div>
 {% endblock %}
