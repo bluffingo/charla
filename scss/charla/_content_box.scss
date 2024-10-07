@@ -70,14 +70,6 @@
     font-weight: bold;
 }
 
-// change content-box padding on profiles that use yt channel 1.0
-.profile-yt2008 {
-    .content-box {
-        padding: 0.5em;
-        margin-bottom: 0.8em;
-    }
-}
-
 .content-box
 {
     border: 1px solid $content-box-border-color;

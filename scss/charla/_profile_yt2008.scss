@@ -1,0 +1,50 @@
+// change content-box padding on profiles that use yt channel 1.0
+.profile-yt2008 {
+  .content-box {
+    padding: 0.5em;
+    margin-bottom: 0.8em;
+  }
+
+  .content-header {
+    &.highlight-box {
+      display: flex;
+      align-items: center;
+      .title {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  .highlight-box {
+    .highlight-intro {
+      .highlight-username {
+        font-weight: 800;
+      }
+
+      .highlight-stat {
+        font-size: 0.8em;
+      }
+
+      .profile-picture {
+        width: 88px;
+        height: 88px;
+      }
+
+      display: flex;
+      gap: 0.5em;
+    }
+  }
+
+  .highlight-description {
+    margin: 0.8em 0;
+    p {
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
