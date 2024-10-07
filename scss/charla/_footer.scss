@@ -1,9 +1,13 @@
 .footer
 {
   margin-top: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.35rem;
 
   .footer-container {
+    .footer-copyright {
+      font-size: 0.75rem;
+    }
+
     border-top: 1px solid $content-box-border-color;
     @if $theme == "dark" {
       color: white;
