@@ -1,3 +1,4 @@
+@use "sass:color";
 // because pagination looks weird with normal buttons
 
 .pagination {
@@ -33,12 +34,12 @@
 
     &.current {
       background: $primary;
-      border: 1px solid adjust-hue(darken($primary, 4%), 2);
+      border: 1px solid color.adjust(color.adjust($primary, $lightness: -4%), $hue: 2deg);
       border-right: none;
       color: white;
 
       &:last-child {
-        border-right: 1px solid adjust-hue(darken($primary, 4%), 2);
+        border-right: 1px solid color.adjust(color.adjust($primary, $lightness: -4%), $hue: 2deg);
       }
     }
   }

@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .under-construction {
   max-width: 300px;
   margin: auto;
@@ -30,8 +32,8 @@
       @each $color, $value in $color-map-admin {
         &.#{$color} {
           background: $value;
-          border: 1px solid adjust-hue(darken($value, 25%), -3);
-          @include gradient-y($start-color: $value, $end-color: adjust-hue(darken($value, 5%), -3));
+          border: 1px solid color.adjust(color.adjust($value, $lightness: -25%), $hue: -3deg);
+          background-image: linear-gradient($value, color.adjust(color.adjust($value, $lightness: -5%), $hue: -3deg));
         }
       }
     }

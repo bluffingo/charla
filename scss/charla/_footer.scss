@@ -2,26 +2,24 @@
 {
   margin-top: 1rem;
   line-height: 1.35rem;
-
   .footer-container {
     .footer-copyright {
       font-size: 0.75rem;
     }
 
-    border-top: 1px solid $content-box-border-color;
+    span {
+      margin: 0 0.25em;
+    }
+
     @if $theme == "dark" {
       color: white;
     } @else {
       color: #333;
     }
-
-    @include maxwidths();
-
     padding: 1.25em 0;
     margin: auto;
     text-align: center;
-    span {
-      margin: 0 0.25em;
-    }
+    border-top: 1px solid $content-box-border-color;
+    @include maxwidths();
   }
 }

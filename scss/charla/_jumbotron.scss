@@ -1,10 +1,20 @@
 .jumbotron {
   &.page-banner {
+    background: #333 url("/assets/charla_banner_background.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 0 1px 0.4em rgba(black, 0.5);
+    padding: 20px 0;
+
     h1, p {
       margin: 0;
     }
 
     h1 {
+      font-size: 1.35rem;
+      font-weight: bold;
+
       @include responsive('tiny') {
         font-size: 1rem;
       }
@@ -14,17 +24,8 @@
       @include responsive('medium') {
         font-size: 1.35rem;
       }
-      font-size: 1.35rem;
-      font-weight: bold;
     }
 
-    background: #333 url("/assets/charla_banner_background.jpg");
-    background-size: cover;
-    background-position: center;
-
-    color: white;
-    text-shadow: 0 1px 0.4em rgba(black, 0.5);
-    padding: 20px 0;
     &.homepage {
       padding: 0;
       .jumbotron-container {
@@ -55,6 +56,8 @@
         align-items: center;
 
         .profile-picture {
+          margin-right: 1em;
+
           @include responsive('tiny') {
             width: 48px;
             height: 48px;
@@ -67,7 +70,6 @@
             width: 64px;
             height: 64px;
           }
-          margin-right: 1em;
         }
       }
     }
@@ -84,16 +86,17 @@
 
   // duplicate of the page class
   .jumbotron-container {
-    @include maxwidths();
     display: flex;
     align-items: center;
     margin: auto;
+    @include maxwidths();
   }
 
   .jumbotron-right-container {
     text-align: right;
     height: inherit;
     display: flex;
+
     @include responsive('tiny') {
       flex-direction: column-reverse;
       justify-content: space-between;
@@ -112,6 +115,8 @@
     }
 
     .jumbotron-right-date {
+      margin-top: 0.75em;
+      font-weight: normal;
       @include responsive('tiny') {
         display: none;
       }
@@ -121,8 +126,6 @@
       @include responsive('medium') {
         display: inline;
       }
-      margin-top: 0.75em;
-      font-weight: normal;
     }
   }
 }

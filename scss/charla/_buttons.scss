@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .button {
   padding: 7px 11px;
   text-align: center;
@@ -43,14 +45,15 @@
 
 @each $color, $value in $color-map {
   .button-#{$color} {
-    $border-color: adjust-hue(darken($value, 7.5%), 2);
+    $border-color: color.adjust(color.adjust($value, $lightness: -7.5%), $hue: 2deg);
     @if $theme == "dark" or $color == "dark" {
-      $border-color: adjust-hue(lighten($value, 10%), 4);
+      $border-color: color.adjust(color.adjust($value, $lightness: 10%), $hue: 4deg);
     }
 
     border: 1px solid $border-color;
     background-color: $value;
-    @include gradient-y($start-color: lighten($value, 5%), $end-color: adjust-hue(darken($value, 2%), 1));
+    background-image: linear-gradient(color.adjust($value, $lightness: 5%),
+            color.adjust(color.adjust($value, $lightness: -2%), $hue: 1deg));
 
     $text-color: contrast-color($value, black, white);
     $shadow-color: contrast-color($value, white, black);
@@ -64,15 +67,16 @@
     }
 
     &:hover {
-      background-color: lighten($value, 10%);
-      @include gradient-y($start-color: adjust-hue(lighten($value, 10%), 1), $end-color: lighten($value, 2%));
-      border-color: lighten($border-color, 1.5%);
+      background-color: color.adjust($value, $lightness: 10%);
+      background-image: linear-gradient(color.adjust(color.adjust($value, $lightness: 10%), $hue: 1deg),
+              color.adjust($value, $lightness: 2%));
+      border-color: color.adjust($value, $lightness: 1.5%);
     }
 
     &:active {
-      background-color: darken($value, 5%);
-      @include gradient-y($start-color: $value, $end-color: adjust-hue(darken($value, 7%), -1.5));
-      border-color: darken($border-color, 2.5%);
+      background-color: color.adjust($value, $lightness: -5%);
+      background-image: linear-gradient($value, color.adjust(color.adjust($value, $lightness: -7%), $hue: 1.5deg));
+      border-color: color.adjust($value, $lightness: -2.5%);
     }
   }
 }

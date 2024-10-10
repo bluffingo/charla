@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .banner {
   padding: 0.6rem 0.75rem;
   display: flex;
@@ -24,13 +26,13 @@
 
 @each $color, $value in $color-map {
   .banner-#{$color} {
-    $border-color: adjust-hue(darken($value, 7.5%), 2);
+    $border-color: color.adjust($value, $lightness: -7.5%);
     @if $theme == "dark" {
-      $border-color: adjust-hue(lighten($value, 10%), 4);
+      $border-color: color.adjust($value, $lightness: 10%);
     }
 
-    background-color: lighten($value, 10%);
-    @include gradient-y($start-color: adjust-hue(lighten($value, 6%), 1), $end-color: $value);
+    background-color: color.adjust($value, $lightness: 10%);
+    background-image: linear-gradient(to bottom, color.adjust(color.adjust($value, $lightness: 6%), $hue: 1deg), $value);
     border: 1px solid $border-color;
     color: contrast-color($value, #000, #fff);
 

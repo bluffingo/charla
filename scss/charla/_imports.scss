@@ -1,11 +1,12 @@
+@use "sass:color";
+
 @import 'normalize';
 @import 'variables';
 
 @import 'mixins/responsiveness';
-@import 'mixins/gradients';
 
 @function contrast-color($color, $dark, $light) {
-  @return if(lightness($color) < $threshold, $light, $dark)
+  @return if(color.channel($color, "lightness", $space: hsl) < $threshold, $light, $dark)
 }
 
 @import 'icons';
@@ -104,8 +105,8 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"] {
-  border: 1px solid darken($content-box-border-color, 1%);
-  background-color: lighten($content-box-background-color, 3.5%);
+  border: 1px solid color.adjust($content-box-border-color, $lightness: -1%);
+  background-color: 1px solid color.adjust($content-box-background-color, $lightness: -1%);
   color: #000;
   transition: border linear 0.3s;
   border-radius: 3px;

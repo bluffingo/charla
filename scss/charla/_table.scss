@@ -1,3 +1,5 @@
+@use "sass:color";
+
 table.c1 {
   width: 100%;
   border: 1px solid $content-box-border-color;
@@ -13,8 +15,10 @@ table.c1 {
     background: $content-box-background-color;
 
     &.h {
-      @include gradient-y($start-color: lighten($content-box-border-color, 10%), $end-color: lighten($content-box-border-color, 2.5%));
-      background-color: lighten($content-box-border-color, 2.5%);
+      background-color: color.adjust($content-box-border-color, $lightness: 2.5%);
+      background-image: linear-gradient(color.adjust($content-box-border-color, $lightness: 10%),
+              color.adjust($content-box-border-color, $lightness: 2.5%));
+
       th {
         padding: 1px 4px;
         text-align: left;
@@ -25,10 +29,12 @@ table.c1 {
 
     @each $color, $value in $color-map-admin {
       &.#{$color} {
-        background: $value;
-        @include gradient-y($start-color: $value, $end-color: adjust-hue(darken($value, 2%), -1));
+        background-color: $value;
+        background-image: linear-gradient($value,
+                color.adjust(color.adjust($value, $lightness: -2%), $hue: -1deg));
+
         td {
-          border-color: adjust-hue(darken($value, 5.5%), -3);
+          border-color: color.adjust(color.adjust($value, $lightness: -5.5%), $hue: -3deg);
         }
       }
     }

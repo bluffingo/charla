@@ -17,13 +17,13 @@
 }
 
 @mixin content-box-small-info {
-    @include content-box-small-max-widths;
     margin: auto;
     font-weight: normal;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
     white-space: nowrap;
+    @include content-box-small-max-widths;
 }
 
 .thumbnail
@@ -171,6 +171,11 @@
 
         .content-image
         {
+            margin-right: 8px;
+            min-width: 50px;
+            min-height: 50px;
+            display: block;
+
             @include responsive('tiny') {
                 width: 140px;
             }
@@ -199,11 +204,6 @@
             &:hover {
                 border-color: var(--link-color);
             }
-
-            margin-right: 8px;
-            min-width: 50px;
-            min-height: 50px;
-            display: block;
         }
     }
 
@@ -213,13 +213,13 @@
         text-align: center;
 
         .content-title {
-            @include content-box-small-info;
             font-size: 12px;
+            @include content-box-small-info;
         }
 
         .content-author {
-            @include content-box-small-info;
             font-size: 10px;
+            @include content-box-small-info;
         }
 
         .content-rating {
@@ -236,16 +236,16 @@
             text-align: center;
             margin: auto;
             height: $content-box-grid-entry-width;
-            a.content-image-link {
+            .content-image-link {
                 display: table-cell;
                 vertical-align: middle;
                 .content-image {
+                    max-height: $content-box-grid-entry-width;
+                    margin: 2px auto;
+                    @include content-box-small-max-widths;
                     &:hover {
                         border-color: var(--link-color);
                     }
-                    max-height: $content-box-grid-entry-width;
-                    @include content-box-small-max-widths;
-                    margin: 2px auto;
                 }
             }
         }
