@@ -1,7 +1,7 @@
 .footer
 {
   margin-top: 1rem;
-  line-height: 1.35rem;
+  line-height: 1.5rem;
   .footer-container {
     .footer-copyright {
       font-size: 0.75rem;
@@ -19,7 +19,6 @@
     padding: 1.25em 0;
     margin: auto;
     text-align: center;
-    border-top: 1px solid $content-box-border-color;
     @include maxwidths();
   }
 }

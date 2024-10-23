@@ -4,7 +4,7 @@
     background-size: cover;
     background-position: center;
     color: white;
-    text-shadow: 0 1px 0.4em rgba(black, 0.5);
+    text-shadow: 0 0.1em 0.2em rgba(black, 0.5);
     padding: 20px 0;
 
     h1, p {
@@ -12,7 +12,7 @@
     }
 
     h1 {
-      font-size: 1.35rem;
+      font-size: 1.33rem;
       font-weight: bold;
 
       @include responsive('tiny') {
@@ -22,7 +22,7 @@
         font-size: 1.2rem;
       }
       @include responsive('medium') {
-        font-size: 1.35rem;
+        font-size: 1.33rem;
       }
     }
 
@@ -34,6 +34,12 @@
     }
 
     .jumbotron-logged-out {
+      line-height: 1.75em;
+
+      h1 {
+        font-size: 1.075rem;
+      }
+
       .button-get-started {
         @include responsive('tiny') {
           display: none;
