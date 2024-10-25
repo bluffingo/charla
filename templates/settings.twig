@@ -2,6 +2,14 @@
 
 {% set title = "Account settings" %}
 
+{% block style %}
+    <style>
+        #settings-banner-preview {
+            background-image: url('{{ profile_banner(user_data.name) }}');
+        }
+    </style>
+{% endblock %}
+
 	{% block content %}
         {% if error %}
             <div class="banner banner-danger">{{ error }}</div>

@@ -21,6 +21,10 @@
   &.button-hamburger {
     padding: 0;
     display: flex;
+    &:not(:hover):not(:active) {
+      box-shadow: none;
+      border-color: #0000;
+    }
   }
 
   &.button-caret {
@@ -54,7 +58,7 @@
     border: 1px solid $border-color;
     background-color: $value;
     background-image: linear-gradient(color.adjust($value, $lightness: 5%),
-            color.adjust(color.adjust($value, $lightness: -2%), $hue: 1deg));
+            color.adjust(color.adjust($value, $lightness: -4%), $hue: 1deg));
 
     $text-color: contrast-color($value, black, white);
     $shadow-color: contrast-color($value, white, black);

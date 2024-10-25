@@ -1,14 +1,14 @@
 {
   "metadata": {
     "id": "charla",
-    "name": "Finalium 3/Charla (Preview)",
+    "name": "Finalium 3/Charla (WIP)",
     "author": "Chaziz",
     "description": "Work-in-progress!",
     "site": "squarebracket",
     "themes": [
       {
         "id": "default",
-        "name": "Default",
+        "name": "Light",
         "description": "The new SquareBracket user experience.",
         "author": "OpenSB developers"
       },
