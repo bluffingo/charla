@@ -24,8 +24,10 @@
                     </div>
                     <div class="content-info">
                         {{ notice.intro }} {{ user_link(notice.sender) }}
+                        {% if notice.detail.info %}
                         <br>
                         {{ notice.detail.info }}
+                        {% endif %}
                         <br>
                         <small>
                             {{ notice.time | relative_time }}
