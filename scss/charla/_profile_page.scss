@@ -1,5 +1,11 @@
 @use 'sass:math';
 
+.container {
+  &.user, &.read {
+    margin-top: -65px;
+  }
+}
+
 .profile-box {
   display: flex;
   align-items: center;
@@ -16,7 +22,7 @@
   .profile-box-pfp {
     width: $pfp-width-profiles;
     height: $pfp-width-profiles;
-    margin-right: 1rem;
+    margin-right: 0.75em;
     &.small {
       width: math.div($pfp-width-profiles, 1.5);
       height: math.div($pfp-width-profiles, 1.5);
@@ -34,21 +40,14 @@
 
   .profile-box-info {
     width: 100%;
-    line-height: 2em;
+    line-height: 2.25em;
 
     .profile-box-username {
       display: flex;
-      gap: 5px;
+      gap: 0.25em;
       align-items: center;
       font-size: 24px;
       font-weight: 500;
-
-      .profile-box-icon {
-        width: 20px;
-        height: 20px;
-        background-size: 20px;
-        display: inline;
-      }
     }
 
     .profile-box-handle {
@@ -61,12 +60,5 @@
     width: 120px;
     text-align: right;
     align-self: start;
-  }
-}
-
-.profile-intro {
-  margin-top: -75px;
-  .page-contents {
-    margin: auto;
   }
 }

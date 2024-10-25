@@ -203,7 +203,6 @@
                 <div id="comments">
                     <div class="content-box">
                         {{ include('/components/_comment_input.twig') }}
-                        <div id="new-comments-here"></div>
                         {% for comment in submission.comments %}
                             {{ include('/components/_comment.twig') }}
                         {% endfor %}

@@ -130,7 +130,6 @@
             <div class="section">
                 <div class="content-box no-border-top">
                     {{ include('/components/_comment_input.twig') }}
-                    <div id="new-comments-here"></div>
                     {% for comment in data.comments %}
                         {{ include('/components/_comment.twig') }}
                     {% endfor %}

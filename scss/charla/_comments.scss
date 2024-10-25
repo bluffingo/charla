@@ -1,6 +1,6 @@
 .comment {
   margin: 0.33em 0;
-  padding: 0.33em 0;
+  padding: 0.5em 0;
   display: flex;
   border-bottom: 1px solid $content-box-border-color;
 
@@ -53,7 +53,23 @@
 }
 
 .new-comment, .reply-form {
-  margin-bottom: 5px;
+  display: flex;
+
+  &:not(:only-child) {
+    margin-bottom: 0.33em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid $content-box-border-color;
+  }
+
+  .profile-picture {
+    width: 50px;
+    height: 50px;
+    margin-right: 0.75em;
+  }
+
+  .new-comment-form {
+    width: 100%;
+  }
 
   #comment_button, .submit-reply-button {
     margin-left: auto;
