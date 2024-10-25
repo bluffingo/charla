@@ -1,3 +1,13 @@
+@mixin header-link-hover {
+  background: rgba(white, 0.075);
+  box-shadow: 0 6px 10px rgba(#222, 0.6) inset;
+}
+
+@mixin header-link-active {
+  background: rgba(white, 0.025);
+  box-shadow: 0 6px 10px rgba(black, 0.6) inset;
+}
+
 .headers {
   position: sticky;
   top: 0;
@@ -41,8 +51,12 @@
         cursor: pointer;
       }
 
-      &:hover, &.selected {
-        background: rgba(white, 0.1);
+      &:hover {
+        @include header-link-hover;
+      }
+
+      &:active, &.selected {
+        @include header-link-active;
       }
 
       .user-menu-pfp {
@@ -166,11 +180,18 @@ td.h
   opacity: 0.75;
   height: $header-height;
   padding: 0 0.5em;
+  text-shadow: 0 1px 0 rgba(black, 0.25);
 
   &:hover {
     opacity: 1;
     text-decoration: none;
-    background: rgba(white, 0.1);
+    @include header-link-hover;
+  }
+
+  &:active {
+    opacity: 1;
+    text-decoration: none;
+    @include header-link-active;
   }
 
   .biscuit-icon {
@@ -219,8 +240,8 @@ td.h
 
   width: 100%;
 
-  background: linear-gradient(to bottom, #2E2E2E, #151515);
-  box-shadow: 0 1px 2px rgba(black, 0.5);
+  background: linear-gradient(to bottom, #333333, #151515);
+  box-shadow: 0 1px 6px rgba(black, 0.1);
 
   height: $header-height;
   display: flex;

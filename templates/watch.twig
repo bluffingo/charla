@@ -116,7 +116,7 @@
                                         <h2>Tags</h2>
                                     </div>
                                     {% for tag in submission.tags %}
-                                        <a href="/search.php?query={{ tag.name }}">{{ tag.name }}</a>{{ not loop.last ? ',' }}
+                                        <a href="/search?query={{ tag.name }}">{{ tag.name }}</a>{{ not loop.last ? ',' }}
                                     {% else %}
                                         No tags.
                                     {% endfor %}
@@ -177,13 +177,13 @@
                                         <h2>Stats</h2>
                                     </div>
                                     <div class="watch-box-info-stat">
-                                        {% if submission.interactions.comments != 1 %}
+                                        {% if submission.interactions.views != 1 %}
                                             {% set pluralViews = "s" %}
                                         {% endif %}
                                         <span class="watch-box-info-stat-number">{{ submission.interactions.views }}</span> view{{ pluralViews }}
                                     </div>
                                     <div class="watch-box-info-stat">
-                                        {% if submission.interactions.views != 1 %}
+                                        {% if submission.interactions.comments != 1 %}
                                             {% set pluralComments = "s" %}
                                         {% endif %}
                                         <span class="watch-box-info-stat-number">{{ submission.interactions.comments }}</span> comment{{ pluralComments }}

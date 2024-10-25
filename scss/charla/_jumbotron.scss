@@ -29,26 +29,47 @@
     &.homepage {
       padding: 0;
       .jumbotron-container {
-        height: 92px;
-      }
-    }
+        &.homepage-logged-in {
+          height: 92px;
 
-    .jumbotron-logged-out {
-      line-height: 1.75em;
+          .jumbotron-welcome {
+            display: flex;
+            align-items: center;
 
-      h1 {
-        font-size: 1.075rem;
-      }
+            .profile-picture {
+              margin-right: 1em;
 
-      .button-get-started {
-        @include responsive('tiny') {
-          display: none;
+              @include responsive('tiny') {
+                width: 48px;
+                height: 48px;
+              }
+              @include responsive('small') {
+                width: 64px;
+                height: 64px;
+              }
+              @include responsive('medium') {
+                width: 64px;
+                height: 64px;
+              }
+            }
+          }
         }
-        @include responsive('small') {
-          display: none;
-        }
-        @include responsive('medium') {
-          display: inline-block;
+        &.homepage-logged-out {
+          height: 120px;
+
+          .jumbotron-welcome {
+            .button-get-started {
+              @include responsive('tiny') {
+                display: none;
+              }
+              @include responsive('small') {
+                display: none;
+              }
+              @include responsive('medium') {
+                display: inline-block;
+              }
+            }
+          }
         }
       }
     }
@@ -56,28 +77,6 @@
     .jumbotron-welcome {
       flex-grow: 1;
       line-height: 2em;
-
-      .jumbotron-logged-in {
-        display: flex;
-        align-items: center;
-
-        .profile-picture {
-          margin-right: 1em;
-
-          @include responsive('tiny') {
-            width: 48px;
-            height: 48px;
-          }
-          @include responsive('small') {
-            width: 64px;
-            height: 64px;
-          }
-          @include responsive('medium') {
-            width: 64px;
-            height: 64px;
-          }
-        }
-      }
     }
   }
 

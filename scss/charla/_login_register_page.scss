@@ -19,11 +19,15 @@ body.login {
   }
 
   .section-header {
-    text-shadow: #000 0 1px 2px;
+    text-shadow: 0 0.1em 0.2em rgba(black, 0.5);
     color: white;
+    h1 {
+      font-weight: 600;
+    }
   }
 
   .login-text {
     margin: 1em 0;
+    font-size: 0.8em;
   }
 }
