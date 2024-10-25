@@ -1,6 +1,6 @@
 .footer
 {
-  margin-top: 1rem;
+  margin: 1rem 0;
   line-height: 1.5rem;
   .footer-container {
     .footer-copyright {
@@ -16,7 +16,6 @@
     } @else {
       color: #333;
     }
-    padding: 1.25em 0;
     margin: auto;
     text-align: center;
     @include maxwidths();

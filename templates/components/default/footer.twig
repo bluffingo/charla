@@ -13,13 +13,13 @@
         {% if is_opensb_v2 %}
         <div><a href="/theme" class="button button-secondary button-small">Customize</a></div>
         {% endif %}
+        {% if is_debug %}
+            <div>
+                {{ profiler_stats() }}
+            </div>
+        {% endif %}
         <div class="footer-copyright">
             <span>© 2021-{{ 'now' | date('Y') }} OpenSB contributors</span>
         </div>
-        {% if is_debug %}
-            <div>
-                <pre>{{ profiler_stats() }}</pre>
-            </div>
-        {% endif %}
     </div>
 </footer>
