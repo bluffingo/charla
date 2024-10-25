@@ -3,62 +3,60 @@
 {% else %}
     {% set logo = website_branding.assets_location ~ '/logo.png' %}
 {% endif %}
-<div class="headers">
-    <div class="header">
-        <div class="header-container {% if not is_user_logged_in %}logged-out{% endif %}">
-            <div class="header-button">
-                <div class="button button-dark button-hamburger button-transparent" id="button-hamburger">
-                    <i class="biscuit-icon hamburger size-32"></i>
-                </div>
+<div class="header">
+    <div class="header-container {% if not is_user_logged_in %}logged-out{% endif %}">
+        <div class="header-button">
+            <div class="button button-dark button-hamburger button-transparent" id="button-hamburger">
+                <i class="biscuit-icon hamburger size-32"></i>
             </div>
-            <div class="header-logo">
-                <a href="/">
-                    <img alt="{{ website_branding.name }}" class="logo" src="{{ logo }}">
+        </div>
+        <div class="header-logo">
+            <a href="/">
+                <img alt="{{ website_branding.name }}" class="logo" src="{{ logo }}">
+            </a>
+        </div>
+        <form class="header-search" action="/search">
+            <input id="header-search-input" type="text" name="query" placeholder="{{ localize('search') }}...">
+            <button id="header-search-button">
+                <i class="biscuit-icon search"></i>
+            </button>
+        </form>
+        <div class="header-links">
+            {% if is_user_logged_in %}
+                <a class="menulink" href="/notices">
+                    <i class="biscuit-icon mail"></i>
+                    {{ user_notice_data }}
                 </a>
-            </div>
-            <form class="header-search" action="/search">
-                <input id="header-search-input" type="text" name="query" placeholder="{{ localize('search') }}...">
-                <button id="header-search-button">
-                    <i class="biscuit-icon search"></i>
-                </button>
-            </form>
-            <div class="header-links">
-                {% if is_user_logged_in %}
-                    <a class="menulink" href="/notices">
-                        <i class="biscuit-icon mail"></i>
-                        {{ user_notice_data }}
-                    </a>
-                    <div class="user-menu-container">
-                        <div class="menu-button user-menu-button" data-menu-id="user-menu">
-                            <div class="profile-picture user-menu-pfp">
-                                <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
-                            </div>
-                            <div class="menu-caret-container user-menu-caret-container">
-                                <i class="biscuit-icon caret-closed-header menu-caret"></i>
-                            </div>
+                <div class="user-menu-container">
+                    <div class="menu-button user-menu-button" data-menu-id="user-menu">
+                        <div class="profile-picture user-menu-pfp">
+                            <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
                         </div>
-                        <div class="menu" id="user-menu">
-                            {% for link in header_user_links() %}
-                                <a class="menu-item-button" href="{{ link.url }}">{{ link.name }}</a>
-                            {% endfor %}
-                            <hr>
-                            {% for link in header_user_account_links() %}
-                                <a class="menu-item-button" href="/login/{{ link.username }}">
-                                    <div class="menu-item-profile-picture profile-picture">
-                                        <img src="{{ profile_picture(link.username) }}" class="pfp" alt="{{ link.username }}">
-                                    </div>
-                                    <span>{{ link.username }}</span>
-                                </a>
-                            {% endfor %}
-                            <a class="menu-item-button small" href="/login"><span>Add another account</span></a>
+                        <div class="menu-caret-container user-menu-caret-container">
+                            <i class="biscuit-icon caret-closed-header menu-caret"></i>
                         </div>
                     </div>
-                {% else %}
-                    {% for link in header_user_links() %}
-                        <a class="menulink" href="{{ link.url }}">{{ link.name }}</a>
-                    {% endfor %}
-                {% endif %}
-            </div>
+                    <div class="menu" id="user-menu">
+                        {% for link in header_user_links() %}
+                            <a class="menu-item-button" href="{{ link.url }}">{{ link.name }}</a>
+                        {% endfor %}
+                        <hr>
+                        {% for link in header_user_account_links() %}
+                            <a class="menu-item-button" href="/login/{{ link.username }}">
+                                <div class="menu-item-profile-picture profile-picture">
+                                    <img src="{{ profile_picture(link.username) }}" class="pfp" alt="{{ link.username }}">
+                                </div>
+                                <span>{{ link.username }}</span>
+                            </a>
+                        {% endfor %}
+                        <a class="menu-item-button small" href="/login"><span>Add another account</span></a>
+                    </div>
+                </div>
+            {% else %}
+                {% for link in header_user_links() %}
+                    <a class="menulink" href="{{ link.url }}">{{ link.name }}</a>
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 </div>

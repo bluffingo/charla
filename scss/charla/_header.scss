@@ -8,10 +8,34 @@
   box-shadow: 0 6px 10px rgba(black, 0.6) inset;
 }
 
-.headers {
+.header
+{
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 1em;
+    width: 100%;
+    gap: 0.5em;
+
+    &.logged-out {
+      // blame the hamburger button for this.
+      margin: 0 1.5em 0 1em;
+    }
+  }
+
   position: sticky;
   top: 0;
   z-index: 2000;
+
+  width: 100%;
+
+  background: linear-gradient(to bottom, #333333, #151515);
+  box-shadow: 0 1px 6px rgba(black, 0.1);
+
+  height: $header-height;
+  display: flex;
 }
 
 .header-main-links {
@@ -219,32 +243,6 @@ td.h
       display: inline;
     }
   }
-}
-
-.header
-{
-  .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 0 1em;
-    width: 100%;
-    gap: 0.5em;
-
-    &.logged-out {
-      // blame the hamburger button for this.
-      margin: 0 1.5em 0 1em;
-    }
-  }
-
-  width: 100%;
-
-  background: linear-gradient(to bottom, #333333, #151515);
-  box-shadow: 0 1px 6px rgba(black, 0.1);
-
-  height: $header-height;
-  display: flex;
 }
 
 .menu#user-menu {

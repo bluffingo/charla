@@ -1,15 +1,24 @@
 #hamburger {
   top: $header-height;
-  left: 0;
+  left: -215px;
   position: fixed;
   z-index: 2000;
   width: 200px;
   padding: $content-box-padding 0;
   height: calc(100vh - $header-height);
-  background: #222;
-  box-shadow: 2px 0px 6px rgba(black, 0.2);
-  display: none;
+  background: #191919;
+  box-shadow: 1px 0 6px rgba(black, 0.15);
+  display: block;
   overflow-y: scroll;
+
+  transition: left 0.25s cubic-bezier(0.33, 1, 0.68, 1);
+  @media (prefers-reduced-motion) {
+    transition: none;
+  }
+
+  &.active {
+    left: 0;
+  }
 
   .hamburger-list {
     margin: 0;
