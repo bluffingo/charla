@@ -70,6 +70,24 @@
                             <input type="file" name="profileBanner" id="settings-banner">
                         </div>
 
+                        {% if 'is_opensb_v1.3' %}
+                            <div class="form-input">
+                                <div class="form-input">
+                                    <label for="profile-layout">Profile layout:</label>
+                                    <select id="profile-layout" name="profile-layout" class="form-submit">
+                                        <option value="default">
+                                            Default
+                                        </option>
+                                        <option value="ytchannel1">
+                                            YT Channel 1.0
+                                        </option>
+                                        <option value="ytchannel2">
+                                            YT Channel 2.0
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        {% endif %}
 
                         <div class="form-input">
                             <label for="customcolor">Username/link color:</label>
