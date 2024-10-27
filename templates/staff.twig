@@ -16,6 +16,97 @@
 {% endblock %}
 
 	{% block content %}
+        {% if 'is_opensb_v1.3' %}
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-left">
+                        <h2 class="section-title">Owners</h2>
+                    </div>
+                </div>
+                <div class="content-box content-grid content-grid-users">
+                    {% for user in staff|filter(user => user.level == '4') %}
+                        <div class="content-entry">
+                            <div class="content-thumbnail">
+                                <a href="/user/{{ user.info.username }}">
+                                    <div class="content-image profile-picture">
+                                        <img src="{{ profile_picture(user.info.username) }}"
+                                             alt="{{ user.info.username }}" class="pfp">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="content-info">
+                                <div class="content-author">
+                                    {{ user_link(user) }}
+                                </div>
+                                <div class="content-description">
+                                    Owner
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-left">
+                        <h2 class="section-title">Administrators</h2>
+                    </div>
+                </div>
+                <div class="content-box content-grid content-grid-users">
+                    {% for user in staff|filter(user => user.level == '3') %}
+                        <div class="content-entry">
+                            <div class="content-thumbnail">
+                                <a href="/user/{{ user.info.username }}">
+                                    <div class="content-image profile-picture">
+                                        <img src="{{ profile_picture(user.info.username) }}"
+                                             alt="{{ user.info.username }}" class="pfp">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="content-info">
+                                <div class="content-author">
+                                    {{ user_link(user) }}
+                                </div>
+                                <div class="content-description">
+                                    Administrator
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-left">
+                        <h2 class="section-title">Moderators</h2>
+                    </div>
+                </div>
+                <div class="content-box content-grid content-grid-users">
+                    {% for user in staff|filter(user => user.level == '2') %}
+                        <div class="content-entry">
+                            <div class="content-thumbnail">
+                                <a href="/user/{{ user.info.username }}">
+                                    <div class="content-image profile-picture">
+                                        <img src="{{ profile_picture(user.info.username) }}"
+                                             alt="{{ user.info.username }}" class="pfp">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="content-info">
+                                <div class="content-author">
+                                    {{ user_link(user) }}
+                                </div>
+                                <div class="content-description">
+                                    Moderator
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% else %}
         <div class="content-box content-grid content-grid-users">
             {% for user in staff %}
                 <div class="content-entry">
@@ -39,4 +130,5 @@
                 </div>
             {% endfor %}
         </div>
+        {% endif %}
     {% endblock %}
