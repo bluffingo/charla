@@ -94,7 +94,7 @@
 
 .header-logo
 {
-  margin-right: 0.75rem;
+  margin-right: 0.6rem;
   a {
     display: block;
     height: $header-logo-height;
@@ -138,13 +138,13 @@ form.header-search
 
   #header-search-input {
     border-radius: 16px;
-    transition: all .1s ease-in-out;
+    transition: border .1s ease-in-out;
     padding: 6px 40px 6px 10px;
     height: 32px;
 
     border: 1px solid black;
     color: #eee;
-    background: #575757;
+    background: #5A5A5A;
     box-shadow: 0 1px 0 #333;
 
     &:focus {
@@ -166,9 +166,9 @@ form.header-search
   }
   @include responsive('small') {
     display: block;
-    max-width: 200px;
+    max-width: 240px;
     #header-search-input {
-      max-width: 180px;
+      max-width: 220px;
     }
   }
   @include responsive('medium') {
@@ -182,11 +182,6 @@ form.header-search
   .form-button-container {
     display: inline;
   }
-}
-
-td.h
-{
-  padding: 5px;
 }
 
 .menulink

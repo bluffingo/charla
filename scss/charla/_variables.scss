@@ -3,7 +3,7 @@ $threshold: 50%; // contrast threshold
 // basic colors
 $text-color: #27272c;
 $link-color: #0061C5;
-$bg-color: #F4F4F4;
+$bg-color: #F2F2F2;
 
 @if $theme == "dark" {
         $text-color: white;
