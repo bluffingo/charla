@@ -44,6 +44,14 @@
         <div class="col-6">
             <div class="section">
                 <div class="section-header">
+                    <h2>Text</h2>
+                </div>
+                {% for color in color_types %}
+                    <div class="text-{{ color }}">{{ color }} text!</div>
+                {% endfor %}
+            </div>
+            <div class="section">
+                <div class="section-header">
                     <h2>Buttons</h2>
                 </div>
                 {% for color in color_types %}
