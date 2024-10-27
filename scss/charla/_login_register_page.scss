@@ -21,13 +21,21 @@ body.login {
   .section-header {
     text-shadow: 0 0.1em 0.2em rgba(black, 0.5);
     color: white;
-    h1 {
-      font-weight: 600;
-    }
   }
 
   .login-text {
     margin: 1em 0;
     font-size: 0.8em;
+    &.login-footer {
+      margin: 0.8em 0 0 0;
+      font-size: 0.9em;
+
+      text-align: center;
+      text-shadow: 0 0.1em 0.2em rgba(black, 0.5);
+      color: white;
+      a {
+        color: white;
+      }
+    }
   }
 }
