@@ -143,15 +143,29 @@
                             <h2>Filtering</h2>
                         </div>
 
-                        <div class="form-submit">
-                            <input type="checkbox" name="rating" id="rating" value="true" {% if user_data.comfortable_rating == "mature" %}checked{% endif %}>
-                            <label for="rating"> Enable sensitive content</label><br>
-                        </div>
+                        {% if is_opensb_v1_3 and not isUserOver18 %}
+                            <div class="text-danger">
+                                Given your account's birthdate, you cannot access adult content. If you have accidentally
+                                given the wrong birthdate, please report it to {{ website_branding.name }} administration.
+                            </div>
+                        {% else %}
+                            <div class="form-submit">
+                                <input type="checkbox" name="rating" id="rating" value="true" {% if user_data.comfortable_rating == "mature" %}checked{% endif %}>
+                                <label for="rating"> {% if is_opensb_v1_3 %}Enable adult content{% else %}Enable sensitive content{% endif %}</label><br>
+                            </div>
+
+                            {% if is_opensb_v1_3 %}
+                                <div class="form-submit">
+                                    <input type="checkbox" name="rating" id="rating" value="true">
+                                    <label for="rating"> Block access from people under 18</label><br>
+                                </div>
+                            {% endif %}
+                        {% endif %}
 
                         <br>
 
                         <div class="section-header">
-                            <h3>Blacklisted tags</h3>
+                            <h3>Blocked tags</h3>
                         </div>
 
                         <div class="form-submit">
@@ -162,7 +176,7 @@
 
                         <div class="form-button-container">
                             <input type="submit" id="upload" name="save" class="button button-primary"
-                                   value="Save changes">
+                                   value="Save">
                         </div>
                     </div>
                 </form>
