@@ -42,7 +42,7 @@
     {% endif %}
     {% if submission.author_banned %}
         <div class="banner banner-secondary">
-            This upload's author was banned.
+            The author of this upload was banned.
         </div>
     {% endif %}
     <div class="grid">
@@ -148,7 +148,11 @@
                                     <div class="watch-box-info-detail">
                                         <span class="watch-box-info-detail-title">Rating:</span>
                                         {% if submission.rating == 'mature' %}
-                                            Sensitive
+                                            {% if is_opensb_v1_3 %}
+                                                Mature
+                                            {% else %}
+                                                Sensitive
+                                            {% endif %}
                                         {% else %}
                                             General
                                         {% endif %}
