@@ -58,7 +58,7 @@
     {% if opengraph_published %}
         <meta property="article:published_time" content="{{ opengraph_published }}" />
     {% endif %}
-    {% if is_user_logged_in and current_theme != "pink" %}
+    {% if is_user_logged_in %}
     <style>
         :root {
             --link-color: {{ user_data.customcolor }};

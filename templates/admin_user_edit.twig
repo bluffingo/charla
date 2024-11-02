@@ -26,16 +26,16 @@
                             </tr>
                             <tr>
                                 <td>Age/Birthday</td>
-                                <td>{{ user.birthdate | calculate_age }} / {{ user.birthdate | date("F j Y") }}</td>
+                                <td>{{ user.birthdate | calculate_age }} / {{ user.birthdate | date("F jS Y") }}</td>
                             </tr>
                             <tr>
                                 <td>Registered</td>
-                                <td>{{ user.joined | date("F j Y, h:i:s A") }}
+                                <td>{{ user.joined | date("F jS Y, h:i:s A") }}
                                     ({{ user.birthdate | calculate_age_from(user.joined) }} years old)</td>
                             </tr>
                             <tr>
                                 <td>Last logged in</td>
-                                <td>{{ user.lastview | date("F j Y, h:i:s A") }}</td>
+                                <td>{{ user.lastview | date("F jS Y, h:i:s A") }}</td>
                             </tr>
                             <tr>
                                 <td>Color</td>
@@ -88,7 +88,7 @@
                                             {{ entry.old_name }}
                                         </td>
                                         <td>
-                                            {{ entry.time | date("F j Y, h:i:s A") }}
+                                            {{ entry.time | date("F jS Y, h:i:s A") }}
                                         </td>
                                     </tr>
                                 {% endfor %}

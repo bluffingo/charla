@@ -60,7 +60,7 @@
 									<td>{{ user.name }}</td>
 									<td>
 										{{ user.ban_reason }}
-										<small>({{ user.ban_time | date('F j, Y') }}/{{ user.ban_time | relative_time }})</small>
+										<small>({{ user.ban_time | date('F jS Y') }}/{{ user.ban_time | relative_time }})</small>
 									</td>
 									<td><a href="/admin?action=unban_user&user={{ user.id }}" class="button button-secondary">Unban</a></td>
 								</tr>
@@ -98,12 +98,12 @@
 										<td>{{ inviteKey.invite_key }}</td>
 										<td>
 											{{ inviteKey.generated_by.name }}
-											<small>({{ inviteKey.generated_time | date('F j, Y') }}/{{ inviteKey.generated_time | relative_time }})</small>
+											<small>({{ inviteKey.generated_time | date('F jS Y') }}/{{ inviteKey.generated_time | relative_time }})</small>
 										</td>
 										<td>
 											{% if inviteKey.claimed_by %}
 												{{ inviteKey.claimed_by.name }}
-												<small>({{ inviteKey.claimed_time | date('F j, Y') }}/{{ inviteKey.claimed_time | relative_time }})</small>
+												<small>({{ inviteKey.claimed_time | date('F jS Y') }}/{{ inviteKey.claimed_time | relative_time }})</small>
 											{% else %}
 												Not claimed
 											{% endif %}

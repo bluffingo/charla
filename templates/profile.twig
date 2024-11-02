@@ -146,10 +146,10 @@
                     {% endif %}
                     <ul>
                         <li>
-                            Joined: {{ data.joined | date('M d Y H:i T') }}
+                            Joined: {{ data.joined | date('F jS Y') }}
                         </li>
                         <li>
-                            Last Login: {{ data.connected | date('M d Y H:i T') }}
+                            Last login: {{ data.connected | relative_time() }}
                         </li>
                     </ul>
                 </div>

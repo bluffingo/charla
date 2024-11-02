@@ -37,7 +37,7 @@
     {% if submission.takedown %}
         <div class="banner banner-secondary">
             This upload was taken down on {{ submission.takedown.sent }} by {{ submission.takedown.takedownee }}
-            on {{ submission.takedown.time | date("F j Y, h:i:s A") }}, with the reason: {{ submission.takedown.reason }}
+            on {{ submission.takedown.time | date("F jS Y, h:i:s A") }}, with the reason: {{ submission.takedown.reason }}
         </div>
     {% endif %}
     {% if submission.author_banned %}

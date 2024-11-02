@@ -42,44 +42,42 @@
 {% endblock %}
 
 {% block precontent %}
-    {% if current_theme in ["default", "pink", "dark"] %}
-        <div class="jumbotron page-banner homepage">
-            <div class="jumbotron-container {{ jumbotronClassName }}">
-                <div class="jumbotron-welcome">
-                    {% if is_user_logged_in %}
-                        <div class="profile-picture">
-                            <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
-                        </div>
-                        <div class="jumbotron-logged-in-text">
-                            <h1>{{ localize('welcome_logged_in', user_data.title) }}</h1>
-                            <div>@{{ user_data.name }} • {{ followersText }} follower{{ pluralSubscribers }} • {{ viewsText }} view{{ pluralViews }}</div>
-                        </div>
-                    {% else %}
-                        <h1>{{ localize('welcome_logged_out', website_branding.name) }}</h1>
-                        {% if is_chaziz_sb %}
-                            <p>Your content, your narration, your niche on the web.</p>
-                        {% endif %}
-                        <a href="/register" class="button button-warning button-get-started">Get started ›</a>
-                    {% endif %}
-                </div>
-                <div class="jumbotron-right-container">
-                    <div class="jumbotron-right-date">
-                        {{ "now"|date("F jS, Y") }}
+    <div class="jumbotron page-banner homepage">
+        <div class="jumbotron-container {{ jumbotronClassName }}">
+            <div class="jumbotron-welcome">
+                {% if is_user_logged_in %}
+                    <div class="profile-picture">
+                        <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
                     </div>
-                    <div class="jumbotron-right-buttons">
-                        <div class="tabs homepage">
-                            <div class="tablink homepage {% if type=='list' %}active{% endif %}" id="index-list-button">
-                                <div class="biscuit-icon homepage-list {% if type=='list' %}active{% endif %} size-24"></div>
-                            </div>
-                            <div class="tablink homepage {% if type=='grid' %}active{% endif %}" id="index-grid-button">
-                                <div class="biscuit-icon homepage-grid {% if type=='grid' %}active{% endif %} size-24"></div>
-                            </div>
+                    <div class="jumbotron-logged-in-text">
+                        <h1>{{ localize('welcome_logged_in', user_data.title) }}</h1>
+                        <div>@{{ user_data.name }} • {{ followersText }} follower{{ pluralSubscribers }} • {{ viewsText }} view{{ pluralViews }}</div>
+                    </div>
+                {% else %}
+                    <h1>{{ localize('welcome_logged_out', website_branding.name) }}</h1>
+                    {% if is_chaziz_sb %}
+                        <p>Your content, your narration, your niche on the web.</p>
+                    {% endif %}
+                    <a href="/register" class="button button-warning button-get-started">Get started ›</a>
+                {% endif %}
+            </div>
+            <div class="jumbotron-right-container">
+                <div class="jumbotron-right-date">
+                    {{ "now"|date("F jS Y") }}
+                </div>
+                <div class="jumbotron-right-buttons">
+                    <div class="tabs homepage">
+                        <div class="tablink homepage {% if type=='list' %}active{% endif %}" id="index-list-button">
+                            <div class="biscuit-icon homepage-list {% if type=='list' %}active{% endif %} size-24"></div>
+                        </div>
+                        <div class="tablink homepage {% if type=='grid' %}active{% endif %}" id="index-grid-button">
+                            <div class="biscuit-icon homepage-grid {% if type=='grid' %}active{% endif %} size-24"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    {% endif %}
+    </div>
 {% endblock %}
 
 {% block content %}
