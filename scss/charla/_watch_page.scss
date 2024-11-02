@@ -47,18 +47,17 @@
     display: flex;
     align-items: center;
 
-    // star rating
     .watch-box-right {
-      width: 25%;
+      /* star rating */
       text-align: right;
     }
 
-    // author and upload date.
     .watch-box-left {
+      /* author and upload date. */
       display: flex;
       align-items: center;
       gap: 0.8em;
-      width: 75%;
+      flex-grow: 1;
 
       .watch-box-profile-picture {
         width: 50px;

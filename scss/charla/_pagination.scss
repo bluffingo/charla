@@ -1,7 +1,7 @@
 @use "sass:color";
-// because pagination looks weird with normal buttons
 
 .pagination {
+  /* because pagination looks weird with normal buttons */
   margin: 1em auto auto;
   display: flex;
   justify-content: center;

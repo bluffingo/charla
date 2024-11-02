@@ -32,8 +32,8 @@
     border: 1px solid $content-box-border-color;
 }
 
-// named like this to avoid conflicts with grid system
 .content-grid {
+    /* named like this to avoid conflicts with grid system */
     display: grid;
     gap: 5px;
     grid-auto-rows: minmax($content-box-grid-entry-width, auto);
@@ -78,13 +78,20 @@
     overflow: hidden;
     word-break: break-word;
 
-    // used by "random uploads" box
-    &.no-side-padding {
-        padding: $content-box-padding 0;
+    &.no-border-left {
+        border-left: none;
+    }
+
+    &.no-border-right {
+        border-right: none;
     }
 
     &.no-border-top {
         border-top: none;
+    }
+
+    &.no-border-bottom {
+        border-bottom: none;
     }
 
     &.rounded {
@@ -100,9 +107,20 @@
         overflow-y: scroll;
     }
 
-    // used for staff notes. i think it just looks cool honestly
+    &.carousel {
+        padding: 0;
+        .section {
+            margin-bottom: 1em;
+            .section-header {
+                padding: 1rem 1rem 0 1rem;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+
     &.content-note
     {
+        /* used for staff notes. i think it just looks cool honestly */
         @if $theme == "dark" {
             background: #2c2c2f;
             background: linear-gradient(180deg, rgba(44,44,47,1) 0%, rgba(35,32,38,1) 100%);
@@ -123,6 +141,20 @@
         }
     }
 
+    .section {
+        margin-bottom: 0;
+        .section-header {
+            margin-bottom: 1em;
+        }
+    }
+
+    &.remove-padding-and-border {
+        /* very fucking ugly hack. this should be some recursive shit (if content-box is inside of content-box) but that
+         fucks up with the way profiles look -chaziz 11/2/2024 */
+        padding: 0;
+        border: none;
+    }
+
     .content-entry
     {
         display: flex;
@@ -140,6 +172,13 @@
 
         &.centered {
             align-items: center;
+        }
+
+        &.journal {
+            .content-thumbnail .profile-picture {
+                width: 50px;
+                height: 50px;
+            }
         }
 
         .content-info {
@@ -230,8 +269,8 @@
             }
         }
 
-        // Thumbnails used by the "Random Uploads" thing in homepage.
         .content-image-container {
+            /* Thumbnails used by grid thumbnails */
             display: table;
             text-align: center;
             margin: auto;
