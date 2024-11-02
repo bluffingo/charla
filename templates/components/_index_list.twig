@@ -1,4 +1,4 @@
-<div class="grid no-gap">
+<div class="grid">
     <div class="col-8">
         <div class="content-box carousel">
             <div class="section">
@@ -42,39 +42,35 @@
         </div>
     </div>
     <div class="col-4">
-        <div class="content-box no-border-left">
-            <div class="section">
-                <div class="section-header">
-                    <div class="section-header-left">
-                        <h2 class="section-title">{{ localize('site_news') }}</h2>
-                        <div class="section-desc">{{ localize('site_news_desc') }}</div>
+        <div class="section">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <h2 class="section-title">{{ localize('site_news') }}</h2>
+                    <div class="section-desc">{{ localize('site_news_desc') }}</div>
+                </div>
+                {% if is_opensb_v1_3 %}
+                    <div class="section-header-right">
+                        <a href="/journals/news">{{ localize('more') }}</a>
                     </div>
-                    {% if is_opensb_v1_3 %}
-                        <div class="section-header-right">
-                            <a href="/journals/news">{{ localize('more') }}</a>
-                        </div>
-                    {% endif %}
-                </div>
-                <div class="content-box remove-padding-and-border">
-                    {% for journal in data.news_recent %}
-                        {{ include('/components/_journal.twig') }}
-                    {% else %}
-                        <p>No news!</p>
-                    {% endfor %}
-                </div>
+                {% endif %}
+            </div>
+            <div class="content-box">
+                {% for journal in data.news_recent %}
+                    {{ include('/components/_journal.twig') }}
+                {% else %}
+                    <p>No news!</p>
+                {% endfor %}
             </div>
         </div>
         {% if is_chaziz_sb %}
-            <div class="content-box no-border-left no-border-top">
-                <div class="section">
-                    <div class="section-header">
-                        <div class="section-header-left">
-                            <h2 class="section-title">Discord</h2>
-                            <div class="section-desc">Join our community!</div>
-                        </div>
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-left">
+                        <h2 class="section-title">Discord</h2>
+                        <div class="section-desc">Join our community!</div>
                     </div>
-                    <iframe src="https://discord.com/widget?id=1209695092554858548&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                 </div>
+                <iframe src="https://discord.com/widget?id=1209695092554858548&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
             </div>
         {% endif %}
     </div>
