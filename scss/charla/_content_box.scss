@@ -78,20 +78,8 @@
     overflow: hidden;
     word-break: break-word;
 
-    &.no-border-left {
-        border-left: none;
-    }
-
-    &.no-border-right {
-        border-right: none;
-    }
-
     &.no-border-top {
         border-top: none;
-    }
-
-    &.no-border-bottom {
-        border-bottom: none;
     }
 
     &.rounded {
@@ -108,14 +96,7 @@
     }
 
     &.carousel {
-        padding: 0;
-        .section {
-            margin-bottom: 1em;
-            .section-header {
-                padding: 1rem 1rem 0 1rem;
-                margin-bottom: 0.5em;
-            }
-        }
+        padding: $content-box-padding 0;
     }
 
     &.content-note
@@ -146,13 +127,6 @@
         .section-header {
             margin-bottom: 1em;
         }
-    }
-
-    &.remove-padding-and-border {
-        /* very fucking ugly hack. this should be some recursive shit (if content-box is inside of content-box) but that
-         fucks up with the way profiles look -chaziz 11/2/2024 */
-        padding: 0;
-        border: none;
     }
 
     .content-entry
