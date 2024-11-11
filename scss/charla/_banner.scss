@@ -33,7 +33,7 @@
 
     background-color: color.adjust($value, $lightness: 10%);
     background-image: linear-gradient(color.adjust($value, $lightness: 3%),
-            color.adjust(color.adjust($value, $lightness: -3%), $hue: 1deg));
+            color.adjust(color.adjust($value, $lightness: -2%), $hue: 1deg));
     border: 1px solid $border-color;
     color: contrast-color($value, #000, #fff);
 

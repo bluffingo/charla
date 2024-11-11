@@ -2,6 +2,14 @@
     {% set pluralViews = "s" %}
 {% endif %}
 
+{% if submission.type == 0 %}
+    {% set type = "Video" %}
+{% elseif submission.type == 2 %}
+    {% set type = "Image" %}
+{% else %}
+    {% set type = "Unknown" %}
+{% endif %}
+
 <div class="content-entry">
     <div class="content-thumbnail">
         <a href="/view/{{ submission.id }}">
@@ -22,7 +30,7 @@
         <div class="content-description">
             By {{ user_link(submission.author) }}
             <br>
-            {{ submission.views }} view{{ pluralViews }} • {{ submission.published | relative_time }}
+            {{ submission.views }} view{{ pluralViews }} • {{ submission.published | relative_time }} • {{ type }}
         </div>
         <div class="content-rating">
             {{ show_ratings(submission.interactions.ratings) }}
