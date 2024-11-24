@@ -53,6 +53,15 @@
 
     &.content-grid-users {
         grid-auto-rows: minmax(auto, auto);
+        @include responsive('tiny') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include responsive('small') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include responsive('medium') {
+            grid-template-columns: repeat(4, 1fr);
+        }
         @include responsive('large') {
             grid-template-columns: repeat(4, 1fr);
         }

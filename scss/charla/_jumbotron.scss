@@ -1,6 +1,10 @@
 .jumbotron {
   &.page-banner {
-    background: #333 url("/assets/charla_banner_background.jpg") center;
+    @if $theme == "dark" {
+      background: #333 url("/assets/charla_banner_background.jpg") center;
+    } @else {
+      background: #333 url("/assets/charla_banner_background_light.jpg") center;
+    }
     background-size: cover;
     color: white;
     text-shadow: 0 0.1em 0.2em rgba(black, 0.5);

@@ -4,11 +4,13 @@ $threshold: 50%; // contrast threshold
 $text-color: #27272c;
 $link-color: #0061C5;
 $bg-color: #F2F2F2;
+$header-link-color: black;
 
 @if $theme == "dark" {
         $text-color: white;
         $link-color: #2d89e8;
         $bg-color: #111;
+        $header-link-color: white;
 }
 
 // component colors

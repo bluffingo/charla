@@ -63,11 +63,19 @@
   }
 
   &.search {
-    background-image: url( '/assets/icons/search-dark.svg' );
+    @if $theme == "dark" {
+      background-image: url('/assets/icons/search-dark.svg');
+    } @else {
+      background-image: url('/assets/icons/search-light.svg');
+    }
   }
 
   &.hamburger {
-    background-image: url( '/assets/icons/hamburger-dark.svg' );
+    @if $theme == "dark" {
+      background-image: url('/assets/icons/hamburger-dark.svg');
+    } @else {
+      background-image: url('/assets/icons/hamburger-light.svg');
+    }
   }
 
   &.caret-closed {
@@ -95,7 +103,11 @@
   }
 
   &.mail {
-    background-image: url( '/assets/icons/mail.svg' );
+    @if $theme == "dark" {
+      background-image: url('/assets/icons/mail-dark.svg');
+    } @else {
+      background-image: url('/assets/icons/mail-light.svg');
+    }
   }
 
   &.homepage-list {

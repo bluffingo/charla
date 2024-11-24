@@ -6,7 +6,11 @@
   width: 200px;
   padding: $content-box-padding 0;
   height: calc(100vh - $header-height);
-  background: #191919;
+  @if $theme == "dark" {
+    background: #191919;
+  } @else {
+    background: #EDEDED;
+  }
   box-shadow: 1px 0 6px rgba(black, 0.15);
   display: block;
   overflow-y: scroll;
@@ -29,7 +33,7 @@
       margin-top: 0.8rem;
       display: block;
       padding: 5px 0.9rem;
-      color: rgba(white, 66%);
+      color: rgba($header-link-color, 66%);
       font-weight: bold;
       text-transform: uppercase;
       font-size: 0.7rem;
@@ -45,13 +49,13 @@
       a {
         display: flex;
         padding: 5px 1rem;
-        color: rgba(white, 66%);
+        color: rgba($header-link-color, 66%);
         align-items: center;
         gap: 0.4rem;
 
         &:hover {
           background: rgba(white, 0.1);
-          color: white;
+          color: $header-link-color;
           text-decoration: none;
         }
       }
