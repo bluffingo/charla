@@ -1,19 +1,12 @@
 {% extends "_layout.twig" %}
 
-{% set title = "Write" %}
-
-{% block precontent %}
-    <div class="jumbotron page-banner">
-        <div class="jumbotron-container">
-            <div>
-                <h1>Write</h1>
-            </div>
-        </div>
-    </div>
-{% endblock %}
+{% set title = "Write new journal" %}
 
 	{% block content %}
         <div class="section">
+            <div class="section-header">
+                <h1>Write</h1>
+            </div>
             <div class="content-box">
                 <form name="uploadForm" id="uploadForm" method="post" action="write" enctype="multipart/form-data">
                     <div class="panel panel-default">

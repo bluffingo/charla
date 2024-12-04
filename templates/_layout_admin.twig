@@ -1,13 +1,5 @@
 {% extends "_layout.twig" %}
 
-{% block precontent %}
-    <div class="jumbotron page-banner">
-        <div class="jumbotron-container">
-            <h1>{{ title }}</h1>
-        </div>
-    </div>
-{% endblock %}
-
 	{% block content %}
         <div class="tabs">
             <a class="tablink {% if page_name=='overview' %}active{% endif %}" href="/admin/overview">Overview</a>

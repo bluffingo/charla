@@ -2,6 +2,15 @@
 {
   padding-top: 10px;
   margin: auto;
+  &.homepage-buttons {
+    padding: 0;
+  }
+
+  &.homepage {
+    position: relative;
+    top: -29px;
+  }
+
   .page-contents
   {
     margin: auto;
