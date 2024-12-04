@@ -111,18 +111,26 @@
   }
 
   &.homepage-list {
-    @if $theme == "dark" {
-      background-image: url( '/assets/icons/homepage-list-dark.svg' );
-    } @else {
-      background-image: url('/assets/icons/homepage-list-light.svg');
+    background-image: url( '/assets/icons/homepage-list-dark.svg' );
+
+    &.active {
+      @if $theme == "dark" {
+        background-image: url( '/assets/icons/homepage-list-dark.svg' );
+      } @else {
+        background-image: url('/assets/icons/homepage-list-light.svg');
+      }
     }
   }
 
   &.homepage-grid {
-    @if $theme == "dark" {
-      background-image: url( '/assets/icons/homepage-grid-dark.svg' );
-    } @else {
-      background-image: url( '/assets/icons/homepage-grid-light.svg' );
+    background-image: url( '/assets/icons/homepage-grid-dark.svg' );
+
+    &.active {
+      @if $theme == "dark" {
+        background-image: url( '/assets/icons/homepage-grid-dark.svg' );
+      } @else {
+        background-image: url( '/assets/icons/homepage-grid-light.svg' );
+      }
     }
   }
 
