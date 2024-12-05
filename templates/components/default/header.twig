@@ -5,7 +5,11 @@
         {% set logo = '/assets/sb_branding/fulp/logo-wordmark.png' %}
     {% endif %}
 {% else %}
-    {% set logo = website_branding.assets_location ~ '/logo.png' %}
+    {% if current_theme == "dark" %}
+        {% set logo = website_branding.assets_location ~ '/logo-dark.png' %}
+    {% else %}
+        {% set logo = website_branding.assets_location ~ '/logo.png' %}
+    {% endif %}
 {% endif %}
 <div class="header">
     <div class="header-container {% if not is_user_logged_in %}logged-out{% endif %}">
