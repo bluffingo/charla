@@ -15,9 +15,7 @@ table.c1 {
     background: $content-box-background-color;
 
     &.h {
-      background-color: color.adjust($content-box-border-color, $lightness: 2.5%);
-      background-image: linear-gradient(color.adjust($content-box-border-color, $lightness: 10%),
-              color.adjust($content-box-border-color, $lightness: 5%));
+      background-color: color.adjust($content-box-border-color, $lightness: 5%);
 
       th {
         padding: 1px 4px;
@@ -30,8 +28,6 @@ table.c1 {
     @each $color, $value in $color-map-admin {
       &.#{$color} {
         background-color: $value;
-        background-image: linear-gradient($value,
-                color.adjust(color.adjust($value, $lightness: -2%), $hue: -1deg));
 
         td {
           border-color: color.adjust(color.adjust($value, $lightness: -5.5%), $hue: -3deg);
@@ -43,11 +39,5 @@ table.c1 {
   td {
     border: 1px solid $content-box-border-color;
     padding: 4px;
-
-    @if $theme != "dark" {
-      &.fade-into-bg {
-        background: linear-gradient(to right, #0000, rgba($content-box-background-color, .5));
-      }
-    }
   }
 }

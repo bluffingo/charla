@@ -2,12 +2,13 @@
   &.page-banner {
     @if $theme == "dark" {
       background: #333 url("/assets/charla_banner_background.jpg") center;
+      background-size: cover;
+      color: white;
     } @else {
-      background: #333 url("/assets/charla_banner_background_light.jpg") center;
+      background: #FFBB00;
+      color: black;
     }
-    background-size: cover;
-    color: white;
-    text-shadow: 0 0.1em 0.2em rgba(black, 0.5);
+
     padding: 20px 0;
 
     h1, p {

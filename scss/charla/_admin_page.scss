@@ -33,7 +33,6 @@
         &.#{$color} {
           background: $value;
           border: 1px solid color.adjust(color.adjust($value, $lightness: -25%), $hue: -3deg);
-          background-image: linear-gradient($value, color.adjust(color.adjust($value, $lightness: -5%), $hue: -3deg));
         }
       }
     }

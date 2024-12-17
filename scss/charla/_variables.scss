@@ -2,7 +2,7 @@ $threshold: 50%; // contrast threshold
 
 // basic colors
 $text-color: #27272c;
-$link-color: #0061C5;
+$link-color: #006FFF;
 $bg-color: #F2F2F2;
 $header-link-color: black;
 
@@ -32,6 +32,14 @@ $color-map: (
         "warning": $yellow,
         "dark": $dark,
 );
+
+// header/hamburger
+$header-background: #FFF;
+$header-border: #DDD;
+@if $theme == "dark" {
+        $header-background: #111;
+        $header-border: #333;
+}
 
 // content boxes
 $content-box-background-color: #FFF;
@@ -75,8 +83,7 @@ $color-map-admin: (
 }
 
 // fonts
-$font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-serif: Georgia, "Times New Roman", serif;
+$font: Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 // https://medium.com/@jainbhavukspeaks/leveraging-scss-mixins-to-create-responsive-layouts-the-easy-way-5bbe4080cb15
 // breakpoints

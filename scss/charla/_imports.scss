@@ -3,6 +3,8 @@
 
 @use "sass:color";
 
+@import url("https://rsms.me/inter/inter.css");
+
 @import 'normalize';
 @import 'variables';
 
@@ -21,6 +23,10 @@
 :root {
   font-family: $font;
   --link-color: #{$link-color};
+}
+
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
 }
 
 *,
@@ -58,37 +64,37 @@ img
 h1 {
   margin: 0;
   font-size: 24px;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 h2 {
   margin: 0;
   font-size: 20px;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 h3 {
   margin: 0;
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 h4 {
   margin: 0;
   font-size: 14px;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 h5 {
   margin: 0;
   font-size: 12px;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 h6 {
   margin: 0;
   font-size: 10px;
-  font-weight: normal;
+  font-weight: 600;
 }
 
 img.img-responsive {
@@ -101,25 +107,6 @@ img.img-responsive {
 
 .bold {
   font-weight: 500;
-}
-
-textarea,
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"] {
-  border: 1px solid color.adjust($content-box-border-color, $lightness: -1%);
-  background-color: 1px solid color.adjust($content-box-background-color, $lightness: -1%);
-  color: #000;
-  transition: border linear 0.3s;
-  border-radius: 3px;
-  padding: 6px;
-  font-family: $font;
-
-  &:focus {
-    border-color: var(--link-color);
-    outline: none;
-  }
 }
 
 code {
@@ -145,26 +132,11 @@ blockquote {
 }
 
 .profile-picture {
-  border: 1px solid #888;
-  display: block;
-  border-radius: 4px;
-  position: relative;
-  box-shadow: 0 1px 2px rgba(black, 0.1);
-
-  &::before {
-    content: '';
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    background-image: url('/assets/charla_pfp_gloss.svg');
-    background-size: cover;
-    position: absolute;
-    border-radius: 3px;
-  }
   .pfp {
+    border-radius: 50%;
+
     width: auto;
     height: 100%;
-    border-radius: 3px;
 
     // a fix for legacy poktube profile pictures that aren't 1:1
     aspect-ratio: 1 / 1;
