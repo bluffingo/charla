@@ -88,9 +88,9 @@
 {% block precontent %}{% endblock %}
 <div class="page">
     <div class="page-contents">
-        {{ include(component('banners')) }}
         <div class="container {{ page_name }}">
-        {% block content %}{% endblock %}
+            {{ include(component('banners')) }}
+            {% block content %}{% endblock %}
         </div>
     </div>
 </div>
