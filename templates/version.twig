@@ -40,22 +40,21 @@
                     <p>
                         You can find our source code on GitHub by visiting the <a href="https://github.com/bluffingo/OpenSB">OpenSB repository</a>.
                     </p>
-                    <hr>
-                    <h2>Installed software</h2>
-                    <table class="c1">
-                        <tr class="h">
-                            <th>Software</th>
-                            <th>Version</th>
-                        </tr>
-                        {% for thing in data.software %}
-                            <tr>
-                                <td class="a">{{ thing.title }}</td>
-                                <td class="b">{{ thing.info }}</td>
-                            </tr>
-                        {% endfor %}
-                    </table>
                 </div>
             </div>
+            <hr>
+            <table class="c1">
+                <tr class="h">
+                    <th>Software</th>
+                    <th>Version</th>
+                </tr>
+                {% for thing in data.software %}
+                    <tr>
+                        <td class="a">{{ thing.title }}</td>
+                        <td class="b">{{ thing.info }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
         </div>
     </div>
 {% endblock %}

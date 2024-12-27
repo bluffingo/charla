@@ -239,6 +239,17 @@ form.header-search
   border-top: none;
   top: $header-height;
   border-radius: 0 0 5px 5px;
+
+  .user-menu-intro {
+    display: flex;
+    align-items: center;
+
+    .user-menu-intro-left {
+      .pfp {
+        width: 52px;
+      }
+    }
+  }
 }
 
 .header-button {
