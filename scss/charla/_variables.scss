@@ -9,7 +9,7 @@ $header-link-color: black;
 @if $theme == "dark" {
         $text-color: white;
         $link-color: #2d89e8;
-        $bg-color: #111;
+        $bg-color: #0B0B0B;
         $header-link-color: white;
 }
 
@@ -33,19 +33,11 @@ $color-map: (
         "dark": $dark,
 );
 
-// header/hamburger
-$header-background: #FFF;
-$header-border: #DDD;
-@if $theme == "dark" {
-        $header-background: #111;
-        $header-border: #333;
-}
-
 // content boxes
 $content-box-background-color: #FFF;
 $content-box-border-color: #DDDDDD;
 @if $theme == "dark" {
-        $content-box-background-color: #1a1a1a;
+        $content-box-background-color: #111111;
         $content-box-border-color: #333333;
 }
 $content-box-padding: 1rem;
@@ -53,6 +45,19 @@ $content-box-padding: 1rem;
 // content box grid entries
 $content-box-grid-entry-height: 190px;
 $content-box-grid-entry-width: 135px;
+
+// header/hamburger
+$header-background: $content-box-background-color;
+$header-border: $content-box-border-color;
+@if $theme == "dark" {
+        $header-background: #111;
+        $header-border: #333;
+}
+
+$header-link-hover: rgba($header-link-color, 0.025);
+$header-link-active: rgba($header-link-color, 0.1);
+$header-link-inactive-opacity: 0.75;
+$header-link-active-opacity: 1; // includes hover
 
 // forms
 $form-bg-color: $content-box-background-color;

@@ -1,0 +1,31 @@
+@use "sass:color";
+
+.navigation-bar {
+  background: $header-background;
+  border-bottom: 1px solid $header-border;
+
+  display: flex;
+  justify-content: center;
+
+  .navigation-bar-button {
+    opacity: $header-link-inactive-opacity;
+    color: $header-link-color;
+    text-decoration: none;
+    padding: 0.4em 1em;
+
+    display: flex;
+    align-items: center;
+    gap: 0.2em;
+
+    &:hover {
+      opacity: $header-link-active-opacity;
+      cursor: pointer;
+      background: $header-link-hover;
+    }
+
+    &.active {
+      opacity: $header-link-active-opacity;
+      background: $header-link-active;
+    }
+  }
+}

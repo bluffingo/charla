@@ -1,7 +1,6 @@
 @mixin header-link-hover {
   @if $theme == "dark" {
     background: rgba(white, 0.075);
-    box-shadow: 0 6px 10px rgba(black, 0.25) inset;
   } @else {
     background: rgba(black, 0.025);
   }
@@ -9,8 +8,7 @@
 
 @mixin header-link-active {
   @if $theme == "dark" {
-    background: rgba(white, 0.025);
-    box-shadow: 0 6px 10px rgba(black, 0.6) inset;
+    background: rgba(white, 0.035);
   } @else {
     background: rgba(black, 0.1);
   }
@@ -79,11 +77,11 @@
       }
 
       &:hover {
-        @include header-link-hover;
+        background: $header-link-hover;
       }
 
       &:active, &.selected {
-        @include header-link-active;
+        background: $header-link-active;
       }
 
       .user-menu-pfp {
@@ -202,7 +200,7 @@ form.header-search
   align-items: center;
   gap: 0.5em;
   color: $header-link-color;
-  opacity: 0.75;
+  opacity: $header-link-inactive-opacity;
   height: $header-height;
   padding: 0 0.5em;
   @if $theme == "dark" {
@@ -210,15 +208,15 @@ form.header-search
   }
 
   &:hover {
-    opacity: 1;
+    opacity: $header-link-active-opacity;
     text-decoration: none;
-    @include header-link-hover;
+    background: $header-link-hover;
   }
 
   &:active {
-    opacity: 1;
+    opacity: $header-link-active-opacity;
     text-decoration: none;
-    @include header-link-active;
+    background: $header-link-active;
   }
 
   .biscuit-icon {

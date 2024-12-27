@@ -1,11 +1,13 @@
+// DEPRECATED
+// this will be removed soon.
+// -chaziz 12/26/2024
+
 .jumbotron {
   &.page-banner {
+    background: #FFBB00;
     @if $theme == "dark" {
-      background: #333 url("/assets/charla_banner_background.jpg") center;
-      background-size: cover;
       color: white;
     } @else {
-      background: #FFBB00;
       color: black;
     }
 
