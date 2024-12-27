@@ -21,7 +21,7 @@
     align-items: center;
     text-align: left;
     padding: 0.3rem 0.8rem;
-    color: rgba($text-color, 66%);
+    color: rgba($text-color, $header-link-inactive-opacity);
     gap: 5px;
 
     span {
@@ -34,11 +34,7 @@
     }
 
     &:hover {
-      @if $theme == "dark" {
-        background: rgba(white, 0.1);
-      } @else {
-        background: rgba(black, 0.1);
-      }
+      background: $header-link-hover;
       color: $text-color;
       text-decoration: none;
       cursor: pointer;

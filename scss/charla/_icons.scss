@@ -47,11 +47,14 @@
   }
 
   &.b-secondary {
+    /*
     @if $theme == "dark" {
       background-image: url( '/assets/icons/banner-primary.svg' );
     } @else {
       background-image: url( '/assets/icons/banner-secondary.svg' );
     }
+    */
+    background-image: url('/assets/icons/banner-primary.svg');
   }
 
   &.b-success {

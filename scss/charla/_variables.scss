@@ -1,7 +1,7 @@
 $threshold: 50%; // contrast threshold
 
 // basic colors
-$text-color: #27272c;
+$text-color: black;
 $link-color: #006FFF;
 $bg-color: #F2F2F2;
 $header-link-color: black;
@@ -15,10 +15,10 @@ $header-link-color: black;
 
 // component colors
 $primary: #1B80CB; // primary color
-$secondary: #eee; // secondary color (nearly white)
+$secondary: #666; // secondary color
 $dark: #333; // dark gray
 @if $theme == "dark" {
-        $secondary: $dark; // secondary color (dark gray)
+        $secondary: $dark; // secondary color
 }
 $green: #28c228;
 $red: #c01b0c;
@@ -54,7 +54,7 @@ $header-border: $content-box-border-color;
         $header-border: #333;
 }
 
-$header-link-hover: rgba($header-link-color, 0.025);
+$header-link-hover: rgba($header-link-color, 0.05);
 $header-link-active: rgba($header-link-color, 0.1);
 $header-link-inactive-opacity: 0.75;
 $header-link-active-opacity: 1; // includes hover
