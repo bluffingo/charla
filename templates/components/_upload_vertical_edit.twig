@@ -1,4 +1,4 @@
-{% if submission.interactions.views != 1 %}
+{% if submission.views != 1 %}
     {% set pluralViews = "s" %}
 {% endif %}
 
@@ -19,7 +19,7 @@
                 {% endif %}
             </a>
             <div class="content-upload-edit-button">
-                <div class="menu-button button button-secondary button-transparent button-caret"
+                <div class="menu-button button button-neutral button-transparent button-caret"
                      data-menu-id="upload-edit-{{ submission.id }}">
                     <div class="menu-caret-container">
                         <i class="biscuit-icon caret-closed menu-caret"></i>
@@ -39,7 +39,7 @@
         <div class="content-description">
             By {{ user_link(submission.author) }}
             <br>
-            {{ submission.views }} view{{ pluralViews }} • {{ submission.published | relative_time }}
+            {{ submission.views }} view{{ pluralViews }} • {{ submission.published | relative_time }} • {{ type }}
         </div>
     </div>
 </div>

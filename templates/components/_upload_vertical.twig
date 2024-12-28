@@ -1,4 +1,4 @@
-{% if submission.interactions.views != 1 %}
+{% if submission.views != 1 %}
     {% set pluralViews = "s" %}
 {% endif %}
 
@@ -37,7 +37,9 @@
             <br>
             {% if submission.description|trim is not empty %}
                 <span>{{ submission.description }}</span>
+                <br>
             {% endif %}
+            <div>{{ convert_time(submission.length) }}</div>
         </div>
     </div>
 </div>
