@@ -35,17 +35,14 @@
                     {# old notifications #}
                     <a class="menulink hide-small" href="/notices">
                         <i class="biscuit-icon mail"></i>
-                        {{ user_notice_data }}
+                        {{ user_stat_data.notifications }}
                     </a>
                 {% endif %}
                 {% if options.charla_2025_ui %}
                     {# create #}
                     <div class="user-menu-container">
                         <div class="menu-button user-menu-button" data-menu-id="create-menu">
-                            <div>Create</div>
-                            <div class="menu-caret-container user-menu-caret-container">
-                                <i class="biscuit-icon caret-closed menu-caret"></i>
-                            </div>
+                            <i class="biscuit-icon plus"></i>
                         </div>
                         <div class="menu" id="create-menu">
                             <a class="menu-item-button" href="/upload">New upload</a>
@@ -55,14 +52,11 @@
                     {# notifications #}
                     <div class="user-menu-container">
                         <div class="menu-button user-menu-button" data-menu-id="notify-menu">
-                            <i class="biscuit-icon mail"></i>
-                            <div class="menu-caret-container user-menu-caret-container">
-                                <i class="biscuit-icon caret-closed menu-caret"></i>
-                            </div>
+                            <i class="biscuit-icon bell"></i>
                         </div>
                         <div class="menu" id="notify-menu">
-                            <a class="menu-item-button" href="/notices">Go to old notices page ({{ user_notice_data }}
-                                )</a>
+                            <a class="menu-item-button" href="/notices">Old notices page
+                                ({{ user_stat_data.notifications }})</a>
                         </div>
                     </div>
                 {% endif %}
@@ -71,9 +65,6 @@
                     <div class="menu-button user-menu-button" data-menu-id="user-menu">
                         <div class="profile-picture user-menu-pfp">
                             <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
-                        </div>
-                        <div class="menu-caret-container user-menu-caret-container">
-                            <i class="biscuit-icon caret-closed menu-caret"></i>
                         </div>
                     </div>
                     <div class="menu" id="user-menu">
@@ -86,9 +77,9 @@
                                     </div>
                                 </div>
                                 <div class="user-menu-intro-right">
-                                    <div>{{ user_data.name }}</div>
-                                    <div>{{ truncate_number("123456789") }} followers</div>
-                                    <div>{{ truncate_number("123456789") }} views</div>
+                                    <div class="user-menu-intro-name">{{ user_data.name }}</div>
+                                    <div class="user-menu-intro-stat">{{ truncate_number(user_stat_data.followers) }} followers</div>
+                                    <div class="user-menu-intro-stat">{{ truncate_number(user_stat_data.views) }} views</div>
                                 </div>
                             </div>
                             <hr>

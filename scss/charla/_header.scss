@@ -67,10 +67,16 @@
 
     .user-menu-button {
       height: $header-height;
-      padding: 0 2px 0 8px;
+      padding: 0 8px;
       direction: ltr;
       display: flex;
       align-items: center;
+
+      .biscuit-icon:not(.menu-caret) {
+        width: 24px;
+        height: 24px;
+        background-size: 24px;
+      }
 
       &:hover, &.selected {
         cursor: pointer;
@@ -239,14 +245,35 @@ form.header-search
   border-top: none;
   top: $header-height;
   border-radius: 0 0 5px 5px;
+  min-width: 250px;
 
   .user-menu-intro {
+    padding: $menu-item-padding;
+
     display: flex;
     align-items: center;
+    gap: 8px;
 
     .user-menu-intro-left {
       .pfp {
         width: 52px;
+      }
+    }
+
+    .user-menu-intro-right {
+      overflow: hidden;
+
+      .user-menu-intro-name {
+        font-weight: 600;
+        font-size: 1.1em;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .user-menu-intro-stat {
+        font-size: 0.9em;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
     }
   }

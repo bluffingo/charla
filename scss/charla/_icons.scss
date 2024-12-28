@@ -113,6 +113,22 @@
     }
   }
 
+  &.bell {
+    @if $theme == "dark" {
+      background-image: url('/assets/icons/bell-dark.svg');
+    } @else {
+      background-image: url('/assets/icons/bell-light.svg');
+    }
+  }
+
+  &.plus {
+    @if $theme == "dark" {
+      background-image: url('/assets/icons/plus-dark.svg');
+    } @else {
+      background-image: url('/assets/icons/plus-light.svg');
+    }
+  }
+
   &.homepage-list {
     @if $theme == "dark" {
       background-image: url( '/assets/icons/homepage-list-dark.svg' );
