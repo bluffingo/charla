@@ -2,25 +2,41 @@
     <div class="col-8">
         <div class="section">
             <div class="section-header">
-                <div class="section-header-left">
-                    <h2 class="section-title">{{ localize('random_uploads') }}</h2>
-                    <div class="section-desc">{{ localize('random_uploads_desc') }}</div>
-                </div>
-                <div class="section-header-right">
-                    <a href="/browse">{{ localize('more') }}</a>
-                </div>
-            </div>
-            <div class="content-box carousel">
-                <section class="splide" id="splide1" aria-labelledby="carousel-heading">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            {% for submission in data.submissions %}
-                                {{ include('/components/_upload_grid_splide.twig') }}
-                            {% endfor %}
-                        </ul>
+                {% if is_user_logged_in and options.charla_2025_ui %}
+                    <div class="section-header-left">
+                        <h2 class="section-title">{{ localize('following_uploads') }}</h2>
+                        <div class="section-desc">{{ localize('following_uploads_desc') }}</div>
                     </div>
-                </section>
+                    <div class="section-header-right">
+                        <a href="/browse">{{ localize('more') }}</a>
+                    </div>
+                {% else %}
+                    <div class="section-header-left">
+                        <h2 class="section-title">{{ localize('random_uploads') }}</h2>
+                        <div class="section-desc">{{ localize('random_uploads_desc') }}</div>
+                    </div>
+                    <div class="section-header-right">
+                        <a href="/browse">{{ localize('more') }}</a>
+                    </div>
+                {% endif %}
             </div>
+            {% if is_user_logged_in and options.charla_2025_ui %}
+                <div class="content-box">
+                    TODO
+                </div>
+            {% else %}
+                <div class="content-box carousel">
+                    <section class="splide" id="splide1" aria-labelledby="carousel-heading">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                {% for submission in data.submissions %}
+                                    {{ include('/components/_upload_grid_splide.twig') }}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            {% endif %}
         </div>
         <div class="section">
             <div class="section-header">
@@ -60,5 +76,21 @@
                 {% endfor %}
             </div>
         </div>
+        {% if options.charla_2025_ui %}
+            <div class="section">
+                <div class="section-header">
+                    <div class="section-header-left">
+                        <h2 class="section-title">{{ localize('recent_members') }}</h2>
+                        <div class="section-desc">{{ localize('recent_members_desc') }}</div>
+                    </div>
+                    <div class="section-header-right">
+                        <a href="/users">{{ localize('more') }}</a>
+                    </div>
+                </div>
+                <div class="content-box">
+                    TODO
+                </div>
+            </div>
+        {% endif %}
     </div>
 </div>

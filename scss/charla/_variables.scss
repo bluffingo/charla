@@ -49,10 +49,6 @@ $content-box-grid-entry-width: 135px;
 // header/hamburger
 $header-background: $content-box-background-color;
 $header-border: $content-box-border-color;
-@if $theme == "dark" {
-        $header-background: #111;
-        $header-border: #333;
-}
 
 $header-link-hover: rgba($header-link-color, 0.05);
 $header-link-active: rgba($header-link-color, 0.1);
@@ -64,27 +60,27 @@ $form-bg-color: $content-box-background-color;
 $form-text-color: $text-color;
 $form-border-color: $content-box-border-color;
 
-// colors used for the users section in the admin panel, taken from the ones on bitview.
 $color-map-admin: (
-        "banned-other-unbanned": #ff9696,
-        "unbanned-other-banned": #ffc848,
-        "banned": #ffcccc,
-        "shadow-banned": #ffe2cc, // "Reuploader" on bitview
-        "unbanned-other-unbanned": #fffdcc,
-        "partner": #e2ffcc,
-        "staff": #e2f0ff,
+        "banned-other-unbanned": #ff6b6b,
+        "unbanned-other-banned": #ffa726,
+        "banned": #ff8a80,
+        "shadow-banned": #ffccbc,
+        "unbanned-other-unbanned": #fff59d,
+        "partner": #a5d6a7,
+        "staff": #90caf9,
 );
 
 @if $theme == "dark" {
         $color-map-admin: (
-                "banned-other-unbanned": #8c4c4c,
-                "unbanned-other-banned": #8f6d1f,
-                "banned": #6b2d2d,
-                "shadow-banned": #6f4e3c,
-                "unbanned-other-unbanned": #6b6b4d,
-                "partner": #5f8b57,
-                "staff": #4a6a8b,
+                "banned-other-unbanned": #b05050,
+                "unbanned-other-banned": #b37729,
+                "banned": #b26666,
+                "shadow-banned": #b2948b,
+                "unbanned-other-unbanned": #b3a35d,
+                "partner": #6e8b6e,
+                "staff": #607c94,
         );
+
 }
 
 // fonts

@@ -9,6 +9,7 @@
 @import 'variables';
 
 @import 'mixins/responsiveness';
+@import 'mixins/scrollbar';
 
 @function contrast-color($color, $dark, $light) {
   @return if(color.channel($color, "lightness", $space: hsl) < $threshold, $light, $dark)

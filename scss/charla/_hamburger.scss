@@ -13,6 +13,8 @@
   display: block;
   overflow-y: scroll;
 
+  @include scrollbar();
+
   transition: left 0.25s cubic-bezier(0.33, 1, 0.68, 1);
   @media (prefers-reduced-motion) {
     transition: none;
@@ -50,7 +52,13 @@
         gap: 0.4rem;
 
         &:hover {
-          background: rgba(white, 0.1);
+          background: $header-link-hover;
+          color: $header-link-color;
+          text-decoration: none;
+        }
+
+        &:active {
+          background: $header-link-active;
           color: $header-link-color;
           text-decoration: none;
         }

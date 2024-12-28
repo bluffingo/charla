@@ -86,6 +86,8 @@
     overflow: hidden;
     word-break: break-word;
 
+    @include scrollbar();
+
     &.no-border-top {
         border-top: none;
     }

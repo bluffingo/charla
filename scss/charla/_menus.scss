@@ -43,6 +43,13 @@
       cursor: pointer;
     }
 
+    &:active {
+      background: $header-link-active;
+      color: $text-color;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
     .menu-item-profile-picture {
       width: 24px;
       height: 24px;
