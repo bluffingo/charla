@@ -4,12 +4,12 @@
 
 .jumbotron {
   &.page-banner {
-    background: #FFBB00;
-    @if $theme == "dark" {
-      color: white;
-    } @else {
-      color: black;
-    }
+    background: #0069B4;
+    //@if $theme == "dark" {
+    color: white;
+    //} @else {
+    //  color: black;
+    //}
 
     padding: 20px 0;
 

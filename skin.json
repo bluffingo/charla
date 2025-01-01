@@ -3,13 +3,13 @@
     "id": "charla",
     "name": "Finalium 3/Charla (WIP)",
     "author": "Chaziz",
-    "description": "Work-in-progress!",
+    "description": "The new user experience.",
     "site": "squarebracket",
     "themes": [
       {
         "id": "default",
         "name": "Light",
-        "description": "The new CheeseRox user experience.",
+        "description": "The new user experience.",
         "author": "OpenSB developers"
       },
       {
