@@ -142,11 +142,13 @@
                 <div class="content-box no-border-top">
                     {% if data.about | trim is not empty %}
                         {{ data.about | markdown_user_written }}
-                        <hr>
+                    {% else %}
+                        This user has not set a description.
                     {% endif %}
+                        <hr>
                     <ul>
                         <li>
-                            Joined: {{ data.joined | date('F jS Y') }}
+                            Joined: {{ data.joined | relative_time() }}
                         </li>
                         <li>
                             Last login: {{ data.connected | relative_time() }}
