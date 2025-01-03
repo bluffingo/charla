@@ -39,7 +39,9 @@
                 <span>{{ submission.description }}</span>
                 <br>
             {% endif %}
+            {% if submission.type == 0 %}
             <div>{{ convert_time(submission.length) }}</div>
+            {% endif %}
         </div>
     </div>
 </div>
