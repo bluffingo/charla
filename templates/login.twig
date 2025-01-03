@@ -5,7 +5,12 @@
 	{% block content %}
         <div class="section">
             <div class="section-header">
-                <h1>Login</h1>
+                <h1 class="section-title">Login</h1>
+                {% if is_user_logged_in %}
+                <div>
+                    Currently logged in as {{ user_data.name }}.
+                </div>
+                {% endif %}
             </div>
             <div class="content-box rounded login">
                 <div class="panel-body">

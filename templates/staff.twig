@@ -5,14 +5,12 @@
 	{% block content %}
         <div class="section">
             <div class="section-header">
-                <h1>{{ website_branding.name }} Staff</h1>
+                <h1 class="section-title">{{ website_branding.name }} Staff</h1>
             </div>
             {% if is_opensb_v1_3 %}
                 <div class="section">
                     <div class="section-header">
-                        <div class="section-header-left">
-                            <h2 class="section-title">Owners</h2>
-                        </div>
+                        <h2 class="section-title">Owners</h2>
                     </div>
                     <div class="content-box content-grid content-grid-users">
                         {% for user in staff|filter(user => user.level == '4') %}
@@ -40,9 +38,7 @@
 
                 <div class="section">
                     <div class="section-header">
-                        <div class="section-header-left">
-                            <h2 class="section-title">Administrators</h2>
-                        </div>
+                        <h2 class="section-title">Administrators</h2>
                     </div>
                     <div class="content-box content-grid content-grid-users">
                         {% for user in staff|filter(user => user.level == '3') %}
@@ -70,9 +66,7 @@
 
                 <div class="section">
                     <div class="section-header">
-                        <div class="section-header-left">
-                            <h2 class="section-title">Moderators</h2>
-                        </div>
+                        <h2 class="section-title">Moderators</h2>
                     </div>
                     <div class="content-box content-grid content-grid-users">
                         {% for user in staff|filter(user => user.level == '2') %}

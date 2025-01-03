@@ -5,7 +5,7 @@
 	{% block admincontent %}
         <div class="content-box">
             <div class="section">
-                <div class="section-header">
+                <div class="section-header flex">
                     <div class="section-header-left">
                         <h1 class="section-title">Over the years</h1>
                         <div class="section-desc">Since {{ data.time.formatted_date }}
@@ -20,9 +20,7 @@
         <div class="content-box">
             <div class="section">
                 <div class="section-header">
-                    <div class="section-header-left">
-                        <h1 class="section-title">Server details</h1>
-                    </div>
+                    <h1 class="section-title">Server details</h1>
                 </div>
                 {% if data.system.is_windows %}
                     <div class="text-danger">
@@ -41,9 +39,7 @@
         <div class="content-box no-border-top">
             <div class="section">
                 <div class="section-header">
-                    <div class="section-header-left">
-                        <h1 class="section-title">Statistics</h1>
-                    </div>
+                    <h1 class="section-title">Statistics</h1>
                 </div>
                 <ul>
                     {% for key, number in data.numbers %}

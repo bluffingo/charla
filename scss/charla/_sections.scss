@@ -1,33 +1,27 @@
 .section {
   .section-header {
-    display: flex;
-    align-items: baseline;
-
-    .section-header-left {
-      flex-grow: 1;
+    &.flex {
       display: flex;
       align-items: baseline;
-      gap: 0.5em;
 
-      .section-title {
-        font-size: 1.33em;
-      }
+      .section-header-left {
+        flex-grow: 1;
+        display: flex;
+        align-items: baseline;
+        gap: 0.5em;
 
-      .section-desc {
-        @if $theme == "dark" {
-          color: #ffffff80;
-        } @else {
-          color: #00000080;
+        .section-desc {
+          @if $theme == "dark" {
+            color: #ffffff80;
+          } @else {
+            color: #00000080;
+          }
         }
       }
     }
 
-    a {
-      font-size: 14px;
-      margin-left: 4px;
-      &.userlink {
-        margin-left: 0;
-      }
+    .section-title {
+      font-size: 1.33em;
     }
 
     margin-bottom: 0.5em;

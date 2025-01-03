@@ -52,9 +52,9 @@
             </div>
             <div class="watch-box">
                 <div class="section">
-                    <div class="section-header">
+                    <div class="section-header flex">
                         <div class="section-header-left">
-                            <h1>
+                            <h1 class="section-title">
                                 {% if submission.title %}
                                     {{ submission.title }}
                                 {% else %}
@@ -113,7 +113,7 @@
                             <div class="col-4">
                                 <div class="section">
                                     <div class="section-header">
-                                        <h2>Tags</h2>
+                                        <h2 class="section-title">Tags</h2>
                                     </div>
                                     {% for tag in submission.tags %}
                                         <a href="/search?query={{ tag.name }}">{{ tag.name }}</a>{{ not loop.last ? ',' }}
@@ -133,7 +133,7 @@
                             <div class="col-4">
                                 <div class="section">
                                     <div class="section-header">
-                                        <h2>Details</h2>
+                                        <h2 class="section-title">Details</h2>
                                     </div>
                                     <div class="watch-box-info-detail">
                                         <span class="watch-box-info-detail-title">Type:</span>
@@ -178,7 +178,7 @@
                             <div class="col-4">
                                 <div class="section">
                                     <div class="section-header">
-                                        <h2>Stats</h2>
+                                        <h2 class="section-title">Stats</h2>
                                     </div>
                                     <div class="watch-box-info-stat">
                                         {% if submission.interactions.views != 1 %}
@@ -202,7 +202,7 @@
             <br>
             <div class="section">
                 <div class="section-header">
-                    <h2>Comments</h2>
+                    <h2 class="section-title">Comments</h2>
                 </div>
                 <div id="comments">
                     <div class="content-box">
@@ -217,7 +217,7 @@
         <div class="col-4">
             {% if submission.other_by_author %}
                 <div class="section">
-                    <div class="section-header">
+                    <div class="section-header flex">
                         <h2>More by {{ submission.author.info.displayname }}</h2>
                     </div>
                     <div class="content-box related-uploads">
@@ -229,7 +229,7 @@
             {% endif %}
             {% if submission.recommended %}
                 <div class="section">
-                    <div class="section-header">
+                    <div class="section-header flex">
                         <h2>Related uploads</h2>
                     </div>
                     <div class="content-box related-uploads">
@@ -241,7 +241,7 @@
             {% endif %}
             {% if submission.random %}
                 <div class="section">
-                    <div class="section-header">
+                    <div class="section-header flex">
                         <h2>Random uploads</h2>
                     </div>
                     <div class="content-box related-uploads">

@@ -4,11 +4,13 @@
 
 {% block content %}
     <div class="section">
-        <div class="section-header">
-            <h1>Notifications</h1>
-            {% if 0 %}
-            <a href="notices?action=clear_all">Clear all</a>
-            {% endif %}
+        <div class="section-header flex">
+            <div class="section-header-left">
+                <h1 class="section-title">Notifications</h1>
+            </div>
+            <div class="section-header-right">
+                <a href="/notices?action=clear_all">Clear all</a>
+            </div>
         </div>
         <div class="banner banner-secondary">
             <strong>NOTE</strong>: This page is still incomplete.

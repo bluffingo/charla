@@ -7,8 +7,11 @@
     {% set current_page = page %}
 
     <div class="section">
-        <div class="section-header">
-            <h1>{{ localize('browse') }} (Page {{ current_page }} of {{ total_pages }})</h1>
+        <div class="section-header flex">
+            <div class="section-header-left">
+                <h1 class="section-title">{{ localize('browse') }}</h1>
+                <div class="section-desc">Page {{ current_page }} of {{ total_pages }}</div>
+            </div>
         </div>
         {% if not user %}
             <div class="tabs">
