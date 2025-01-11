@@ -12,27 +12,41 @@
                 <div class="col-4">
                     <div id="previewContainer">
                         <img id="themePreview" src="" alt="Theme Preview" style="max-width: 100%;">
-                        <p id="themeDescription"></p><p id="themeAuthor"></p>
+                        <p id="themeDescription"></p>
+                        <p id="themeAuthor"></p>
                     </div>
                 </div>
                 <div class="col-8">
                     <form name="uploadForm" id="uploadForm" method="post" action="theme">
                         <div class="form-input">
-                            <label for="theme">Skin:</label>
-                            <select id="theme" name="theme" class="form-submit" onchange="updatePreview()">
-                                {% for skin in skins %}
-                                    {% for theme in skin.metadata.themes %}
-                                        {% set skin_theme_value = skin.metadata.id ~ ',' ~ theme.id %}
-                                        <option value="{{ skin_theme_value }}"
-                                                data-preview-url="/assets/previews/{{ skin.metadata.id }}_{{ theme.id }}.png"
-                                                data-description="{{ theme.description }}"
-                                                data-author="{{ theme.author }}"
+                            <div class="form-input">
+                                <label for="theme">Skin:</label>
+                                <select id="theme" name="theme" class="form-submit" onchange="updatePreview()">
+                                    {% for skin in skins %}
+                                        {% for theme in skin.metadata.themes %}
+                                            {% set skin_theme_value = skin.metadata.id ~ ',' ~ theme.id %}
+                                            <option value="{{ skin_theme_value }}"
+                                                    data-preview-url="/assets/previews/{{ skin.metadata.id }}_{{ theme.id }}.png"
+                                                    data-description="{{ theme.description }}"
+                                                    data-author="{{ theme.author }}"
+                                                    {% if skin_theme_value == current_skin_and_theme %} selected{% endif %}>
+                                                {{ skin.metadata.name }}: {{ theme.name }}
+                                            </option>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-input">
+                                <label for="locale">Locale:</label>
+                                <select id="locale" name="locale" class="form-submit">
+                                    {% for locale in locales %}
+                                        <option value="{{ locale.id }}"
                                                 {% if skin_theme_value == current_skin_and_theme %} selected{% endif %}>
-                                            {{ skin.metadata.name }}: {{ theme.name }}
+                                            {{ locale.name }}
                                         </option>
                                     {% endfor %}
-                                {% endfor %}
-                            </select>
+                                </select>
+                            </div>
                         </div>
                         <br>
                         <div class="form-button-container">
