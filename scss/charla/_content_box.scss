@@ -29,6 +29,7 @@
 .thumbnail
 {
     border: 1px solid $content-box-border-color;
+    border-radius: 4px;
 }
 
 .content-grid {
@@ -86,18 +87,23 @@
     overflow: hidden;
     word-break: break-word;
 
+    border-radius: 8px;
+
     @include scrollbar();
 
     &.no-border-top {
         border-top: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    &.no-border-bottom-rounded {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     &.rounded {
-        border-radius: 5px;
-    }
-
-    &.login {
-        padding: 15px;
+        border-radius: 8px;
     }
 
     &.related-uploads {

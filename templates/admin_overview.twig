@@ -3,50 +3,45 @@
 {% set title = "Overview" %}
 
 	{% block admincontent %}
-        <div class="content-box">
-            <div class="section">
-                <div class="section-header flex">
-                    <div class="section-header-left">
-                        <h1 class="section-title">Over the years</h1>
-                        <div class="section-desc">Since {{ data.time.formatted_date }}
-                            ({{ data.time.relative_days }} days ago)
-                        </div>
+        <div class="section">
+            <div class="section-header flex">
+                <div class="section-header-left">
+                    <h1 class="section-title">Over the years</h1>
+                    <div class="section-desc">Since {{ data.time.formatted_date }}
+                        ({{ data.time.relative_days }} days ago)
                     </div>
                 </div>
-                <canvas id="cumulativeChart"></canvas>
             </div>
+            <canvas id="cumulativeChart"></canvas>
         </div>
-        <br>
-        <div class="content-box">
-            <div class="section">
-                <div class="section-header">
-                    <h1 class="section-title">Server details</h1>
+        <hr>
+        <div class="section">
+            <div class="section-header">
+                <h1 class="section-title">Server details</h1>
+            </div>
+            {% if data.system.is_windows %}
+                <div class="text-danger">
+                    Windows is no longer officially supported. If you are using XAMPP, please switch to Windows
+                    Subsystem for Linux.
                 </div>
-                {% if data.system.is_windows %}
-                    <div class="text-danger">
-                        Windows is no longer officially supported. If you are using XAMPP, please switch to Windows
-                        Subsystem for Linux.
-                    </div>
+            {% endif %}
+            <ul>
+                {% if is_opensb_v1_3 and data.system.os_name %}
+                    <li>Operating System: {{ data.system.os_name }}</li>
                 {% endif %}
-                <ul>
-                    {% if is_opensb_v1_3 and data.system.os_name %}
-                        <li>Operating System: {{ data.system.os_name }}</li>
-                    {% endif %}
-                    <li>Uname: {{ data.system.uname }}</li>
-                </ul>
-            </div>
+                <li>Uname: {{ data.system.uname }}</li>
+            </ul>
         </div>
-        <div class="content-box no-border-top">
-            <div class="section">
-                <div class="section-header">
-                    <h1 class="section-title">Statistics</h1>
-                </div>
-                <ul>
-                    {% for key, number in data.numbers %}
-                        <li>{{ key }}: {{ number }}</li>
-                    {% endfor %}
-                </ul>
+        <hr>
+        <div class="section">
+            <div class="section-header">
+                <h1 class="section-title">Statistics</h1>
             </div>
+            <ul>
+                {% for key, number in data.numbers %}
+                    <li>{{ key }}: {{ number }}</li>
+                {% endfor %}
+            </ul>
         </div>
     {% endblock %}
 
