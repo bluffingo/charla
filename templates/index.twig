@@ -46,11 +46,11 @@
         <div class="navigation-bar">
             <a class="navigation-bar-button {% if type=='list' %}active{% endif %}" id="index-list-button">
                 <div class="biscuit-icon homepage-list {% if type=='grid' %}active{% endif %} size-24"></div>
-                List
+                {{ localize("list") }}
             </a>
             <a class="navigation-bar-button {% if type=='grid' %}active{% endif %}" id="index-grid-button">
                 <div class="biscuit-icon homepage-grid {% if type=='grid' %}active{% endif %} size-24"></div>
-                Grid
+                {{ localize("grid") }}
             </a>
         </div>
     {% else %}

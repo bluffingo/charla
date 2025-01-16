@@ -15,9 +15,15 @@
         </div>
         {% if not user %}
             <div class="tabs">
-                <a class="tablink {% if type=='recent' %}active{% endif %}" href="/browse?type=recent">Newest</a>
-                <a class="tablink {% if type=='popular' %}active{% endif %}" href="/browse?type=popular">Popular</a>
-                <a class="tablink {% if type=='random' %}active{% endif %}" href="/browse?type=random">Random</a>
+                <a class="tablink {% if type=='recent' %}active{% endif %}" href="/browse?type=recent">
+                    {{ localize('new') }}
+                </a>
+                <a class="tablink {% if type=='popular' %}active{% endif %}" href="/browse?type=popular">
+                    {{ localize('popular') }}
+                </a>
+                <a class="tablink {% if type=='random' %}active{% endif %}" href="/browse?type=random">
+                    {{ localize('random') }}
+                </a>
             </div>
         {% endif %}
         <div class="content-box no-border-top">
