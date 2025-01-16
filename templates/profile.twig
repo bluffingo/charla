@@ -22,15 +22,16 @@
 {% endblock %}
 
 {% block content %}
-    <div class="content-box no-border-bottom-rounded">
-        <div class="profile-box">
-            <div class="profile-box-pfp">
-                <div class="profile-picture">
-                    <img src="{{ profile_picture(data.username) }}" class="pfp" alt="{{ data.username }}">
+    <div class="section">
+        <div class="content-box">
+            <div class="profile-box">
+                <div class="profile-box-pfp">
+                    <div class="profile-picture">
+                        <img src="{{ profile_picture(data.username) }}" class="pfp" alt="{{ data.username }}">
+                    </div>
                 </div>
-            </div>
-            <div class="profile-box-info">
-                <div class="profile-box-username">
+                <div class="profile-box-info">
+                    <div class="profile-box-username">
                     <span style="color:{{ data.color }}">
                         {% if data.displayname == data.username %}
                             @{{ data.displayname }}
@@ -38,122 +39,125 @@
                             {{ data.displayname }}
                         {% endif %}
                     </span>
-                    {% if data.is_staff %}
-                        <div class="biscuit-icon size-24 staff"></div>
-                    {% endif %}
-                </div>
-
-                {% if data.displayname != data.username %}
-                    <div class="profile-box-handle">
-                        @{{ data.username }}
+                        {% if data.is_staff %}
+                            <div class="biscuit-icon size-24 staff"></div>
+                        {% endif %}
                     </div>
-                {% endif %}
-                <div class="profile-box-details">
-                    <span id="follower_count">{{ data.followers }}</span> followers
-                </div>
-            </div>
-            <div class="profile-box-follow">
-                {% if is_user_logged_in %}
-                    {% if not data.is_current %}
-                        <button class="button button-secondary" id="follow-user">
-                            {% if data.following %}
-                                Unfollow
-                            {% else %}
-                                Follow
-                            {% endif %}
-                        </button>
-                    {% else %}
-                        <a href="/settings">
-                            Edit
-                        </a>
+
+                    {% if data.displayname != data.username %}
+                        <div class="profile-box-handle">
+                            @{{ data.username }}
+                        </div>
                     {% endif %}
-                {% endif %}
+                    <div class="profile-box-details">
+                        <span id="follower_count">{{ data.followers }}</span> followers
+                    </div>
+                </div>
+                <div class="profile-box-follow">
+                    {% if is_user_logged_in %}
+                        {% if not data.is_current %}
+                            <button class="button button-secondary" id="follow-user">
+                                {% if data.following %}
+                                    Unfollow
+                                {% else %}
+                                    Follow
+                                {% endif %}
+                            </button>
+                        {% else %}
+                            <a href="/settings">
+                                Edit
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
-    <div class="content-box no-border-top">
-        <div class="tabs">
-            {% if data.submissions %}
-                <button class="tablink" data-tab="tab_uploads">Uploads</button>
-            {% endif %}
-            {% if data.journals %}
-                <button class="tablink" data-tab="tab_posts">Journals</button>
-            {% endif %}
-            {% if data.pools %}
-                <button class="tablink" data-tab="tab_pools">Pools</button>
-            {% endif %}
-            <button class="tablink" data-tab="tab_comments">Comments</button>
-            <button class="tablink" data-tab="tab_about">About</button>
-        </div>
+    <div class="section">
+        <div class="content-box">
+            <div class="tabs">
+                {% if data.submissions %}
+                    <button class="tablink" data-tab="tab_uploads">Uploads</button>
+                {% endif %}
+                {% if data.journals %}
+                    <button class="tablink" data-tab="tab_posts">Journals</button>
+                {% endif %}
+                {% if data.pools %}
+                    <button class="tablink" data-tab="tab_pools">Pools</button>
+                {% endif %}
+                <button class="tablink" data-tab="tab_comments">Comments</button>
+                <button class="tablink" data-tab="tab_about">About</button>
+            </div>
 
-        <div id="tab_uploads" class="tabcontent">
-            {% if data.submissions %}
-                <div class="section">
-                    <div class="content-box no-border-top">
-                        <div class="section-header flex">
-                            <div class="section-header-left">
-                                <h2 class="section-title">Uploads</h2>
+            <div id="tab_uploads" class="tabcontent">
+                {% if data.submissions %}
+                    <div class="section">
+                        <div class="content-box no-border-top">
+                            <div class="section-header flex">
+                                <div class="section-header-left">
+                                    <h2 class="section-title">Uploads</h2>
+                                </div>
+                                <div class="section-header-right">
+                                    <a href="/browse">{{ localize('more') }}</a>
+                                </div>
                             </div>
-                            <div class="section-header-right">
-                                <a href="/browse">{{ localize('more') }}</a>
+                            <div class="content-grid">
+                                {% for submission in data.submissions %}
+                                    {{ include('/components/_upload_grid.twig') }}
+                                {% endfor %}
                             </div>
-                        </div>
-                        <div class="content-grid">
-                            {% for submission in data.submissions %}
-                                {{ include('/components/_upload_grid.twig') }}
-                            {% endfor %}
                         </div>
                     </div>
-                </div>
-            {% endif %}
-        </div>
+                {% endif %}
+            </div>
 
-        <div id="tab_posts" class="tabcontent">
-            <div class="section">
-                <div class="content-box no-border-top">
-                    {% if data.journals %}
-                        {% for journal in data.journals %}
-                            {{ include('/components/_journal.twig') }}
+            <div id="tab_posts" class="tabcontent">
+                <div class="section">
+                    <div class="content-box no-border-top">
+                        {% if data.journals %}
+                            {% for journal in data.journals %}
+                                {{ include('/components/_journal.twig') }}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab_pools" class="tabcontent">
+                <div class="section">
+                    Under Construction
+                </div>
+            </div>
+
+            <div id="tab_comments" class="tabcontent">
+                <div class="section">
+                    <div class="content-box no-border-top">
+                        {{ include('/components/_comment_input.twig') }}
+                        {% for comment in data.comments %}
+                            {{ include('/components/_comment.twig') }}
                         {% endfor %}
-                    {% endif %}
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div id="tab_pools" class="tabcontent">
-            <div class="section">
-                Under Construction
-            </div>
-        </div>
-
-        <div id="tab_comments" class="tabcontent">
-            <div class="section">
-                <div class="content-box no-border-top">
-                    {{ include('/components/_comment_input.twig') }}
-                    {% for comment in data.comments %}
-                        {{ include('/components/_comment.twig') }}
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-        <div id="tab_about" class="tabcontent">
-            <div class="section">
-                <div class="content-box no-border-top">
-                    {% if data.about | trim is not empty %}
-                        {{ data.about | markdown_user_written }}
-                    {% else %}
-                        This user has not set a description.
-                    {% endif %}
+            <div id="tab_about" class="tabcontent">
+                <div class="section">
+                    <div class="content-box no-border-top">
+                        {% if data.about | trim is not empty %}
+                            {{ data.about | markdown_user_written }}
+                        {% else %}
+                            This user has not set a description.
+                        {% endif %}
                         <hr>
-                    <ul>
-                        <li>
-                            Joined: {{ data.joined | relative_time() }}
-                        </li>
-                        <li>
-                            Last login: {{ data.connected | relative_time() }}
-                        </li>
-                    </ul>
+                        <ul>
+                            <li>
+                                Joined: {{ data.joined | relative_time() }}
+                            </li>
+                            <li>
+                                Last login: {{ data.connected | relative_time() }}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

@@ -18,7 +18,7 @@
   @include responsive('tiny') {
     text-align: center;
     border-bottom: 1px solid $content-box-border-color;
-    padding: 30px;
+    padding: 2em;
   }
   @include responsive('medium') {
     border-bottom: none;

@@ -2,7 +2,7 @@
     <div class="col-8">
         <div class="section">
             <div class="section-header flex">
-                {% if is_user_logged_in and options.charla_2025_ui %}
+                {% if is_user_logged_in %}
                     <div class="section-header-left">
                         <h2 class="section-title">{{ localize('following_uploads') }}</h2>
                         <div class="section-desc">{{ localize('following_uploads_desc') }}</div>
@@ -20,7 +20,7 @@
                     </div>
                 {% endif %}
             </div>
-            {% if is_user_logged_in and options.charla_2025_ui %}
+            {% if is_user_logged_in %}
                 <div class="content-box">
                     TODO
                 </div>

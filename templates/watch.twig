@@ -218,7 +218,7 @@
             {% if submission.other_by_author %}
                 <div class="section">
                     <div class="section-header flex">
-                        <h2>More by {{ submission.author.info.displayname }}</h2>
+                        <h2>From {{ submission.author.info.displayname }}</h2>
                     </div>
                     <div class="content-box related-uploads">
                         {% for submission in submission.other_by_author %}

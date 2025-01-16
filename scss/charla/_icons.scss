@@ -43,11 +43,11 @@
   }
 
   /* yeah this is kinda fucked */
-  &.b-primary, &.b-secondary {
+  &.b-primary {
     background-image: url( '/assets/icons/banner-primary.svg' );
   }
 
-  &.b-neutral {
+  &.b-secondary {
     @if $theme == "dark" {
       background-image: url( '/assets/icons/banner-primary.svg' );
     } @else {

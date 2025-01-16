@@ -148,10 +148,7 @@ hr {
   border: 0;
   border-bottom: 1px solid $content-box-border-color;
   height: 0;
-  margin: 10px 0;
-  &.taller {
-    margin: 25px 0;
-  }
+  margin: 1em 0;
 }
 
 .userlink-handle {

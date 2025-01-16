@@ -2,6 +2,14 @@
     {% set pluralViews = "s" %}
 {% endif %}
 
+{% if submission.type == 0 %}
+    {% set type = "Video" %}
+{% elseif submission.type == 2 %}
+    {% set type = "Image" %}
+{% else %}
+    {% set type = "Unknown" %}
+{% endif %}
+
 <div class="content-entry">
     <div class="content-thumbnail">
         <a href="/view/{{ submission.id }}">
@@ -19,7 +27,7 @@
                 {% endif %}
             </a>
             <div class="content-upload-edit-button">
-                <div class="menu-button button button-neutral button-transparent button-caret"
+                <div class="menu-button button button-secondary button-transparent button-caret"
                      data-menu-id="upload-edit-{{ submission.id }}">
                     <div class="menu-caret-container">
                         <i class="biscuit-icon caret-closed menu-caret"></i>

@@ -21,7 +21,7 @@ $content-box-border-color: #DDDDDD;
         $content-box-border-color: #333333;
 }
 
-$content-box-padding: 1rem;
+$content-box-padding: 1em;
 
 // content box grid entries
 $content-box-grid-entry-height: 190px;
@@ -29,22 +29,17 @@ $content-box-grid-entry-width: 135px;
 
 // component colors
 $primary: #1B80CB; // primary color
-$secondary: #666; // secondary color
-$dark: #333; // dark gray
-@if $theme == "dark" {
-        $secondary: $dark; // secondary color
-}
+$secondary: $content-box-border-color; // secondary color
 $green: #28c228;
 $red: #c01b0c;
 $yellow: #ffb10a;
 
 $color-map: (
         "primary": $primary,
-        "secondary": $secondary,
+        "secondary": $content-box-border-color,
         "success": $green,
         "danger": $red,
         "warning": $yellow,
-        "neutral": $content-box-border-color,
 );
 
 // header/hamburger

@@ -64,8 +64,13 @@
     padding: 3px 4px;
   }
 
+  &.button-transparent {
+    background: none;
+  }
+
   &.button-small {
-    padding: 5px 10px;
+    font-size: 0.75em;
+    padding: 5px;
   }
 
   &.button-big {
@@ -91,10 +96,6 @@
 @each $color, $value in $color-map {
   .button-#{$color} {
     @include button-variant($value);
-
-    &.button-transparent {
-      background: none;
-    }
   }
 }
 
