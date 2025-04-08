@@ -29,7 +29,7 @@
 .thumbnail
 {
     border: 1px solid $content-box-border-color;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 .content-grid {
@@ -87,7 +87,7 @@
     overflow: hidden;
     word-break: break-word;
 
-    border-radius: 8px;
+    border-radius: 4px;
 
     @include scrollbar();
 
@@ -100,10 +100,6 @@
     &.no-border-bottom-rounded {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-    }
-
-    &.rounded {
-        border-radius: 8px;
     }
 
     &.related-uploads {
