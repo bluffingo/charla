@@ -31,24 +31,17 @@
         </form>
         <div class="header-links">
             {% if is_user_logged_in %}
-                {% if not options.charla_2025_ui %}
-                    {# old notifications #}
-                    <a class="menulink hide-small" href="/notices">
-                        <i class="biscuit-icon mail"></i>
-                        {{ user_stat_data.notifications }}
-                    </a>
-                {% endif %}
-                {% if options.charla_2025_ui %}
-                    {# create #}
-                    <div class="user-menu-container">
-                        <div class="menu-button user-menu-button" data-menu-id="create-menu">
-                            <i class="biscuit-icon plus"></i>
-                        </div>
-                        <div class="menu" id="create-menu">
-                            <a class="menu-item-button" href="/upload">New upload</a>
-                            <a class="menu-item-button" href="/write">New journal</a>
-                        </div>
+                {# create #}
+                <div class="user-menu-container">
+                    <div class="menu-button user-menu-button" data-menu-id="create-menu">
+                        <i class="biscuit-icon plus"></i>
                     </div>
+                    <div class="menu" id="create-menu">
+                        <a class="menu-item-button" href="/upload">New upload</a>
+                        <a class="menu-item-button" href="/write">New journal</a>
+                    </div>
+                </div>
+                {% if options.enable_incomplete_features %}
                     {# notifications #}
                     <div class="user-menu-container">
                         <div class="menu-button user-menu-button" data-menu-id="notify-menu">
@@ -59,6 +52,11 @@
                                 ({{ user_stat_data.notifications }})</a>
                         </div>
                     </div>
+                {% else %}
+                    <a class="menulink hide-small" href="/notices">
+                        <i class="biscuit-icon mail"></i>
+                        {{ user_stat_data.notifications }}
+                    </a>
                 {% endif %}
                 {# user #}
                 <div class="user-menu-container">
@@ -68,7 +66,6 @@
                         </div>
                     </div>
                     <div class="menu" id="user-menu">
-                        {% if options.charla_2025_ui %}
                             <div class="user-menu-intro">
                                 <div class="user-menu-intro-left">
                                     <div class="profile-picture">
@@ -83,7 +80,6 @@
                                 </div>
                             </div>
                             <hr>
-                        {% endif %}
                         {% for link in header_user_links() %}
                             <a class="menu-item-button" href="{{ link.url }}">{{ link.name }}</a>
                         {% endfor %}
