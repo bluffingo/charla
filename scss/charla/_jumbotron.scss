@@ -87,8 +87,8 @@
   }
 
   &.profile-banner {
-    background: #111 center/cover;
-    height: 323px;
+    background: #111 center no-repeat;
+    height: 300px;
 
     .jumbotron-container {
       padding-top: $header-height;
