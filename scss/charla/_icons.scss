@@ -48,7 +48,7 @@
   }
 
   &.b-secondary {
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       background-image: url( '/assets/icons/banner-primary.svg' );
     } @else {
       background-image: url( '/assets/icons/banner-secondary.svg' );
@@ -64,7 +64,7 @@
   }
 
   &.search {
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       background-image: url('/assets/icons/search-dark.svg');
     } @else {
       background-image: url('/assets/icons/search-light.svg');
@@ -72,7 +72,7 @@
   }
 
   &.hamburger {
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       background-image: url('/assets/icons/hamburger-dark.svg');
     } @else {
       background-image: url('/assets/icons/hamburger-light.svg');
@@ -80,7 +80,7 @@
   }
 
   &.caret-closed {
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       background-image: url( '/assets/icons/caret-closed-dark.svg' );
     } @else {
       background-image: url( '/assets/icons/caret-closed-light.svg' );
@@ -88,7 +88,7 @@
   }
 
   &.caret-open {
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       background-image: url( '/assets/icons/caret-open-dark.svg' );
     } @else {
       background-image: url( '/assets/icons/caret-open-light.svg' );
@@ -104,7 +104,7 @@
   }
 
   &.mail {
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       background-image: url('/assets/icons/mail-dark.svg');
     } @else {
       background-image: url('/assets/icons/mail-light.svg');
@@ -112,7 +112,7 @@
   }
 
   &.bell {
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       background-image: url('/assets/icons/bell-dark.svg');
     } @else {
       background-image: url('/assets/icons/bell-light.svg');
@@ -120,7 +120,7 @@
   }
 
   &.plus {
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       background-image: url('/assets/icons/plus-dark.svg');
     } @else {
       background-image: url('/assets/icons/plus-light.svg');
@@ -128,7 +128,7 @@
   }
 
   &.homepage-list {
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       background-image: url( '/assets/icons/homepage-list-dark.svg' );
     } @else {
       background-image: url('/assets/icons/homepage-list-light.svg');
@@ -136,7 +136,7 @@
   }
 
   &.homepage-grid {
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       background-image: url( '/assets/icons/homepage-grid-dark.svg' );
     } @else {
       background-image: url( '/assets/icons/homepage-grid-light.svg' );

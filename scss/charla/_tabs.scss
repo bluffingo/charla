@@ -18,7 +18,7 @@
       display: flex;
 
       &:hover {
-        @if $theme == "dark" {
+        @if $color-scheme == "dark" {
           background-color: rgba(color.adjust($bg-color, $lightness: 2.5%), 50%);
         } @else {
           background-color: rgba(color.adjust($bg-color, $lightness: -3.5%), 10%);
@@ -44,7 +44,7 @@
   border: 1px solid #0000;
 
   &:hover {
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       background-color: color.adjust($bg-color, $lightness: 2.5%);
     } @else {
       background-color: color.adjust($bg-color, $lightness: -3.5%)
@@ -56,7 +56,7 @@
     background-color: $content-box-background-color;
     border: 1px solid $content-box-border-color;
     border-bottom: 1px solid #fff0;
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       color: white;
     } @else {
       color: black;

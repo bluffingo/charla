@@ -5,7 +5,7 @@
 .jumbotron {
   &.page-banner {
     background: #0069B4;
-    //@if $theme == "dark" {
+    //@if $color-scheme == "dark" {
     color: white;
     //} @else {
     //  color: black;

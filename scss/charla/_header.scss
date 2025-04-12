@@ -1,5 +1,5 @@
 @mixin header-link-hover {
-  @if $theme == "dark" {
+  @if $color-scheme == "dark" {
     background: rgba(white, 0.075);
   } @else {
     background: rgba(black, 0.025);
@@ -7,7 +7,7 @@
 }
 
 @mixin header-link-active {
-  @if $theme == "dark" {
+  @if $color-scheme == "dark" {
     background: rgba(white, 0.035);
   } @else {
     background: rgba(black, 0.1);
@@ -196,7 +196,7 @@ form.header-search
   opacity: $header-link-inactive-opacity;
   height: $header-height;
   padding: 0 0.5em;
-  @if $theme == "dark" {
+  @if $color-scheme == "dark" {
     text-shadow: 0 1px 0 rgba(black, 0.25);
   }
 

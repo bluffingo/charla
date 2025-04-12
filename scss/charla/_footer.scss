@@ -11,7 +11,7 @@
       margin: 0 0.25em;
     }
 
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       color: white;
     } @else {
       color: #333;

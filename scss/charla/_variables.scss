@@ -6,7 +6,7 @@ $link-color: #006FFF;
 $bg-color: #F2F2F2;
 $header-link-color: black;
 
-@if $theme == "dark" {
+@if $color-scheme == "dark" {
         $text-color: white;
         $link-color: #2d89e8;
         $bg-color: #0B0B0B;
@@ -16,7 +16,7 @@ $header-link-color: black;
 // content boxes
 $content-box-background-color: #FFF;
 $content-box-border-color: #DDDDDD;
-@if $theme == "dark" {
+@if $color-scheme == "dark" {
         $content-box-background-color: #111111;
         $content-box-border-color: #333333;
 }
@@ -66,7 +66,7 @@ $color-map-admin: (
         "staff": #90caf9,
 );
 
-@if $theme == "dark" {
+@if $color-scheme == "dark" {
         $color-map-admin: (
                 "banned-other-unbanned": #b05050,
                 "unbanned-other-banned": #b37729,
