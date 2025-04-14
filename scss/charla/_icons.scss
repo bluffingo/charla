@@ -143,6 +143,22 @@
     }
   }
 
+  &.next {
+    @if $color-scheme == "dark" {
+      background-image: url( '/assets/icons/placeholder.svg' );
+    } @else {
+      background-image: url( '/assets/icons/next-light.svg' );
+    }
+  }
+
+  &.previous {
+    @if $color-scheme == "dark" {
+      background-image: url( '/assets/icons/placeholder.svg' );
+    } @else {
+      background-image: url( '/assets/icons/previous-light.svg' );
+    }
+  }
+
   &.placeholder {
     background-image: url( '/assets/icons/placeholder.svg' );
   }

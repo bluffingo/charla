@@ -27,6 +27,15 @@
             {% else %}
                 <div class="content-box carousel">
                     <section class="splide" id="splide1" aria-labelledby="carousel-heading">
+                        <div class="splide__arrows">
+                            <button class="splide__arrow splide__arrow--prev">
+                                <div class="biscuit-icon previous"></div>
+                            </button>
+                            <button class="splide__arrow splide__arrow--next">
+                                <div class="biscuit-icon next"></div>
+                            </button>
+                        </div>
+
                         <div class="splide__track">
                             <ul class="splide__list">
                                 {% for submission in data.submissions %}

@@ -2,6 +2,7 @@
 
 .navigation-bar {
   background: $header-background;
+  border-top: 1px solid $header-border;
   border-bottom: 1px solid $header-border;
 
   display: flex;
