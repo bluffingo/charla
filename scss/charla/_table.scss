@@ -24,16 +24,6 @@ table.c1 {
         font-weight: 500;
       }
     }
-
-    @each $color, $value in $color-map-admin {
-      &.#{$color} {
-        background-color: $value;
-
-        td {
-          border-color: color.adjust(color.adjust($value, $lightness: -5.5%), $hue: -3deg);
-        }
-      }
-    }
   }
 
   td {

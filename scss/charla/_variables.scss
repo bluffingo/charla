@@ -56,29 +56,6 @@ $form-bg-color: $content-box-background-color;
 $form-text-color: $text-color;
 $form-border-color: $content-box-border-color;
 
-$color-map-admin: (
-        "banned-other-unbanned": #ff6b6b,
-        "unbanned-other-banned": #ffa726,
-        "banned": #ff8a80,
-        "shadow-banned": #ffccbc,
-        "unbanned-other-unbanned": #fff59d,
-        "partner": #a5d6a7,
-        "staff": #90caf9,
-);
-
-@if $color-scheme == "dark" {
-        $color-map-admin: (
-                "banned-other-unbanned": #b05050,
-                "unbanned-other-banned": #b37729,
-                "banned": #b26666,
-                "shadow-banned": #b2948b,
-                "unbanned-other-unbanned": #b3a35d,
-                "partner": #6e8b6e,
-                "staff": #607c94,
-        );
-
-}
-
 // fonts
 $font: Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
