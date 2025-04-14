@@ -38,8 +38,8 @@
                 <h1 class="section-title">Statistics</h1>
             </div>
             <ul>
-                {% for key, number in data.numbers %}
-                    <li>{{ key }}: {{ number }}</li>
+                {% for item in data.numbers %}
+                    <li>{{ item.name }}: {{ item.value }}</li>
                 {% endfor %}
             </ul>
         </div>
