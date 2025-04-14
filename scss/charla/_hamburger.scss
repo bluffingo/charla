@@ -32,8 +32,8 @@
     .hamburger-header {
       margin-top: 0.8rem;
       display: block;
-      padding: 5px 0.9rem;
-      color: rgba($header-link-color, 66%);
+      padding: 0.4rem 0.9rem;
+      color: rgba($header-link-color, 75%);
       font-size: 0.8rem;
     }
 
@@ -46,8 +46,8 @@
 
       a {
         display: flex;
-        padding: 5px 1rem;
-        color: rgba($header-link-color, 66%);
+        padding: $menu-item-padding;
+        color: rgba($header-link-color, 75%);
         align-items: center;
         gap: 0.4rem;
 

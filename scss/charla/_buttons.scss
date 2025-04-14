@@ -85,11 +85,16 @@
     border-radius: 7px;
   }
 
-  &.button-full {
-    width: 100%;
-
-    padding: 0.5rem;
-    border-radius: 6px;
+  &.button-login {
+    @include responsive('tiny') {
+      width: 100%;
+    }
+    @include responsive('small') {
+      width: 100%;
+    }
+    @include responsive('medium') {
+      width: inherit;
+    }
   }
 }
 
