@@ -12,9 +12,6 @@
                 <a href="/notices?action=clear_all">Clear all</a>
             </div>
         </div>
-        <div class="banner banner-secondary">
-            <strong>NOTE</strong>: This page is still incomplete.
-        </div>
         <div class="content-box">
             {% for notice in data %}
                 <div class="content-entry">
@@ -38,9 +35,7 @@
                     </div>
                 </div>
             {% else %}
-            <p>
-                You have no notifications.
-            </p>
+                No notifications.
             {% endfor %}
         </div>
     </div>
