@@ -104,6 +104,18 @@
         </div>
     </div>
 </div>
+{#
+<div class="mobile-navigation-bar-container">
+    <div class="navigation-bar">
+        {% for link in header_main_links() %}
+            <a class="navigation-bar-button" href="{{ link.url }}">
+                <div class="biscuit-icon homepage-list size-24"></div>
+                {{ link.name }}
+            </a>
+        {% endfor %}
+    </div>
+</div>
+#}
 <div class="hamburger" id="hamburger">
     <ul class="hamburger-list">
         {% for link in header_main_links() %}

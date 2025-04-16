@@ -1,5 +1,26 @@
 @use "sass:color";
 
+
+/*
+TODO
+.mobile-navigation-bar-container {
+  z-index: 2000;
+  border-bottom: none;
+  bottom: 0;
+  width: 100%;
+
+  @include responsive('tiny') {
+    position: fixed;
+  }
+  @include responsive('small') {
+    display: none;
+  }
+  @include responsive('medium') {
+    display: none;
+  }
+}
+*/
+
 .navigation-bar {
   background: $header-background;
   border-top: 1px solid $header-border;
