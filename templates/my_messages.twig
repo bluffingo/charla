@@ -1,0 +1,26 @@
+{% extends "_layout.twig" %}
+
+{% set title = "My messages" %}
+
+{% block content %}
+    <div class="section">
+        <div class="section-header">
+            <h1 class="section-title">My messages (Inbox?)</h1>
+        </div>
+        <div class="content-box">
+            {% for message in data %}
+                <div class="content-entry">
+                    <div class="content-info">
+                        <div class="content-title">
+                            {{ message.title }}
+                        </div>
+                        <div class="content-description">
+                            By {{ user_link(message.author) }} • {{ message.published | relative_time }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+{% endblock %}
