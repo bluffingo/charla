@@ -12,14 +12,15 @@
         }
 
         .page a {
-            color: {{ data.customization.link_color }}
+            color: {{ data.customization.link_color }};
+        }
+
+        /* Titles */
+        .section-title {
+            color: {{ data.customization.title_color }};
         }
 
         /* Highlight box */
-        .content-header.highlight-box {
-            background-color: {{ data.customization.basic_box_border_color }};
-            color: #ffffff;
-        }
         .content-box.highlight-box {
             background-color: {{ data.customization.highlight_box_background_color }};
             border-color: {{ data.customization.basic_box_border_color }};
@@ -27,10 +28,6 @@
         }
 
         /* Basic box */
-        .content-header.basic-box {
-            background-color: {{ data.customization.basic_box_border_color }};
-            color: #ffffff;
-        }
         .content-box.basic-box {
             background-color: {{ data.customization.basic_box_background_color }};
             border-color: {{ data.customization.basic_box_border_color }};
