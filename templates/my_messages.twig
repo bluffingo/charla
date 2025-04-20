@@ -1,21 +1,33 @@
-{% extends "_layout.twig" %}
+{% extends "_layout_my_stuff.twig" %}
 
 {% set title = "My messages" %}
 
-{% block content %}
+{% block mystuffcontent %}
     <div class="section">
         <div class="section-header">
             <h1 class="section-title">My messages (Inbox?)</h1>
         </div>
+        <div class="banner banner-secondary">
+            INCOMPLETE!
+        </div>
         <div class="content-box">
             {% for message in data %}
                 <div class="content-entry">
-                    <div class="content-info">
-                        <div class="content-title">
-                            {{ message.title }}
+                    <div class="content-thumbnail">
+                        <div class="content-image profile-picture">
+                            <img src="{{ profile_picture(user.info.username) }}"
+                                 alt="{{ user.info.username }}" class="pfp">
                         </div>
-                        <div class="content-description">
-                            By {{ user_link(message.author) }} • {{ message.published | relative_time }}
+                    </div>
+                    <div class="content-info">
+                        <div class="content-author">
+                            {{ user_link(message.author) }}
+                            <small title="{{ message.published | date('F jS Y') }}">
+                                {{ message.published | relative_time }}
+                            </small>
+                        </div>
+                        <div class="content-title">
+                            {{ message.title }} {{ message.contents }}
                         </div>
                     </div>
                 </div>

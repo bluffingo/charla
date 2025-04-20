@@ -1,0 +1,14 @@
+{% extends "_layout.twig" %}
+
+	{% block content %}
+        <div class="tabs">
+            <a class="tablink {% if page_name=='my_uploads' %}active{% endif %}" href="/my_uploads">Uploads</a>
+            <a class="tablink {% if page_name=='my_messages' %}active{% endif %}" href="/my_messages">Messages</a>
+            <a class="tablink {% if page_name=='notifications' %}active{% endif %}" href="/notifications">Notifications</a>
+        </div>
+
+        <div class="content-box no-border-top">
+            {% block mystuffcontent %}
+            {% endblock %}
+        </div>
+    {% endblock %}
