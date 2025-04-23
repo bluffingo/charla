@@ -41,23 +41,18 @@
                         <a class="menu-item-button" href="/write">New journal</a>
                     </div>
                 </div>
-                {% if options.enable_incomplete_features %}
-                    {# notifications #}
-                    <div class="user-menu-container">
-                        <div class="menu-button user-menu-button" data-menu-id="notify-menu">
-                            <i class="biscuit-icon bell"></i>
-                        </div>
-                        <div class="menu" id="notify-menu">
-                            <a class="menu-item-button" href="/notices">Old notices page
-                                ({{ user_stat_data.notifications }})</a>
-                        </div>
+                {# notifications #}
+                <div class="user-menu-container">
+                    <div class="menu-button user-menu-button" data-menu-id="notify-menu">
+                        <i class="biscuit-icon bell"></i>
                     </div>
-                {% else %}
-                    <a class="menulink hide-small" href="/notices">
-                        <i class="biscuit-icon mail"></i>
-                        {{ user_stat_data.notifications }}
-                    </a>
-                {% endif %}
+                    <div class="menu" id="notify-menu">
+                        <a class="menu-item-button" href="/notifications">Notifications
+                            ({{ user_stat_data.notifications }})</a>
+                        <a class="menu-item-button" href="/my_messages">Messages
+                            (0)</a>
+                    </div>
+                </div>
                 {# user #}
                 <div class="user-menu-container">
                     <div class="menu-button user-menu-button" data-menu-id="user-menu">
