@@ -6,7 +6,9 @@
             </a>
         </div>
         <div class="content-description">
-            By {{ user_link(journal.author) }} • {{ journal.published | relative_time }}
+            {{ user_link(journal.author) }}
+            <br>
+            {{ journal.published | relative_time }}
             <br>
             {{ journal.contents|u.truncate(300, '...') }}
         </div>

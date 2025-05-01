@@ -47,7 +47,7 @@
         grid-template-columns: repeat(4, 1fr);
     }
     @include responsive('large') {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     &.content-grid-users {
