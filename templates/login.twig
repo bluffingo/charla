@@ -5,7 +5,7 @@
 	{% block content %}
         <div class="section">
             <div class="section-header">
-                <h1 class="section-title">Login</h1>
+                <h1 class="section-title">{{ localize('login') }}</h1>
                 {% if is_user_logged_in %}
                 <div>
                     Currently logged in as {{ user_data.name }}.
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="login-text">
-                            Don't have an account? <a href="/register">Register</a>
+                            Don't have an account? <a href="/register">{{ localize('register') }}</a>
                         </div>
 
                         <div class="form-button-container">
