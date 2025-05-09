@@ -41,7 +41,7 @@
     </div>
     <div class="section">
         <div class="content-box no-border-bottom-rounded">
-            {{ data.contents | markdown_user_journal }}
+            {{ data.contents | markdown_user_written(true) }}
         </div>
         <div id="comments">
             <div class="content-box no-border-top">
