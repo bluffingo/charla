@@ -3,7 +3,6 @@
 @mixin button() {
   padding: 8px 12px;
   text-align: center;
-  border: none;
   border-radius: 4px;
   color: white;
   font-family: $font;
@@ -45,6 +44,7 @@
     display: flex;
 
     &:not(:hover):not(:active) {
+      box-shadow: none;
       border-color: #0000;
     }
   }

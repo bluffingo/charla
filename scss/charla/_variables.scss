@@ -57,7 +57,8 @@ $form-text-color: $text-color;
 $form-border-color: $content-box-border-color;
 
 // fonts
-$font: Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-serif: Georgia, "Times New Roman", serif;
 
 // https://medium.com/@jainbhavukspeaks/leveraging-scss-mixins-to-create-responsive-layouts-the-easy-way-5bbe4080cb15
 // breakpoints
