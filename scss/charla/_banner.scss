@@ -27,7 +27,7 @@
 @each $color, $value in $color-map {
   .banner-#{$color} {
     $border-color: color.adjust($value, $lightness: -7.5%);
-    @if $theme == "dark" {
+    @if $color-scheme == "dark" {
       $border-color: color.adjust($value, $lightness: 10%);
     }
 
