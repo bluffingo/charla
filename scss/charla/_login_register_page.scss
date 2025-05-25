@@ -1,41 +1,62 @@
-body.login {
-  background: #333 url("/assets/biscuit_login_background.jpg");
-  background-size: cover;
-  background-position: center;
+.login-text {
+  font-size: 0.9em;
+}
 
-  .page {
-    display: flex;
-    align-items: center;
-    height: calc(100vh - $header-height);;
-    justify-content: center;
-  }
-
-  .page-login {
-    margin: 0;
-    padding: 0;
-    .register, .login {
-      width: 350px;
+.login-bottom {
+  @include responsive('tiny') {
+    display: block;
+    .login-text {
+      margin: 1em 0;
     }
   }
+  @include responsive('medium') {
+    display: flex;
+    align-items: center;
 
-  .section-header {
-    text-shadow: 0 0.1em 0.2em rgba(black, 0.5);
-    color: white;
+    .login-text {
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+// modified duplicate of col-version
+.col-login-info {
+  display: flex;
+
+  @include responsive('tiny') {
+    flex-direction: column-reverse;
+
+    border-top: 1px solid $content-box-border-color;
+    border-left: 0;
+    padding-left: 0;
+    margin-top: 1em;
+  }
+  @include responsive('medium') {
+    flex-direction: column;
+
+    border-top: 0;
+    border-left: 1px solid $content-box-border-color;
+    padding-left: 2em;
+    margin-top: 0;
+  }
+}
+
+.login-currently-logged-in {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+
+  .login-currently-logged-in-text {
+    margin-bottom: 1em;
   }
 
-  .login-text {
-    margin: 1em 0;
-    font-size: 0.8em;
-    &.login-footer {
-      margin: 0.8em 0 0 0;
-      font-size: 0.9em;
-
-      text-align: center;
-      text-shadow: 0 0.1em 0.2em rgba(black, 0.5);
-      color: white;
-      a {
-        color: white;
-      }
+  .login-pfp {
+    width: 50px;
+    height: 50px;
+    .profile-picture {
+      width: 50px;
+      height: 50px;
     }
   }
 }
