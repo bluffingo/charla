@@ -23,6 +23,7 @@
 // modified duplicate of col-version
 .col-login-info {
   display: flex;
+  height: 100%;
 
   @include responsive('tiny') {
     flex-direction: column-reverse;
@@ -48,7 +49,11 @@
   align-items: center;
 
   .login-currently-logged-in-text {
-    margin-bottom: 1em;
+    //margin-bottom: 1em;
+  }
+
+  .login-currently-logged-in-other-accs {
+    font-size: 0.9em;
   }
 
   .login-pfp {

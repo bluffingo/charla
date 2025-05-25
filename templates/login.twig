@@ -10,7 +10,7 @@
                 <h1 class="section-title">{{ localize('login') }}</h1>
             </div>
             <div class="content-box">
-                <div class="grid">
+                <div class="grid center">
                     <div class="col-6">
                         <div class="panel-body">
                             <form method="post" name="loginForm" id="loginForm" action="login" class="form-signin">
@@ -49,12 +49,14 @@
                                     <div class="login-currently-logged-in-text">
                                         You are currently logged in as {{ user_data.name }}.
                                     </div>
-                                    {% if other_accs %}
-                                        <span>Other accounts:</span>
-                                        {% for link in other_accs %}
-                                            <a href="/login/{{ link.username }}">{{ link.username }}</a>{{ not loop.last ? ',' }}
-                                        {% endfor %}
-                                    {% endif %}
+                                    <div class="login-currently-logged-in-other-accs">
+                                        {% if other_accs %}
+                                            <span>Other accounts:</span>
+                                            {% for link in other_accs %}
+                                                <a href="/login/{{ link.username }}">{{ link.username }}</a>{{ not loop.last ? ',' }}
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
                                 </div>
                             </div>
                             <hr>
