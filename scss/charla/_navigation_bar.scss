@@ -23,7 +23,7 @@ TODO
 
 .navigation-bar {
   background: $header-background;
-  border-top: 1px solid $header-border;
+  //border-top: 1px solid $header-border;
   border-bottom: 1px solid $header-border;
 
   display: flex;
@@ -42,12 +42,13 @@ TODO
     &:hover {
       opacity: $header-link-active-opacity;
       cursor: pointer;
-      background: $header-link-hover;
+      @include bar-button-hover;
     }
 
-    &.active {
+    &:active, &.active {
       opacity: $header-link-active-opacity;
       background: $header-link-active;
+      @include bar-button-active;
     }
   }
 }

@@ -3,8 +3,9 @@
     @if $color-scheme == "dark" {
       background: #29292a;
     } @else {
-      background: #0069B4;
+      background: #0069B4 url("/assets/charla_banner_background.jpg") center;
       color: white;
+      text-shadow: 0 0.1em 0.2em rgba(black, 0.5);
     }
 
     h1, p {

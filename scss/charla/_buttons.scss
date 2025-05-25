@@ -57,11 +57,6 @@
   &.button-hamburger {
     padding: 0;
     display: flex;
-
-    &:not(:hover):not(:active) {
-      box-shadow: none;
-      border-color: #0000;
-    }
   }
 
   &.button-caret {
@@ -70,11 +65,16 @@
 
   &.button-transparent {
     background: none;
+
+    &:not(:hover):not(:active) {
+      box-shadow: none;
+      border-color: #0000;
+    }
   }
 
   &.button-small {
     font-size: 0.75em;
-    padding: 5px;
+    padding: 5px 8px;
   }
 
   &.button-big {

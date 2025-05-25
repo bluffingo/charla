@@ -1,21 +1,3 @@
-@mixin header-link-hover {
-  @if $color-scheme == "dark" {
-    background: rgba(white, 0.075);
-    box-shadow: 0 6px 10px rgba(black, 0.25) inset;
-  } @else {
-    background: $header-link-hover;
-  }
-}
-
-@mixin header-link-active {
-  @if $color-scheme == "dark" {
-    background: rgba(white, 0.025);
-    box-shadow: 0 6px 10px rgba(black, 0.6) inset;
-  } @else {
-    background: $header-link-active;
-  }
-}
-
 .header
 {
   .header-container {
@@ -86,11 +68,11 @@
       }
 
       &:hover {
-        @include header-link-hover;
+        @include bar-button-hover;
       }
 
       &:active, &.selected {
-        @include header-link-active;
+        @include bar-button-active;
       }
 
       .user-menu-pfp {
@@ -257,8 +239,9 @@
     gap: 8px;
 
     .user-menu-intro-left {
-      .pfp {
+      .profile-picture {
         width: 52px;
+        height: 52px;
       }
     }
 

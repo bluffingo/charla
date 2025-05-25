@@ -78,7 +78,7 @@
                         {{ data.about | markdown_user_written }}
                         <hr>
                     {% endif %}
-                    <ul>
+                    <ul class="unstyled-list">
                         <li>
                             Joined: {{ data.joined | relative_time() }}
                         </li>
@@ -90,6 +90,7 @@
             </div>
 
             <div class="section">
+                {% if data.journals %}
                 <div class="content-box basic-box">
                     <div class="section-header flex">
                         <div class="section-header-left">
@@ -99,12 +100,11 @@
                             <a href="/journals/{{ data.username }}">{{ localize('more') }}</a>
                         </div>
                     </div>
-                    {% if data.journals %}
                         {% for journal in data.journals %}
                             {{ include('/components/_journal.twig') }}
                         {% endfor %}
-                    {% endif %}
                 </div>
+                {% endif %}
             </div>
         </div>
         <div class="col-8">

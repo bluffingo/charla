@@ -32,6 +32,7 @@
     </div>
 </div>
 
+{% if data.news_recent %}
 <div class="section">
     <div class="section-header flex">
         <div class="section-header-left">
@@ -47,8 +48,7 @@
     <div class="content-box">
         {% for journal in data.news_recent %}
             {{ include('/components/_journal.twig') }}
-        {% else %}
-            No news!
         {% endfor %}
     </div>
 </div>
+{% endif %}

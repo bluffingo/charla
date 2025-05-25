@@ -145,6 +145,7 @@
                                             Video
                                         {% endif %}
                                     </div>
+                                    {% if not is_chaziz_sb %}
                                     <div class="watch-box-info-detail">
                                         <span class="watch-box-info-detail-title">Rating:</span>
                                         {% if submission.rating == 'mature' %}
@@ -157,6 +158,7 @@
                                             General
                                         {% endif %}
                                     </div>
+                                    {% endif %}
                                     <div class="watch-box-info-detail">
                                         <span class="watch-box-info-detail-title">Uploaded:</span>
                                         {{ submission.published | date('M d Y H:i T') }}

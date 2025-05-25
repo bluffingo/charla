@@ -71,8 +71,8 @@ $form-text-color: $text-color;
 $form-border-color: $content-box-border-color;
 
 // fonts
+//$font: Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-serif: Georgia, "Times New Roman", serif;
 
 // https://medium.com/@jainbhavukspeaks/leveraging-scss-mixins-to-create-responsive-layouts-the-easy-way-5bbe4080cb15
 // breakpoints
@@ -100,7 +100,7 @@ $header-logo-height: 32px;
 $header-pfp-width: 32px;
 
 // profile
-$pfp-width-profiles: 90px;
+$pfp-width-profiles: 64px;
 $pfp-width-watch: 35px;
 $profile-intro-height: 90px;
 

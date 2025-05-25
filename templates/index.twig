@@ -19,6 +19,10 @@
     {% set jumbotronClassName = "homepage-logged-out" %}
 {% endif %}
 
+{% if not data.submissions and not data.submission_new and not data.news_recent %}
+    {% set empty_instance = true %}
+{% endif %}
+
 {% block scripts %}
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous">
@@ -69,6 +73,7 @@
             </div>
         </div>
     </div>
+    {% if not empty_instance %}
     <div class="navigation-bar">
         <a class="navigation-bar-button {% if type=='list' %}active{% endif %}" id="index-list-button">
             <div class="biscuit-icon homepage-list size-24"></div>
@@ -79,12 +84,19 @@
             {{ localize("grid") }}
         </a>
     </div>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
-    {% if type == "grid" %}
-        {{ include('/components/_index_grid.twig') }}
+    {% if empty_instance %}
+        <div class="banner banner-secondary">
+            This instance is currently empty.
+        </div>
     {% else %}
-        {{ include('/components/_index_list.twig') }}
+        {% if type == "grid" %}
+            {{ include('/components/_index_grid.twig') }}
+        {% else %}
+            {{ include('/components/_index_list.twig') }}
+        {% endif %}
     {% endif %}
 {% endblock %}
