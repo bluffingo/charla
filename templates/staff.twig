@@ -4,15 +4,16 @@
 
 	{% block content %}
         <div class="section">
-            <div class="section-header">
-                <h1 class="section-title">{{ website_branding.name }} Staff</h1>
-            </div>
-            {% if is_opensb_v1_3 %}
+        <div class="section-header">
+            <h1 class="section-title">{{ website_branding.name }} Staff</h1>
+        </div>
+        <div class="content-box">
+            {% if staff|filter(user => user.level == '4') is not empty %}
                 <div class="section">
                     <div class="section-header">
                         <h2 class="section-title">Owners</h2>
                     </div>
-                    <div class="content-box content-grid content-grid-users">
+                    <div class="content-grid content-grid-users">
                         {% for user in staff|filter(user => user.level == '4') %}
                             <div class="content-entry">
                                 <div class="content-thumbnail">
@@ -35,12 +36,16 @@
                         {% endfor %}
                     </div>
                 </div>
-
+                {% if staff|filter(user => user.level == '3') is not empty %}
+                    <hr>
+                {% endif %}
+            {% endif %}
+            {% if staff|filter(user => user.level == '3') is not empty %}
                 <div class="section">
                     <div class="section-header">
                         <h2 class="section-title">Administrators</h2>
                     </div>
-                    <div class="content-box content-grid content-grid-users">
+                    <div class="content-grid content-grid-users">
                         {% for user in staff|filter(user => user.level == '3') %}
                             <div class="content-entry">
                                 <div class="content-thumbnail">
@@ -63,12 +68,16 @@
                         {% endfor %}
                     </div>
                 </div>
-
+                {% if staff|filter(user => user.level == '2') is not empty %}
+                    <hr>
+                {% endif %}
+            {% endif %}
+            {% if staff|filter(user => user.level == '2') is not empty %}
                 <div class="section">
                     <div class="section-header">
                         <h2 class="section-title">Moderators</h2>
                     </div>
-                    <div class="content-box content-grid content-grid-users">
+                    <div class="content-grid content-grid-users">
                         {% for user in staff|filter(user => user.level == '2') %}
                             <div class="content-entry">
                                 <div class="content-thumbnail">
@@ -90,30 +99,6 @@
                             </div>
                         {% endfor %}
                     </div>
-                </div>
-            {% else %}
-                <div class="content-box content-grid content-grid-users">
-                    {% for user in staff %}
-                        <div class="content-entry">
-                            <div class="content-thumbnail">
-                                <a href="/user/{{ user.info.username }}">
-                                    <div class="content-image profile-picture">
-                                        <img src="{{ profile_picture(user.info.username) }}"
-                                             alt="{{ user.info.username }}" class="pfp">
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="content-info">
-                                <div class="content-author">
-                                    {{ user_link(user) }}
-                                </div>
-                                <div class="content-description">
-                                    {# temporary #}
-                                    Administrator
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
                 </div>
             {% endif %}
         </div>
