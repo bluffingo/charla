@@ -55,12 +55,12 @@
           }
         }
         &.homepage-logged-out {
-          height: 100px;
+          height: 120px;
 
           .jumbotron-welcome {
             line-height: 2em;
 
-            .button-get-started {
+            .jumbotron-get-started {
               @include responsive('tiny') {
                 display: none;
               }
@@ -68,7 +68,14 @@
                 display: none;
               }
               @include responsive('medium') {
-                display: inline-block;
+                display: flex;
+                align-items: center; // looks FUCKED with center
+                gap: 0.65rem;
+              }
+
+              span {
+                font-family: "Caveat", cursive, sans-serif;
+                font-size: 1.3rem;
               }
             }
           }

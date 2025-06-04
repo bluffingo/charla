@@ -4,6 +4,9 @@
 
 //@import url("https://rsms.me/inter/inter.css");
 
+// caveat is used by the "its free!" text on logged out jumbotron
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
 @import 'normalize';
 @import 'variables';
 
@@ -152,11 +155,19 @@ blockquote {
 }
 
 .profile-picture {
-  border: 1px solid #888;
+  @if $color-scheme == "dark" {
+    border: 1px solid #888;
+  } @else {
+    border: 1px solid #333;
+  }
+
   display: block;
   border-radius: 4px;
   position: relative;
-  box-shadow: 0 1px 2px rgba(black, 0.1);
+  overflow: clip;
+
+  background: linear-gradient(#333, #050505);
+  box-shadow: 0 2px 2px rgba(black, 0.1);
 
   &::before {
     content: '';
@@ -166,12 +177,12 @@ blockquote {
     background-image: url('/assets/charla_pfp_gloss.svg');
     background-size: cover;
     position: absolute;
-    border-radius: 3px;
+    z-index: 1; // shitty hack so pfp's filter property doesnt fuck this up
   }
   .pfp {
     width: auto;
     height: 100%;
-    border-radius: 3px;
+    filter: drop-shadow(4px 8px 8px rgba(0,0,0,50%));
 
     // a fix for legacy poktube profile pictures that aren't 1:1
     aspect-ratio: 1 / 1;
