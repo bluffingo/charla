@@ -15,7 +15,7 @@
                     </div>
                     <div class="content-grid content-grid-users">
                         {% for user in staff|filter(user => user.level == '4') %}
-                            <div class="content-entry">
+                            <div class="content-entry user-id-{{ user.id }}">
                                 <div class="content-thumbnail">
                                     <a href="/user/{{ user.info.username }}">
                                         <div class="content-image profile-picture">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="content-grid content-grid-users">
                         {% for user in staff|filter(user => user.level == '3') %}
-                            <div class="content-entry">
+                            <div class="content-entry user-id-{{ user.id }}">
                                 <div class="content-thumbnail">
                                     <a href="/user/{{ user.info.username }}">
                                         <div class="content-image profile-picture">
@@ -79,7 +79,7 @@
                     </div>
                     <div class="content-grid content-grid-users">
                         {% for user in staff|filter(user => user.level == '2') %}
-                            <div class="content-entry">
+                            <div class="content-entry user-id-{{ user.id }}">
                                 <div class="content-thumbnail">
                                     <a href="/user/{{ user.info.username }}">
                                         <div class="content-image profile-picture">

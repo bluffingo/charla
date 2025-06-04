@@ -247,7 +247,8 @@ hr {
     align-items: center;
 
     .userlink-handle {
-      color: #aaa;
+      color: $text-color;
+      opacity: 50%;
       text-decoration: none;
     }
 

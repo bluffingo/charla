@@ -18,6 +18,14 @@
   .comment-body {
     flex: 1;
 
+    .comment-author {
+      .comment-timestamp {
+        color: $text-color;
+        opacity: 50%;
+        font-size: 0.8em;
+      }
+    }
+
     .comment-contents {
       margin-top: 0.25em;
 
@@ -94,6 +102,7 @@
 
 .reply-button {
   font-size: 0.75rem;
+  cursor: pointer;
 }
 
 .new-comment-logged-out {

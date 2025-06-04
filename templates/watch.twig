@@ -42,7 +42,7 @@
     {% endif %}
     {% if submission.author_banned %}
         <div class="banner banner-secondary">
-            The author of this upload was banned.
+            The author of this upload is banned.
         </div>
     {% endif %}
     <div class="grid">
@@ -71,9 +71,11 @@
                     <hr>
                     <div class="watch-box-row">
                         <div class="watch-box-left">
-                            <div class="watch-box-profile-picture profile-picture">
-                                <img class="pfp" src="{{ profile_picture(submission.author.info.username) }}">
-                            </div>
+                            <a href="/user/{{ submission.author.info.username }}">
+                                <div class="watch-box-profile-picture profile-picture user-id-{{ submission.author.id }}">
+                                    <img class="pfp" src="{{ profile_picture(submission.author.info.username) }}">
+                                </div>
+                            </a>
                             <div class="watch-box-author">
                                 <div class="watch-box-author-userlink">
                                     {{ user_link(submission.author) }}
