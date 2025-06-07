@@ -107,6 +107,25 @@
   }
 }
 
+/*
+.header-logo-squarebracket {
+  background: #0069B4;
+  color: white;
+
+  height: $header-height;
+  width: $header-height; // stupid !
+
+  &:hover {
+    background: #1b9ade;
+  }
+
+  &:active {
+    background: #054585;
+  }
+}
+*/
+
+
 .header-search
 {
   position: relative;

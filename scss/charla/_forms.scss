@@ -43,5 +43,6 @@ input[type="number"] {
 
 .form-flex {
   display: flex;
-  gap: 5px;
+  gap: 0.25em;
+  align-items: center;
 }

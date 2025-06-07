@@ -3,6 +3,7 @@
 {% set title = "Invite keys" %}
 
 	{% block admincontent %}
+        <div class="inviteKeyGenerationForm">
         <form name="inviteKeyGenerationForm" id="inviteKeyGenerationForm" method="post"
               action="/admin/invitekeys" enctype="multipart/form-data">
             <input type="hidden" id="action" name="action" value="generate_invite_key"/>
@@ -12,6 +13,7 @@
         <p>
             If you give an invitation key to a bad actor, you <strong>will</strong> be demoted.
         </p>
+        </div>
         <hr>
         <div class="section">
             <div class="section-header">
@@ -26,7 +28,7 @@
                 {% for inviteKey in data.invites %}
                     <tr style="height: 30px;">
                         <td>
-                            <pre>{{ inviteKey.invite_key }}</pre>
+                            <code>{{ inviteKey.invite_key }}</code>
                         </td>
                         <td>
                             {{ inviteKey.generated_by.name }}

@@ -13,23 +13,25 @@
         {% set current_page = page %}
 
         <div class="form-flex">
-            <form action="/admin/users/" method="GET" id="num_change">
-                <select name="amount" onchange="this.form.submit()" style="height:30px;">
+            <form action="/admin/users/" method="GET" id="num_change" class="admin-form-select">
+                <select name="amount" onchange="this.form.submit()">
                     {% for option in [8, 16, 32, 64, 128, 256] %}
                         <option value="{{ option }}" {{ amount == option ? 'selected' }}>{{ option }}</option>
                     {% endfor %}
                 </select>
             </form>
 
-            <form method="GET" action="/admin/users/" style="margin-left: auto;">
+            <form method="GET" action="/admin/users/" class="admin-form-search">
                 <input type="hidden" name="amount" value="{{ amount }}">
                 <input type="text" name="search" value="{{ search }}" placeholder="{{ localize('search') }}...">
-                <button type="submit" class="button button-secondary">{{ localize('search') }}</button>
+                <button type="submit" class="button button-secondary">
+                    <div class="biscuit-icon search"></div>
+                </button>
             </form>
         </div>
         <hr>
         {% for user in users %}
-            <div class="content-entry">
+            <div class="content-entry admin-entry">
                 <div class="content-image profile-picture">
                     <a href="/user/{{ user.info.username }}">
                         <img src="{{ profile_picture_admin(user.info.username) }}" alt="{{ user.info.username }}" class="pfp">
@@ -59,25 +61,25 @@
                             Joined: {{ user.info.joined | relative_time() }}
                         </div>
                         <div>
-                            Last login: {{ user.info.joined | relative_time() }}
+                            Logged in: {{ user.info.connected | relative_time() }}
                         </div>
                     </div>
-                    <div>
-                        <a class="button button-secondary" href="/admin/users/{{ user.info.username }}">
-                            Check
-                        </a>
-                        {% if user.powerlevel <= 1 %}
-                            {% if user.banned %}
-                                <form id="banForm" method="post" action="/admin/users/{{ user.info.username }}" enctype="multipart/form-data">
-                                    <button name="ban_user" value="{{ user.info.username }}" class="button button-warning" onclick="if (!confirm('Are you sure you want to unban this user?')) { return false }">Unban</button>
-                                </form>
-                            {% else %}
-                                <form id="banForm" method="post" action="/admin/users/{{ user.info.username }}" enctype="multipart/form-data">
-                                    <button name="ban_user" value="{{ user.info.username }}" class="button button-danger" onclick="if (!confirm('Are you sure you want to ban this user?')) { return false }">Ban</button>
-                                </form>
-                            {% endif %}
+                </div>
+                <div class="admin-user-buttons">
+                    <a class="button button-secondary button-small" href="/admin/users/{{ user.info.username }}">
+                        Check
+                    </a>
+                    {% if user.powerlevel <= 1 %}
+                        {% if user.banned %}
+                            <form id="banForm" method="post" action="/admin/users/{{ user.info.username }}" enctype="multipart/form-data">
+                                <button name="ban_user" value="{{ user.info.username }}" class="button button-warning button-small" onclick="if (!confirm('Are you sure you want to unban this user?')) { return false }">Unban</button>
+                            </form>
+                        {% else %}
+                            <form id="banForm" method="post" action="/admin/users/{{ user.info.username }}" enctype="multipart/form-data">
+                                <button name="ban_user" value="{{ user.info.username }}" class="button button-danger button-small" onclick="if (!confirm('Are you sure you want to ban this user?')) { return false }">Ban</button>
+                            </form>
                         {% endif %}
-                    </div>
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
