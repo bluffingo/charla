@@ -10,6 +10,12 @@
     {% set type = "Unknown" %}
 {% endif %}
 
+{% if submission.published_originally and submission.original_site %}
+    {% set time = submission.published_originally | relative_time %}
+{% else %}
+    {% set time = submission.published | relative_time %}
+{% endif %}
+
 <div class="content-entry">
     <div class="content-thumbnail">
         <a href="/view/{{ submission.id }}">
@@ -33,7 +39,12 @@
         <div class="content-description">
             {{ user_link(submission.author) }}
             <br>
-            {{ submission.views }} view{{ pluralViews }} • {{ submission.published | relative_time }} • {{ type }}
+            {{ submission.views }} view{{ pluralViews }}
+            • {{ time }}
+            {% if submission.published_originally and submission.original_site %}
+                <span class="text-faded">on {{ submission.original_site }}</span>
+            {% endif %}
+            • {{ type }}
             <br>
             {% if submission.description|trim is not empty %}
                 <span>{{ submission.description }}</span>
