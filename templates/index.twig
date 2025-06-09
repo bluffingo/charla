@@ -1,18 +1,13 @@
 {% extends "_layout.twig" %}
 
 {% if is_user_logged_in %}
-    {% set followers = user_stat_data.followers ?? "no" %}
-    {% set views = user_stat_data.views ?? "no" %}
-    {% set followersText = followers == 0 ? "no" : followers %}
-    {% set viewsText = views == 0 ? "no" : views %}
-
     {% set jumbotronClassName = "homepage-logged-in" %}
 
-    {% if followersText != 1 %}
+    {% if user_stat_data.followers != 1 %}
         {% set pluralSubscribers = "s" %}
     {% endif %}
 
-    {% if viewsText != 1 %}
+    {% if user_stat_data.views != 1 %}
         {% set pluralViews = "s" %}
     {% endif %}
 {% else %}
@@ -55,8 +50,8 @@
                     </div>
                     <div class="jumbotron-logged-in-text">
                         <h1>{{ localize('welcome_logged_in', user_data.title) }}</h1>
-                        <div>@{{ user_data.name }} • {{ followersText }} follower{{ pluralSubscribers }}
-                            • {{ viewsText }} view{{ pluralViews }}</div>
+                        <div>@{{ user_data.name }} • {{ user_stat_data.followers }} follower{{ pluralSubscribers }}
+                            • {{  user_stat_data.views }} view{{ pluralViews }}</div>
                     </div>
                 {% else %}
                     <h1>{{ localize('welcome_logged_out', website_branding.name) }}</h1>

@@ -2,6 +2,10 @@
 
 {% set title = "Charla!" %}
 
+{% set button_color_types = color_types %}
+
+{% set button_color_types = button_color_types|merge(['favorite']) %}
+
 {% block scripts %}
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous">
@@ -46,19 +50,19 @@
                 <div class="section-header">
                     <h2 class="section-title">Buttons</h2>
                 </div>
-                {% for color in color_types %}
+                {% for color in button_color_types %}
                     <div class="button button-{{ color }} button-small">small {{ color }} button!</div>
                 {% endfor %}
                 <br>
-                {% for color in color_types %}
+                {% for color in button_color_types %}
                     <div class="button button-{{ color }}">{{ color }} button!</div>
                 {% endfor %}
                 <br>
-                {% for color in color_types %}
+                {% for color in button_color_types %}
                     <div class="button button-{{ color }} button-big">big {{ color }} button!</div>
                 {% endfor %}
                 <br>
-                {% for color in color_types %}
+                {% for color in button_color_types %}
                     <div class="button button-{{ color }} button-huge">huge {{ color }} button!</div>
                 {% endfor %}
             </div>

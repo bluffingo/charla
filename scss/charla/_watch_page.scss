@@ -17,30 +17,31 @@
   overflow: hidden;
   word-break: break-word;
 
-  .watch-box-info {
-    .watch-box-info-detail {
-      .watch-box-info-detail-title {
-        color: gray;
-      }
-    }
+  .section {
+    margin: 0;
+  }
 
-    .watch-box-info-stat {
-      .watch-box-info-stat-number {
-        font-weight: 500;
-      }
+  .watch-box-title {
+    .section-header {
+      margin: 0;
     }
-
-    .section-title {
-      h2 {
-        font-size: 0.9em;
-        font-weight: 500;
-      }
+    .watch-box-below-title {
+      opacity: 50%;
+      font-size: 0.9em;
     }
   }
 
   .watch-box-description {
     margin: 0 auto;
     word-wrap: break-word;
+
+    .watch-box-description-info {
+      //opacity: 50%;
+    }
+
+    .watch-box-description-info-small {
+      font-size: 0.9em;
+    }
   }
 
   .watch-box-row {
@@ -48,8 +49,16 @@
     align-items: center;
 
     .watch-box-right {
-      /* star rating */
       text-align: right;
+
+      .watch-box-views {
+        font-size: 1.25em;
+      }
+
+      .watch-box-ratings-number {
+        font-size: 0.8em;
+        opacity: 50%;
+      }
     }
 
     .watch-box-left {

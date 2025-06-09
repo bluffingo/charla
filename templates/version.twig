@@ -41,21 +41,16 @@
                         The source code to OpenSB is available
                         <a href="https://github.com/bluffingo/OpenSB">on GitHub</a>.
                     </p>
+                    <hr>
+                    <ul class="unstyled-list">
+                        {% for thing in data.software %}
+                            <li>
+                                <span class="text-faded">{{ thing.title }}</span>: {{ thing.info }}
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
-            <hr>
-            <table class="c1">
-                <tr class="h">
-                    <th>Software</th>
-                    <th>Version</th>
-                </tr>
-                {% for thing in data.software %}
-                    <tr>
-                        <td class="a">{{ thing.title }}</td>
-                        <td class="b">{{ thing.info }}</td>
-                    </tr>
-                {% endfor %}
-            </table>
         </div>
     </div>
 {% endblock %}
