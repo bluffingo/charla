@@ -18,13 +18,27 @@
 
             {% if comment.id and is_user_logged_in %}
             <a class="reply-button" data-comment-id="{{ comment.id }}">{{ localize('reply') }}</a>
-            <div class="reply-form" id="reply-form-{{ comment.id }}" style="display: none;">
-                <textarea class="form-submit" id="reply_contents_{{ comment.id }}" maxlength="1000" placeholder="Write your reply here." rows="4"></textarea>
-                <button class="button button-secondary submit-reply-button" data-comment-id="{{ comment.id }}">{{ localize('reply') }}</button>
-            </div>
             {% endif %}
 
             <div class="replies" id="replies-{{ comment.id }}">
+                {% if comment.id and is_user_logged_in %}
+                    <div class="reply-form" id="reply-form-{{ comment.id }}" style="display: none;">
+                        <div class="profile-picture">
+                            <img src="{{ profile_picture(user_data.name) }}" class="pfp" alt="{{ user_data.name }}">
+                        </div>
+                        <div class="new-reply-form">
+                            <textarea class="form-submit" id="reply_contents_{{ comment.id }}" maxlength="1000" rows="3"></textarea>
+                            <div class="flex">
+                                <div class="text-danger" id="reply-form-error-{{ comment.id }}" style="display:none;">
+                                    Reply Form Error
+                                </div>
+                                <button class="button button-primary submit-reply-button" data-comment-id="{{ comment.id }}">
+                                    {{ localize('reply') }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
                 {% for reply in comment.replies %}
                     {{ include('/components/_comment.twig', { comment: reply }) }}
                 {% endfor %}

@@ -1,7 +1,7 @@
 .comment {
   margin: 1em 0;
   display: flex;
-  gap: 1em;
+  gap: 0.8em;
 
   border-bottom: 1px solid $content-box-border-color;
 
@@ -44,15 +44,11 @@
   }
 }
 
-.new-comment-form {
-  flex: 1;
-}
-
 .replies {
   border-left: 1px solid $content-box-border-color;
   padding-left: 1em;
   margin-top: 1em;
-  .comment {
+  .comment, .reply-form {
     border: none;
     .profile-picture {
       width: 35px;
@@ -63,7 +59,7 @@
 
 .new-comment, .reply-form {
   display: flex;
-  gap: 1em;
+  gap: 0.8em;
 
   &:not(:only-child) {
     &:not(:only-of-type) {
@@ -105,10 +101,20 @@
   cursor: pointer;
 }
 
-.new-comment-logged-out {
+#new-comment-form {
+  display: none;
+}
+
+#new-comment-form, .new-reply-form {
+  flex: 1;
+}
+
+#new-comment-logged-out {
   background: $form-bg-color;
   color: $form-text-color;
   border: 1px solid $form-border-color;
   border-radius: 6px;
   padding: 0.5rem;
+  width: 100%;
+  cursor: pointer;
 }
